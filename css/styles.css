@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: "OpenSans Semibold", sans-serif;
+}
+
+@font-face {font-family: "OpenSans Semibold";src: url("../fonts/OpenSans-Semibold.ttf");}
+
+body {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    background: url("../images/header-background2.png") no-repeat/*, url("../images/ribbons.png") no-repeat 95% 50%*/;
+    background-size: 100%/*, 21.25%*/;
+    text-align: center;
+    vertical-align: top;
+}
+.header-menu {
+    display: inline-block;
+    width: 40%;
+    list-style: none;
+    vertical-align: top;
+    margin: 0.3% 0 0 0;
+}
+.header-menu li {
+    display: inline-block;
+}
+.header-menu li:first-child:after {
+    content: "\2002\2022\2002";
+    color: white;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+.header-menu li a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+.logo {
+    display: inline-block;
+    width: 18.75%;
+    vertical-align: top;
+    margin: 0.5% 0 0 0;
+}
+.logo img {
+    max-width: 100%;
+}
+.controls {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    margin: 0.5% 0 0 0;
+}
+.account-menu {
+    position: relative;
+    list-style: none;
+    text-align: left;
+    padding-left: 25%;
+}
+.account-menu li:first-child {
+    display: inline-block;
+    width: 40%;
+    background: url("../images/sprite-arrows.png") no-repeat 100% 0;
+    background-size: 9%;
+}
+.account-menu li:first-child:hover {
+    background: url("../images/sprite-arrows.png") 25%;
+}
+.account-sub-menu {
+    display: inline-block;
+    position: absolute;
+    top: 170%;
+    left: 33%;
+    list-style: none;
+}
+.account-sub-menu ul {
+    display: inline-block;
+    width: 50%;
+    background-color: white;
+    opacity: 0.9;
+    border-top: none;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    -webkit-box-shadow: 2px 2px 3px -1px #636262, -2px 2px 3px -1px #636262;
+    -moz-box-shadow: 2px 2px 3px -1px #636262, -2px 2px 3px -1px #636262;
+    box-shadow: 2px 2px 3px -1px #636262, -2px 2px 3px -1px #636262;
+}
+.account-sub-menu li {
+    display: inline-block;
+    width: 100%;
+    font-size: 0.8em;
+    color: #636262;
+    padding: 3%;
+}
+.up-arrow {
+    display: inline-block;
+    width: 15%;
+    padding-top: 10%;
+    vertical-align: bottom;
+    float: right;
+    background: url("../images/sprite-arrows.png") 90% 0;
+}
+
+.city-menu {
+    list-style: none;
+}

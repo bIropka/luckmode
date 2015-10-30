@@ -189,18 +189,26 @@ main {
     height: 0;
     overflow: hidden;
 }
-.winners {
-    text-align: center;
+.winners-table {
+    display: table;
 }
-.winners li {
-    display: inline-block;
-    width: 32%;
-    margin: 0 0.5% 1%;
+.winners-row {
+    display: table-row;
+}
+.winners-cell {
+    display: table-cell;
+    /*width: 30%;*/
 }
 .winners li img {
     width: 100%;
 }
-.winners span {
+.winners .name {
+
+}
+.winners .text {
+
+}
+.more-winners {
     display: inline-block;
     font-family: "OpenSans Italic", sans-serif;
     font-weight: bold;
@@ -363,14 +371,14 @@ footer .logo {
 @media (max-width: 640px) {
 
     * {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 }
 
 @media (max-width: 480px) {
 
     * {
-        font-size: 0.78em;
+        font-size: 0.7em;
     }
     .odnoklassniki {
         margin-left: 15%;

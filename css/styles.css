@@ -4,11 +4,13 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: 1em;
+    font-size: 14px;
     font-family: "OpenSans Semibold", sans-serif;
 }
 
 @font-face {font-family: "OpenSans Semibold";src: url("../fonts/OpenSans-Semibold.ttf");}
+@font-face {font-family: "OpenSans Italic";src: url("../fonts/OpenSans-Italic.ttf");}
+@font-face {font-family: "OpenSans";src: url("../fonts/OpenSans.ttf");}
 
 body {
     max-width: 1600px;
@@ -46,6 +48,9 @@ header {
     color: white;
     text-shadow: 1px 1px black;
 }
+.header-menu li a:hover {
+    color: #bebebe;
+}
 header .logo {
     position: absolute;
     top: 0.5%;
@@ -70,13 +75,13 @@ header .logo {
 .account-menu>a {
     display: block;
     width: 100%;
-    background: url("../images/sprite-arrows.png") no-repeat 100% -9%;
+    background: url("../images/sprite-arrows.png") no-repeat 95% -9%;
     background-size: 9%;
     color: black;
     text-decoration: none;
 }
 .account-menu:hover>a {
-    background: url("../images/sprite-arrows.png") no-repeat 100% 18%;
+    background: url("../images/sprite-arrows.png") no-repeat 95% 18%;
     background-size: 9%;
 }
 .account-menu:hover .sub-menu {
@@ -103,7 +108,7 @@ header .logo {
 }
 .sub-menu li a {
     display: block;
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: #636262;
     padding: 1%;
     text-decoration: none;
@@ -128,7 +133,7 @@ header .logo {
 .city-menu>a {
     display: block;
     width: 100%;
-    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 100% 50%;
+    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 93% 50%;
     background-size: 12%;
     color: #636262;
     text-decoration: none;
@@ -145,7 +150,7 @@ header .logo {
     box-shadow: none;
 }
 .city-menu:hover>a {
-    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 100% 78%;
+    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 93% 78%;
     background-size: 12%;
 }
 .city-menu:hover .sub-menu {
@@ -154,7 +159,8 @@ header .logo {
 /***************** MAIN ******************
 *****************************************/
 main {
-    width: 80%;
+    position: relative;
+    width: 70%;
     margin: 0 auto;
 }
 .menu ul {
@@ -196,18 +202,185 @@ main {
 }
 .winners span {
     display: inline-block;
-    width: 15%;
-    font-style: italic;
-    font-size: 1.2em;
-    color: #990000;
-    background: url("../images/sprite-arrows.png") no-repeat 100% 104%;
+    font-family: "OpenSans Italic", sans-serif;
+    font-weight: bold;
+    color: #c52f32;
+    background: url("../images/sprite-arrows.png") no-repeat 98% 105%;
     -webkit-background-size: 10%;
     background-size: 10%;
     margin: 2% auto;
+    text-align: left;
+}
+main button {
+    position: absolute;
+    width: 15%;
+    top:-5%;
+    left: 2.7%;
+    border: none;
+    background: linear-gradient(to bottom, #cd1013, #ae0e14);
+    padding: 0.7% 1.5%;
+    color: white;
+    text-transform: uppercase;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 /**************** FOOTER *****************
 *****************************************/
 footer {
     width: 100%;
     background: #ca1013;
+}
+footer span, footer a {
+    font-family: OpenSans, sans-serif;
+}
+.footer-top, .footer-bottom {
+    width: 70%;
+    margin: 0 auto;
+    padding: 1%;
+}
+.footer-controls, .odnoklassniki, .vkontakte {
+    display: inline-block;
+}
+.footer-controls {
+    width: 30%;
+}
+footer .logo {
+    display: block;
+    width: 75%;
+    margin-bottom: 2%;
+}
+.activities span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.activities li, .activities li a {
+    text-decoration: none;
+    color: white;
+}
+.activities li {
+    margin-left: 1.5%;
+}
+.activities li a:hover {
+    text-decoration: underline;
+}
+.social {
+    margin-top: 1%;
+}
+.social li {
+    display: inline-block;
+    width: 15%;
+}
+.social a {
+    display: inline-block;
+    width: 100%;
+    padding-top: 100%;
+    background: url("../images/sprite-social.png") no-repeat 0% 50%;
+    background-size: cover;
+}
+.social li:nth-child(2) a {background: url("../images/sprite-social.png") no-repeat 20% 50%;background-size: cover;}
+.social li:nth-child(3) a {background: url("../images/sprite-social.png") no-repeat 40% 50%;background-size: cover;}
+.social li:nth-child(4) a {background: url("../images/sprite-social.png") no-repeat 60% 50%;background-size: cover;}
+.social li:nth-child(5) a {background: url("../images/sprite-social.png") no-repeat 80% 50%;background-size: cover;}
+.social li:nth-child(6) a {background: url("../images/sprite-social.png") no-repeat 100% 50%;background-size: cover;}
+.social li:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.odnoklassniki {
+    width: 20%;
+    margin-left: 21%;
+}
+.vkontakte {
+    width: 25%;
+    margin-left: 3%;
+}
+.odnoklassniki img, .vkontakte img {
+    max-width: 100%;
+}
+.footer-bottom a {
+    color: white;
+}
+.footer-bottom span:last-child a {
+    text-decoration: none;
+}
+.footer-bottom span:last-child {
+    float: right;
+}
+/*************MEDIA QUERIES**************
+****************************************/
+
+@media (max-width: 1680px) {
+
+    * {
+        font-size: 0.97em;
+    }
+}
+@media (max-width: 1366px) {
+
+    * {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    * {
+        font-size: 0.93em;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    * {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 980px) {
+
+    * {
+        font-size: 0.87em;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    * {
+        font-size: 0.85em;
+    }
+    main button {
+        padding: 0.3% 1.5%;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+}
+@media (max-width: 640px) {
+
+    * {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+
+    * {
+        font-size: 0.78em;
+    }
+    .odnoklassniki {
+        margin-left: 15%;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    * {
+        font-size: 0.7em;
+    }
 }

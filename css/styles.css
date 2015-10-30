@@ -11,22 +11,26 @@
 @font-face {font-family: "OpenSans Semibold";src: url("../fonts/OpenSans-Semibold.ttf");}
 
 body {
+    max-width: 1600px;
     width: 100%;
+    margin: auto;
 }
-
+/**************** HEADER *****************
+*****************************************/
 header {
     width: 100%;
     background: url("../images/header-background2.png") no-repeat/*, url("../images/ribbons.png") no-repeat 95% 50%*/;
     background-size: 100%/*, 21.25%*/;
-    text-align: center;
     vertical-align: top;
+    padding-bottom: 5.5%;
 }
 .header-menu {
     display: inline-block;
     width: 40%;
     list-style: none;
     vertical-align: top;
-    margin: 0.3% 0 0 0;
+    margin-top: 0.3%;
+    text-align: center;
 }
 .header-menu li {
     display: inline-block;
@@ -42,48 +46,51 @@ header {
     color: white;
     text-shadow: 1px 1px black;
 }
-.logo {
-    display: inline-block;
+header .logo {
+    position: absolute;
+    top: 0.5%;
+    left: 50%;
+    margin-left: -9.375%;
     width: 18.75%;
-    vertical-align: top;
-    margin: 0.5% 0 0 0;
 }
 .logo img {
     max-width: 100%;
 }
-.controls {
+.header-controls {
     display: inline-block;
-    width: 40%;
+    width: 13%;
     vertical-align: top;
-    margin: 0.5% 0 0 0;
+    margin-top: 0.5%;
+    margin-left: 28%;
 }
 .account-menu {
     position: relative;
-    list-style: none;
     text-align: left;
-    padding-left: 25%;
 }
-.account-menu li:first-child {
-    display: inline-block;
-    width: 40%;
-    background: url("../images/sprite-arrows.png") no-repeat 100% 0;
+.account-menu>a {
+    display: block;
+    width: 100%;
+    background: url("../images/sprite-arrows.png") no-repeat 100% -9%;
+    background-size: 9%;
+    color: black;
+    text-decoration: none;
+}
+.account-menu:hover>a {
+    background: url("../images/sprite-arrows.png") no-repeat 100% 18%;
     background-size: 9%;
 }
-.account-menu li:first-child:hover {
-    background: url("../images/sprite-arrows.png") 25%;
+.account-menu:hover .sub-menu {
+    display: block;
 }
-.account-sub-menu {
-    display: inline-block;
+.sub-menu {
+    display: none;
     position: absolute;
-    top: 170%;
-    left: 33%;
+    top: 100%;
+    left: 25%;
+    opacity: 0.95;
     list-style: none;
-}
-.account-sub-menu ul {
-    display: inline-block;
-    width: 50%;
+    width: 75%;
     background-color: white;
-    opacity: 0.9;
     border-top: none;
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
@@ -91,23 +98,116 @@ header {
     -webkit-box-shadow: 2px 2px 3px -1px #636262, -2px 2px 3px -1px #636262;
     -moz-box-shadow: 2px 2px 3px -1px #636262, -2px 2px 3px -1px #636262;
     box-shadow: 2px 2px 3px -1px #636262, -2px 2px 3px -1px #636262;
+    z-index: 1;
+    padding: 0.5% 1%;
 }
-.account-sub-menu li {
-    display: inline-block;
-    width: 100%;
+.sub-menu li a {
+    display: block;
     font-size: 0.8em;
     color: #636262;
-    padding: 3%;
+    padding: 1%;
+    text-decoration: none;
 }
-.up-arrow {
+.sub-menu-mark {
+    display: none;
+    float: right;
+    color: red;
+    vertical-align: middle;
+}
+.sub-menu li:hover .sub-menu-mark{
+    display: inherit;
+}
+.city-menu {
+    width: 75%;
+    position: relative;
+    list-style: none;
+    text-align: left;
+    margin-top: 15%;
+    margin-left: 25%;
+}
+.city-menu>a {
+    display: block;
+    width: 100%;
+    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 100% 50%;
+    background-size: 12%;
+    color: #636262;
+    text-decoration: none;
+    padding: 5%;
+}
+.city-menu .sub-menu {
+    left: 25%;
+    width: 75%;
+    border: none;
+    border-radius: inherit;
+    background: #e5e4e4;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.city-menu:hover>a {
+    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 100% 78%;
+    background-size: 12%;
+}
+.city-menu:hover .sub-menu {
+    display: block;
+}
+/***************** MAIN ******************
+*****************************************/
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+.menu ul {
+    width: 100%;
+    text-align: center;
+}
+.menu li {
+    display:inline-block;
+    background: #e5e4e4;
+    padding: 1%;
+    width: 17%;
+    margin: 1% 1% 0;
+    border: 2px solid transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.menu li:hover {
+    background: none;
+    border: 2px solid red;
+    border-bottom: none;
+}
+.menu:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+.winners {
+    text-align: center;
+}
+.winners li {
+    display: inline-block;
+    width: 32%;
+    margin: 0 0.5% 1%;
+}
+.winners li img {
+    width: 100%;
+}
+.winners span {
     display: inline-block;
     width: 15%;
-    padding-top: 10%;
-    vertical-align: bottom;
-    float: right;
-    background: url("../images/sprite-arrows.png") 90% 0;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #990000;
+    background: url("../images/sprite-arrows.png") no-repeat 100% 104%;
+    -webkit-background-size: 10%;
+    background-size: 10%;
+    margin: 2% auto;
 }
-
-.city-menu {
-    list-style: none;
+/**************** FOOTER *****************
+*****************************************/
+footer {
+    width: 100%;
+    background: #ca1013;
 }

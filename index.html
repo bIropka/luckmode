@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/styles.css" rel="stylesheet">
-    <title>admin-panel</title>
+    <title>index</title>
 </head>
 <body>
 
@@ -15,36 +15,78 @@
 
     <a href="" class="logo"><img src="images/logo.png" alt="логотип"/></a>
 
-    <div class="controls">
-        <ul class="account-menu">
-            <li>Надежда Сергеевна</li>
-            <li class="account-sub-menu">
-                <ul>
-                    <li><span>Ваш профиль</span><div class="menu-mark"></div></li>
-                    <li><span>Настройки</span><div class="menu-mark"></div></li>
-                    <li><span>Выйти из системы</span><div class="menu-mark"></div></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="city-menu">
-            <li><span>Самара</span><div class="menu-mark"></div></li>
-            <li>
-                <ul class="city-sub-menu">
-                    <li><span>Харьков</span><div class="menu-mark"></div></li>
-                    <li><span>Новосибирск</span><div class="menu-mark"></div></li>
-                    <li><span>Алма-аты</span><div class="menu-mark"></div></li>
-                </ul>
-            </li>
-        </ul>
+    <div class="header-controls">
+        <div class="account-menu">
+            <a href="">Надежда Сергеевна</a>
+            <ul class="sub-menu">
+                <li><a href="">Ваш профиль<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Настройки<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Выйти из системы<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+        <div class="city-menu">
+            <a href="">Самара</a>
+            <ul class="sub-menu">
+                <li><a href="">Харьков<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Новосибирск<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Алма-аты<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
     </div>
 </header>
 
 <main>
+    <nav class="menu">
+        <ul>
+            <li>Заявки</li>
+            <li>Аукционы</li>
+            <li>Пользователи</li>
+            <li>Бонусные баллы</li>
+            <li>Наши победители</li>
+        </ul>
+    </nav>
 
+    <div class="winners">
+        <ul>
+            <li><img src="images/winner.png" alt="фото победителя"/></li>
+            <li><img src="images/winner.png" alt="фото победителя"/></li>
+            <li><img src="images/winner.png" alt="фото победителя"/></li>
+            <li><img src="images/winner.png" alt="фото победителя"/></li>
+            <li><img src="images/winner.png" alt="фото победителя"/></li>
+            <li><img src="images/winner.png" alt="фото победителя"/></li>
+        </ul>
+        <span>Показать еще</span>
+    </div>
 </main>
 
 <footer>
-
+    <div class="footer-top">
+        <div class="footewr-controls">
+            <a href="" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+            <ul class="activities">
+                <li><a href="">Еда</a></li>
+                <li><a href="">Развлечения и спорт</a></li>
+                <li><a href="">Красота и уход</a></li>
+                <li><a href="">Медицина</a></li>
+                <li><a href="">Образование</a></li>
+                <li><a href="">Услуги</a></li>
+            </ul>
+            <ul class="social">
+                <li><a href=""><img src="" alt="google"/></a></li>
+                <li><a href=""><img src="" alt="twitter"/></a></li>
+                <li><a href=""><img src="" alt="google"/></a></li>
+                <li><a href=""><img src="" alt="facebook"/></a></li>
+                <li><a href=""><img src="" alt="RSS"/></a></li>
+                <li><a href=""><img src="" alt="google"/></a></li>
+            </ul>
+        </div>
+        <div class="odnoklassniki"><img src="" alt="odnoklassniki"/></div>
+        <div class="vkontakte"><img src="" alt="vkontakte"/></div>
+    </div>
+    <div class="footer-bottom">
+        <span>Фкции и розыгрыши.<a href="">Luckmode</a>. 2015</span>
+        <span>Создание сайта:<a href="">A.Goncharov WEB Studio</a></span>
+    </div>
 </footer>
 
 </body>

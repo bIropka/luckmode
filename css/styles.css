@@ -115,7 +115,7 @@ header .logo {
 }
 .city-menu {
     display: inline-block;
-    width: 75%;
+    width: 80%;
     margin-left: 25%;
     position: relative;
     margin-top: 15%;
@@ -134,9 +134,9 @@ header .logo {
 }
 .city-menu .sub-menu {
     position: absolute;
-    left: 10%;
+    left: 0;
     top: 100%;
-    width: 90%;
+    width: 100%;
     border: none;
     border-radius: inherit;
     background: #e5e4e4;
@@ -157,7 +157,6 @@ header .logo {
 /***************** MAIN ******************
 *****************************************/
 main {
-    position: relative;
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -165,13 +164,14 @@ main {
 .menu ul {
     width: 100%;
     text-align: center;
+    margin-bottom: 3%;
 }
 .choice {
     display:inline-block;
     background: #e5e4e4;
     padding: 1%;
     width: 18%;
-    margin: 1% 2% 0 0;
+    margin: 1% 1.9% 0 0;
     border: 2px solid transparent;
     text-decoration: none;
     text-transform: uppercase;
@@ -199,59 +199,59 @@ main {
 /************WINNERS*************
 ********************************/
 .winners {
+    position: relative;
+}
+.winners-table {
+    display: table;
     width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.winners-row {
+    display: table-row;
 }
 .winners li {
-    display: inline-block;
-    width: 32%;
-    background: url("../images/winner-background.png") no-repeat;
-    background-size: contain;
-    margin-top: 3%;
+    display: table-cell;
+    width: 33%;
+    background: #dddddd url("../images/winner-background.png") no-repeat 100% 0;
+    background-size: 10% 100%;
+    border-bottom: 25px solid white;
 }
 .winners li:nth-child(3n-1) {
     margin-left: 1.5%;
     margin-right: 1.5%;
 }
 .winners img {
-    width: 86.5%;
-    margin: 1.5% 10% 0 2.5%;
-    border-bottom: 6px solid white;
-    vertical-align: top;
+    width: 90%;
+    margin-right: 10%;
+}
+.winner-data {
+    width: 90%;
+    margin-right: 10%;
+    border-top: 5px solid white;
 }
 .winners .name {
     display: inline-block;
-    width: 86.5%;
-    margin: 5% 10% 3% 2.5%;
+    width: 100%;
+    margin: 5% 0 3%;
     font-size: 1.3em;
     color: #CC0000;
     text-align: center;
 }
 .winners .text {
     display: inline-block;
-    width: 79%;
-    margin: 1.5% 13% 15% 7%;
+    width: 80%;
+    margin: 0 10% 10%;
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-style: italic;
     text-align: justify;
 }
-.more-winners {
-    display: inline-block;
-    margin: 3% 0;
-    text-decoration: none;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    color: #c52f32;
-    background: url("../images/sprite-arrows.png") no-repeat 98% 105%;
-    -webkit-background-size: 10%;
-    background-size: 10%;
-}
 .add-winner {
     position: absolute;
     width: 150px;
     height: 35px;
-    top: -5%;
+    top: -13%;
     left: 5px;
     border: none;
     background: linear-gradient(to bottom, #cc0000, #990000);
@@ -314,7 +314,6 @@ main {
     resize: none;
     vertical-align: middle;
 }
-.window-add-winner textarea
 .window-add-winner .submit {
 
 }
@@ -323,6 +322,19 @@ main {
 }
 /********************************
 *******************/
+.more-info {
+    display: inline-block;
+    margin: 1% 0 3% 45%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #c52f32;
+    background: url("../images/sprite-arrows.png") no-repeat 98% 105%;
+    -webkit-background-size: 10%;
+    background-size: 10%;
+}
 /**************** FOOTER *****************
 *****************************************/
 footer {
@@ -337,7 +349,12 @@ footer span, footer a {
 .footer-top, .footer-bottom {
     width: 70%;
     margin: 0 auto;
-    padding: 0.5%;
+}
+.footer-top {
+    padding-top: 2%;
+}
+.footer-bottom {
+    padding: 1% 0;
 }
 .footer-controls, .odnoklassniki, .vkontakte {
     display: block;
@@ -349,24 +366,23 @@ footer span, footer a {
 footer .logo {
     display: block;
     width: 75%;
-    margin-bottom: 3%;
+    margin-bottom: 5%;
 }
 .activities span {
     text-transform: uppercase;
     font-weight: bold;
+    margin-left: -5%;
 }
 .activities li, .activities li a {
     text-decoration: none;
     color: white;
 }
-.activities li {
-    margin-left: 4%;
-}
 .activities li a:hover {
     text-decoration: underline;
 }
 .social {
-    margin-top: 5%;
+    margin-top: 7%;
+    margin-left: -5%;
 }
 .social li {
     display: inline-block;
@@ -392,27 +408,31 @@ footer .logo {
     transform: scale(1.1);
 }
 .odnoklassniki {
-    width: 20%;
+    width: 22%;
     float: left;
-    margin-left: 21%;
+    margin-left: 15%;
 }
 .vkontakte {
-    width: 24.43%;
-    float: left;
-    margin-left: 3%;
+    width: 26.873%;
+    float: right;
 }
 .odnoklassniki img, .vkontakte img {
     max-width: 100%;
 }
+.footer-bottom span{
+    vertical-align: bottom;
+}
 .footer-bottom a {
     color: white;
+}
+.footer-bottom span:first-child {
+    margin-left: -2%;
 }
 .footer-bottom span:last-child a {
     text-decoration: none;
 }
 .footer-bottom span:last-child {
     float: right;
-
 }
 /*************MEDIA QUERIES**************
 ****************************************/
@@ -423,34 +443,19 @@ footer .logo {
         font-size: 1.2em;
     }
     .winners .text {
-        font-size: 0.85em;
+        font-size: 0.9em;
     }
 }
 @media (max-width: 1480px) {
 
-    .winners .name {
-        margin: 3% 10% 2% 2.5%;
-    }
     .winners .text {
         font-size: 0.8em;
-        margin: 0 13% 10% 7%;
-    }
-    .odnoklassniki {
-        width: 22%;
-        margin-left: 15%;
-    }
-    .vkontakte {
-        width: 26.873%;
     }
 }
 @media (max-width: 1366px) {
 
     .menu li {
         font-size: 0.9em;
-    }
-    .winners .text {
-        font-size: 0.8em;
-        margin-bottom: 8%;
     }
     .header-menu, .header-controls {
         margin-top: 0.2%;
@@ -473,17 +478,22 @@ footer .logo {
     }
     .winners .name {
         font-size: 1.1em;
-        margin: 1.5% 10% 1% 2.5%;
     }
     .header-menu a, .header-controls a {
         font-size: 0.8em;
+    }
+    .odnoklassniki {
+        width: 24.2%;
+        margin-left: 10%;
+    }
+    .vkontakte {
+        width: 29.5603%;
     }
 }
 @media (max-width: 1190px) {
 
     .winners .text {
         font-size: 0.7em;
-        margin-bottom: 5%;
     }
     .social li {
         width: 12%;
@@ -503,10 +513,6 @@ footer .logo {
     .menu li:last-child {
         margin-right: 0;
 
-    }
-    .winners .text {
-        font-size: 0.65em;
-        margin-bottom: 3%;
     }
     .add-winner {
         left: 35px;
@@ -528,32 +534,14 @@ footer .logo {
     .winners {
         margin-left: 1%;
     }
-    .winners img {
-        width: 88%;
-        margin: 1.5% 24% 0 0.5%;
-    }
-    .winners .name {
-        width: 88%;
-        margin: 1.5% 24% 0 0.5%;
-    }
-    .winners .text {
-        width: 77%;
-        margin: 1.5% 30% 12% 5.5%;
-        font-size: 0.8em;
-    }
     .footer-bottom, .footer-top {
         width: 100%;
     }
     .footer-controls {
-        margin-left: 5%;
-    }
-    .odnoklassniki {
-        margin-left: 15%;
-    }
-    .odnoklassniki {
         margin-left: 10%;
     }
-    .vkontakte {
+    .odnoklassniki {
+        margin-left: 5%;
     }
     .social {
         margin-top: 8%;
@@ -562,33 +550,63 @@ footer .logo {
         margin-bottom: 5%;
     }
     .add-winner {
-        left: 55px;
+        left: 40px;
+    }
+    .footer-bottom span:first-child {
+        margin-left: 8.5%;
+    }
+    .footer-bottom span:last-child {
+        margin-right: 6.5%;
     }
 }
 
 @media (max-width: 860px) {
 
-    .winners .text {
-        font-size: 0.65em;
+    .odnoklassniki {
+        margin: 0;
+    }
+    .vkontakte {
+        margin-right: 5%;
+    }
+    .activities {
+        margin-top: 10%;
+    }
+    .social {
+        margin-top: 10%;
+    }
+    .add-winner {
+        left: 35px;
     }
 
 }
 
 @media (max-width: 800px) {
 
+    * {
+        font-size: 0.95em;
+    }
+    .menu li {
+        font-size: 0.68em;
+    }
     .winners li:nth-child(3n-1) {
         margin-left: 0;
         margin-right: 0;
     }
-    * {
-        font-size: 0.95em;
-    }
     .add-winner {
-        width: 100px;
+        width: 90px;
         height: 25px;
-        left: 35px;
-        padding-top: 5px;
+        left: 30px;
         font-size: 0.7em;
+        top: -14%;
+    }
+    .activities {
+        margin-top: 15%;
+    }
+    .social {
+        margin-top: 15%;
+    }
+    .more-winners {
+        margin-top: 0;
     }
 }
 
@@ -597,14 +615,13 @@ footer .logo {
     * {
         font-size: 0.9em;
     }
-    .winners .text {
-        margin-bottom: 10%;
-    }
+
     .add-winner {
         width: 75px;
         height: 20px;
-        left: 30px;
-        padding-top: 3px;
+        left: 25px;
+        top: -16%;
+        padding-top: 4px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
@@ -613,42 +630,62 @@ footer .logo {
 
 @media (max-width: 540px) {
 
-    * {
-        font-size: 0.85em;
-    }
-    .winners .text {
-        margin-bottom: 12%;
-    }
     .add-winner {
         width: 65px;
         height: 15px;
         left: 25px;
         padding-top: 2px;
     }
+    .activities {
+        margin-top: 10%;
+    }
+    .social {
+        margin-top: 10%;
+    }
 
 }
 
 @media (max-width: 480px) {
 
+    .header-menu, .header-controls  {
+        font-size: 0.6em;
+        vertical-align: top;
+    }
+    .menu li {
+        font-size: 0.54em;
+    }
     .winners .text {
         font-size: 0.6em;
     }
     .add-winner {
         left: 20px;
     }
-
+    .footer-controls {
+        margin-left: 5%;
+    }
+    .footer-bottom span:first-child {
+        margin-left: 3%;
+        font-size: 0.8em;
+    }
+    .vkontakte, .footer-bottom span:last-child {
+        margin-right: 3%;
+    }
+    .footer-bottom span:last-child {
+        padding-top: 1.2%;
+        font-size: 0.8em;
+    }
 }
 
 @media (max-width: 380px) {
 
+    .menu li {
+        font-size: 0.43em;
+    }
     .winners .text {
         font-size: 0.5em;
     }
-    .menu li {
-        font-size: 0.5em;
-    }
     .header-menu a, .header-controls a {
-        font-size: 0.65em;
+        font-size: 0.55em;
     }
     .add-winner {
         left: 15px;

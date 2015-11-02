@@ -196,6 +196,14 @@ main {
 .content-block {
     width: 100%;
 }
+/**********BONUS-POINTS***********
+*********************************/
+.bonus-points {
+    width: 100%;
+}
+.bonus-points table {
+    width: 70%;
+}
 /************WINNERS*************
 ********************************/
 .winners {

@@ -3,7 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/styles.css" rel="stylesheet">
-    <title>index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.choice').mouseenter(function () {
+                if (!$(this).hasClass('activated')) {
+                    $(this).addClass('active-effect');
+                }
+            });
+
+            $('.choice').mouseleave(function () {
+                if ($(this).hasClass('active-effect')) {
+                    $(this).removeClass('active-effect');
+                }
+            });
+
+            $('.choice').click(function () {
+                if (!$(this).hasClass('activated')) {
+                    $('.choice').removeClass('activated');
+                    $(this).addClass('activated');
+                    $('.content-block').addClass('invisible-block');
+
+                    if ($(this).hasClass('mark-bids')) {
+                        $('.bids').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-auctions')) {
+                        $('.auctions').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-users')) {
+                        $('.users').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-bonus-points')) {
+                        $('.bonus-points').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-winners')) {
+                        $('.winners').removeClass('invisible-block');
+                    }
+                }
+            });
+            $('.add-winner').click(function(){
+                $('.window-add-winner-wrap').fadeIn();
+            });
+            $('.window-add-winner-wrap').click(function(event) {
+                $target = $(event.target);
+                if (!$target.closest($('.window-add-winner')).length) $('.window-add-winner-wrap').fadeOut();
+                if ($target.hasClass('close')) $('.window-add-winner-wrap').fadeOut();
+            });
+        });
+    </script>
+    <title>Admin-panel</title>
 </head>
 <body>
 
@@ -40,15 +88,26 @@
 <main>
     <nav class="menu">
         <ul>
-            <li>Заявки</li>
-            <li>Аукционы</li>
-            <li>Пользователи</li>
-            <li>Бонусные баллы</li>
-            <li>Наши победители</li>
+            <li class="choice mark-bids">Заявки</li>
+            <li class="choice mark-auctions">Аукционы</li>
+            <li class="choice mark-users">Пользователи</li>
+            <li class="choice mark-bonus-points">Бонусные баллы</li>
+            <li class="choice mark-winners">Наши победители</li>
         </ul>
     </nav>
 
-    <ul class="winners">
+
+    <div class="bids content-block">
+
+    </div>
+
+    <div class="auctions content-block"></div>
+
+    <div class="users content-block"></div>
+
+    <div class="bonus-points content-block"></div>
+
+    <ul class="winners content-block">
         <li>
             <img src="images/winner-photo.png" alt="фото победителя"/>
 
@@ -97,10 +156,20 @@
             <p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                 Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         </li>
-        <!--<div class="clearfix"></div>-->
+        <a href="#" class="add-winner">добавить</a>
+        <div class="window-add-winner-wrap">
+            <div class="window-add-winner">
+                <a href="#" class="close">&#10006;</a>
+                <span class="title">Добавить нового победителя...</span>
+                <img src="" alt="добавить фото"/>
+                <label>Добавить информацию о победителе<textarea name="" cols="55" rows="10"></textarea></label>
+                <button class="submit"></button>
+                <button class="cancel"></button>
+            </div>
+        </div>
     </ul>
+
     <a href="" class="more-winners">Показать еще&ensp;&ensp;&ensp;</a>
-    <a href="" class="add-winner">добавить</a>
 
 </main>
 
@@ -132,7 +201,7 @@
     </div>
     <div class="footer-bottom">
         <span>Акции и розыгрыши. <a href="">Luckmode.</a> 2015</span>
-        <span>Создание сайта:<a href="">  A.Goncharov WEB Studio</a></span>
+        <span>Создание сайта:<a href=""> A.Goncharov WEB Studio</a></span>
     </div>
 </footer>
 

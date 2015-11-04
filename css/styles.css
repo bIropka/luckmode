@@ -213,14 +213,6 @@ main {
 .content-block {
     width: 100%;
 }
-/**********BONUS-POINTS***********
-*********************************/
-.bonus-points {
-    width: 100%;
-}
-.bonus-points table {
-    width: 70%;
-}
 /************WINNERS*************
 ********************************/
 .winners {
@@ -540,7 +532,7 @@ main {
 .participants th:nth-child(8) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat 50% 50%; background-size: 500%;}
 .participants th:nth-child(9) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat 80% 50%; background-size: 500%;}
 .participants th:nth-child(10) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat 110% 50%; background-size: 500%;}
-/************** both tables *************/
+/************** all tables *************/
 .advertisers, .participants {
     border-collapse: collapse;
     margin-top: 3%;
@@ -570,7 +562,40 @@ td {
     left: 0;
     bottom: -15px;
 }
-
+/*********** BONUS-POINTS *************
+**************************************/
+.bonus-points {
+    width: 100%;
+}
+.bonus-points table {
+    width: 70%;
+    border-collapse: collapse;
+}
+.bonus-points-title {
+    display: inline-block;
+    margin-bottom: 2%;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.bonus-points th {
+    font-family: Lobster, cursive;
+    color: #cc0000;
+    font-size: 1.5em;
+    text-align: left;
+    padding: 8px 15px;
+}
+.bonus-points td {
+    text-align: left;
+    padding: 8px 15px;
+}
+.bonus-points .gray-row {
+    background: #f5f4f4;
+}
+.bonus-points button {
+    float: right;
+    margin-right: 30%;
+    margin-top: 2%;
+}
 /**************** FOOTER *****************
 *****************************************/
 footer {

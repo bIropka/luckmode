@@ -41,10 +41,10 @@
                     }
                 }
             });
-            $('.add-winner').click(function(){
+            $('.add-winner').click(function () {
                 $('.window-add-winner-wrap').fadeIn();
             });
-            $('.window-add-winner-wrap').click(function(event) {
+            $('.window-add-winner-wrap').click(function (event) {
                 $target = $(event.target);
                 if (!$target.closest($('.window-add-winner')).length) $('.window-add-winner-wrap').fadeOut();
                 if ($target.hasClass('close')) $('.window-add-winner-wrap').fadeOut();
@@ -85,218 +85,410 @@
     <div class="clearfix"></div>
 </header>
 
-    <nav class="menu">
-        <ul>
-            <li class="choice mark-bids">Заявки</li>
-            <li class="choice mark-auctions">Аукционы</li>
-            <li class="choice mark-users">Пользователи</li>
-            <li class="choice mark-bonus-points">Бонусные баллы</li>
-            <li class="choice mark-winners">Наши победители</li>
-        </ul>
-    </nav>
+<nav class="menu">
+    <ul>
+        <li class="choice mark-bids">Заявки</li>
+        <li class="choice mark-auctions">Аукционы</li>
+        <li class="choice mark-users">Пользователи</li>
+        <li class="choice mark-bonus-points">Бонусные баллы</li>
+        <li class="choice mark-winners">Наши победители</li>
+    </ul>
+</nav>
 
-                <!-- BIDS -->
-    <div class="bids content-block invisible-block"></div>
-
-                <!-- AICTIONS -->
-    <div class="auctions content-block invisible-block"></div>
-
-                <!-- USERS -->
-    <div class="users content-block invisible-block"></div>
-
-                <!-- BONUS-POINTS -->
-    <div class="bonus-points content-block invisible-block">
-        <span class="bonus-points-title">Бонусные баллы участника</span>
-        <table>
-            <tr>
-                <th>За что начислить</th>
-                <th>Количество баллов</th>
-            </tr>
-            <tr>
-                <td>Заполнение имени</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Заполнение фамилии</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Заполнение города</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Выбор пола</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Заполнение E-mail</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Загрузка фотографии</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Пригласить друга</td>
-                <td>25 баллов</td>
-            </tr>
-            <tr>
-                <td>Желаемые призы</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr class="gray-row">
-                <td>Вступить в группу ВКОНТАКТЕ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr class="gray-row">
-                <td>Вступить в группу ОДНОКЛАССНИКИ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr class="gray-row">
-                <td>Вступить в группу ФЕЙСБУК</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr class="gray-row">
-                <td>Вступить в группу ТВИТТЕР</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr class="gray-row">
-                <td>Вступить в группу ИНСТАГРАММ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Поставить лайк ВКОНТАКТЕ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Поставить лайк ОДНОКЛАССНИКИ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Поставить лайк ФЕЙСБУК</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>Поставить лайк ИНСТАГРАММ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td class="gray-row">Сделать репост ВКОНТАКТЕ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr class="gray-row">
-                <td>Сделать репост ОДНОКЛАССНИКИ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td class="gray-row">Сделать репост ФЕЙСБУК</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td class="gray-row">Сделать репост ТВИТТЕР</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td class="gray-row">Сделать репост ИНСТАГРАММ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>За добавление ссылки ВКОНТАКТЕ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>За добавление ссылки ОДНОКЛАССНИКИ</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>За добавление ссылки ФЕЙСБУК</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>За добавление ссылки ТВИТТЕР</td>
-                <td>5 баллов</td>
-            </tr>
-            <tr>
-                <td>За добавление ссылки ИНСТАГРАММ</td>
-                <td>5 баллов</td>
-            </tr>
-        </table>
-    </div>
-
-                <!-- WINNERS -->
-    <div class="winners content-block invisible-block">
-        <ul class="winners-table">
-            <div class="winners-row">
-                <li>
-                    <img src="images/winner-photo.png" alt="фото победителя"/>
-
-                    <div class="winner-data">
-                        <span class="name">Чарли Чаплин</span>
-                        <span class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. </span>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/winner-photo.png" alt="фото победителя"/>
-                    <div class="winner-data">
-                        <span class="name">Мерелин Монро</span>
-                        <span class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/winner-photo.png" alt="фото победителя"/>
-                    <div class="winner-data">
-                        <span class="name">Эдвард Нортон</span>
-                        <span class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa.</span>
-                    </div>
-                </li>
-            </div>
-            <div class="winners-row">
-                <li>
-                    <img src="images/winner-photo.png" alt="фото победителя"/>
-                    <div class="winner-data">
-                        <span class="name">Брюс Ли</span>
-                        <span class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/winner-photo.png" alt="фото победителя"/>
-                    <div class="winner-data">
-                        <span class="name">Арнольд Шварцнеггер</span>
-                        <span class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/winner-photo.png" alt="фото победителя"/>
-                    <div class="winner-data">
-                        <span class="name">Энтони Хопкинс</span>
-                        <span class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
-                    </div>
-                </li>
-            </div>
-        </ul>
-        <a href="#" class="add-winner">добавить</a>
-        <div class="window-add-winner-wrap">
-            <div class="window-add-winner">
-                <a href="#" class="close">&#10006;</a>
-                <span class="title">Добавить нового победителя...</span>
-                <img src="" alt="добавить фото"/>
-                <label>Добавить информацию о победителе<textarea name="" cols="55" rows="10"></textarea></label>
-                <button class="submit"></button>
-                <button class="cancel"></button>
+<!-- BIDS -->
+<div class="bids content-block invisible-block">
+    <div class="bid">
+        <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
+        <div class="bid-info">
+            <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+            </span>
+            <div class="bid-controls">
+                <button class="bid-submit" href="#">Одобрить</button>
+                <button class="bid-description" href="#">Подробнее</button>
             </div>
         </div>
     </div>
-
+    <div class="bid">
+        <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
+        <div class="bid-info">
+            <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo.</span>
+            <div class="bid-controls">
+                <button class="bid-submit" href="#">Одобрить</button>
+                <button class="bid-description" href="#">Подробнее</button>
+            </div>
+        </div>
+    </div>
     <a href="" class="more-info">Показать еще</a>
+</div>
+
+<!-- AUCTIONS -->
+<div class="auctions content-block invisible-block">
+    <form action="" class="auction">
+        <div class="auction-photo"><label>Добавить фото<input type="file" accept="image/*"/></label></div>
+        <div class="auction-info">
+            <textarea class="auction-description" cols="" rows="10" placeholder="Добавить описание аукциона..."></textarea>
+            <label class="start-bid">Начальная ставка:<input type="text"/>баллов</label>
+            <div class="event-date">
+                <span class="event-date-title">Дата розыгрыша</span>
+                <span class="event-date-date">12 ноября 2015</span>
+            </div>
+            <input class="auction-submit" type="submit" value="Добавить"/>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>
+
+<!-- USERS -->
+<div class="users content-block invisible-block">
+    <form action="">
+        <select>
+            <option>Рекламодатели</option>
+            <option>Участники</option>
+        </select>
+        <label>Поиск...<input type="search"/></label>
+        <table class="advertisers">
+            <tr>
+                <th>Активен</th>
+                <th>Имя, Фамилия</th>
+                <th>Город</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Рекламодатель 1</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Рекламодатель 2</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Рекламодатель 3</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Рекламодатель 4</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Рекламодатель 5</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Рекламодатель 6</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <table class="participants">
+            <tr>
+                <th>Активен</th>
+                <th>Логин (имя)</th>
+                <th>Город</th>
+                <th>E-mail</th>
+                <th>Пол</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="active-participant"></td>
+                <td>Участник 1</td>
+                <td>Москва</td>
+                <td></td>
+                <td>М</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="active-participant"></td>
+                <td>Участник 2</td>
+                <td>Самара</td>
+                <td></td>
+                <td>М</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="active-participant"></td>
+                <td>Участник 3</td>
+                <td>Тольятти</td>
+                <td></td>
+                <td>М</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="not-active-participant"></td>
+                <td>Участник 4</td>
+                <td>Сызрань</td>
+                <td></td>
+                <td>Ж</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="active-participant"></td>
+                <td>Участник 5</td>
+                <td>Москва</td>
+                <td></td>
+                <td>М</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="not-active-participant"></td>
+                <td>Участник 6</td>
+                <td>Казань</td>
+                <td></td>
+                <td>Ж</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <input type="submit" value="Сохранить"/>
+    </form>
+    <a href="" class="more-info">Показать еще</a>
+</div>
+
+<!-- BONUS-POINTS -->
+<div class="bonus-points content-block invisible-block">
+    <span class="bonus-points-title">Бонусные баллы участника</span>
+    <table>
+        <tr>
+            <th>За что начислить</th>
+            <th>Количество баллов</th>
+        </tr>
+        <tr>
+            <td>Заполнение имени</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Заполнение фамилии</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Заполнение города</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Выбор пола</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Заполнение E-mail</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Загрузка фотографии</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Пригласить друга</td>
+            <td>25 баллов</td>
+        </tr>
+        <tr>
+            <td>Желаемые призы</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr class="gray-row">
+            <td>Вступить в группу ВКОНТАКТЕ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr class="gray-row">
+            <td>Вступить в группу ОДНОКЛАССНИКИ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr class="gray-row">
+            <td>Вступить в группу ФЕЙСБУК</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr class="gray-row">
+            <td>Вступить в группу ТВИТТЕР</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr class="gray-row">
+            <td>Вступить в группу ИНСТАГРАММ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Поставить лайк ВКОНТАКТЕ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Поставить лайк ОДНОКЛАССНИКИ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Поставить лайк ФЕЙСБУК</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>Поставить лайк ИНСТАГРАММ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td class="gray-row">Сделать репост ВКОНТАКТЕ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr class="gray-row">
+            <td>Сделать репост ОДНОКЛАССНИКИ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td class="gray-row">Сделать репост ФЕЙСБУК</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td class="gray-row">Сделать репост ТВИТТЕР</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td class="gray-row">Сделать репост ИНСТАГРАММ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>За добавление ссылки ВКОНТАКТЕ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>За добавление ссылки ОДНОКЛАССНИКИ</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>За добавление ссылки ФЕЙСБУК</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>За добавление ссылки ТВИТТЕР</td>
+            <td>5 баллов</td>
+        </tr>
+        <tr>
+            <td>За добавление ссылки ИНСТАГРАММ</td>
+            <td>5 баллов</td>
+        </tr>
+    </table>
+</div>
+
+<!-- WINNERS -->
+<div class="winners content-block invisible-block">
+    <ul class="winners-table">
+        <div class="winners-row">
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Чарли Чаплин</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. </span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Мерелин Монро</span>
+                    <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Эдвард Нортон</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa.</span>
+                </div>
+            </li>
+        </div>
+        <div class="winners-row">
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Брюс Ли</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Арнольд Шварцнеггер</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Энтони Хопкинс</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                </div>
+            </li>
+        </div>
+    </ul>
+    <a href="#" class="add-winner">добавить</a>
+    <a href="" class="more-info">Показать еще</a>
+
+    <div class="window-add-winner-wrap">
+        <div class="window-add-winner">
+            <a href="#" class="close">&#10006;</a>
+            <span class="title">Добавить нового победителя...</span>
+            <img src="" alt="добавить фото"/>
+            <label>Добавить информацию о победителе<textarea name="" cols="55" rows="10"></textarea></label>
+            <button class="submit"></button>
+            <button class="cancel"></button>
+        </div>
+    </div>
+</div>
 
 </main>
 

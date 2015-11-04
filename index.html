@@ -41,6 +41,22 @@
                     }
                 }
             });
+            $('.users-menu').bind('change', UsersMenuEvent);
+            function UsersMenuEvent() {
+                var usersMenuValue=$('.users-menu').val();
+                switch (usersMenuValue) {
+                    case 'advertisers':
+                        $('.participants').addClass('invisible-block');
+                        $('.advertisers').removeClass('invisible-block');
+                        $('.users-submit').css('left', '0').css('right', 'inherit');
+                        break;
+                    case 'participants':
+                        $('.participants').removeClass('invisible-block');
+                        $('.advertisers').addClass('invisible-block');
+                        $('.users-submit').css('right', '0').css('left', 'inherit');
+                        break;
+                }
+            };
             $('.add-winner').click(function () {
                 $('.window-add-winner-wrap').fadeIn();
             });
@@ -109,8 +125,8 @@
                 consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
             </span>
             <div class="bid-controls">
-                <button class="bid-submit" href="#">Одобрить</button>
-                <button class="bid-description" href="#">Подробнее</button>
+                <button class="bid-submit">Одобрить</button>
+                <button class="bid-description">Подробнее</button>
             </div>
         </div>
     </div>
@@ -151,11 +167,12 @@
 <!-- USERS -->
 <div class="users content-block invisible-block">
     <form action="">
-        <select>
-            <option>Рекламодатели</option>
-            <option>Участники</option>
+        <select class="users-menu">
+            <option value="advertisers">Рекламодатели</option>
+            <option value="participants">Участники</option>
         </select>
-        <label>Поиск...<input type="search"/></label>
+        <input type="search" placeholder="Поиск..." class="search-field"/>
+        <div class="clearfix"></div>
         <table class="advertisers">
             <tr>
                 <th>Активен</th>
@@ -164,43 +181,43 @@
                 <th>E-mail</th>
             </tr>
             <tr>
-                <td></td>
+                <td class="active-user"></td>
                 <td>Рекламодатель 1</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td></td>
+                <td class="active-user"></td>
                 <td>Рекламодатель 2</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td></td>
+                <td class="active-user"></td>
                 <td>Рекламодатель 3</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td></td>
+                <td class="not-active-user"></td>
                 <td>Рекламодатель 4</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td></td>
+                <td class="active-user"></td>
                 <td>Рекламодатель 5</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td></td>
+                <td class="not-active-user"></td>
                 <td>Рекламодатель 6</td>
                 <td></td>
                 <td></td>
             </tr>
         </table>
-        <table class="participants">
+        <table class="participants invisible-block">
             <tr>
                 <th>Активен</th>
                 <th>Логин (имя)</th>
@@ -214,7 +231,7 @@
                 <th></th>
             </tr>
             <tr>
-                <td class="active-participant"></td>
+                <td class="active-user"></td>
                 <td>Участник 1</td>
                 <td>Москва</td>
                 <td></td>
@@ -226,7 +243,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="active-participant"></td>
+                <td class="active-user"></td>
                 <td>Участник 2</td>
                 <td>Самара</td>
                 <td></td>
@@ -238,7 +255,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="active-participant"></td>
+                <td class="active-user"></td>
                 <td>Участник 3</td>
                 <td>Тольятти</td>
                 <td></td>
@@ -250,7 +267,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="not-active-participant"></td>
+                <td class="not-active-user"></td>
                 <td>Участник 4</td>
                 <td>Сызрань</td>
                 <td></td>
@@ -262,7 +279,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="active-participant"></td>
+                <td class="active-user"></td>
                 <td>Участник 5</td>
                 <td>Москва</td>
                 <td></td>
@@ -274,7 +291,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="not-active-participant"></td>
+                <td class="not-active-user"></td>
                 <td>Участник 6</td>
                 <td>Казань</td>
                 <td></td>
@@ -286,7 +303,7 @@
                 <td></td>
             </tr>
         </table>
-        <input type="submit" value="Сохранить"/>
+        <input type="submit" class="users-submit" value="Сохранить"/>
     </form>
     <a href="" class="more-info">Показать еще</a>
 </div>
@@ -475,7 +492,7 @@
             </li>
         </div>
     </ul>
-    <a href="#" class="add-winner">добавить</a>
+    <button class="add-winner">добавить</button>
     <a href="" class="more-info">Показать еще</a>
 
     <div class="window-add-winner-wrap">

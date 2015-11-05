@@ -44,20 +44,16 @@
             $('.users-menu').bind('change', UsersMenuEvent);
             function UsersMenuEvent() {
                 var usersMenuValue=$('.users-menu').val();
-                switch (usersMenuValue) {
-                    case 'advertisers':
-                        $('.participants').addClass('invisible-block');
-                        $('.advertisers').removeClass('invisible-block');
-                        $('.users-submit').css('left', '0').css('right', 'inherit');
-                        break;
-                    case 'participants':
-                        $('.participants').removeClass('invisible-block');
-                        $('.advertisers').addClass('invisible-block');
-                        $('.users-submit').css('right', '0').css('left', 'inherit');
-                        break;
+                if (usersMenuValue === 'advertisers') {
+                    $('.participants').addClass('invisible-block');
+                    $('.advertisers').removeClass('invisible-block');
+                    $('.users-submit').css('left', '0').css('right', 'inherit');
+                } else if (usersMenuValue === 'participants') {
+                    $('.participants').removeClass('invisible-block');
+                    $('.advertisers').addClass('invisible-block');
+                    $('.users-submit').css('right', '0').css('left', 'inherit');
                 }
-            };
-
+            }
             $('.users-activity').bind('change', UsersActivityEvent);
             function UsersActivityEvent() {
                 if ($(this).find('input').prop("checked")){
@@ -65,7 +61,7 @@
                 } else {
                     $(this).addClass('not-active-user');
                 }
-            };
+            }
 
             $('.add-winner').click(function () {
                 $('.window-add-winner').fadeIn();
@@ -75,6 +71,15 @@
                 if (!$target.closest($('.form-add-winner')).length) $('.window-add-winner').fadeOut();
                 if ($target.hasClass('close-window')) $('.window-add-winner').fadeOut();
             });
+
+            $('.bid-description').click(function () {
+                $('.window-bid').fadeIn();
+            });
+            $('.window-bid').click(function (event) {
+                $target = $(event.target);
+                if (!$target.closest($('.form-bid')).length) $('.window-bid').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-bid').fadeOut();
+            });
         });
     </script>
     <title>Admin-panel</title>
@@ -83,14 +88,14 @@
 
 <header>
     <div class="header-background"></div>
-    <ul class="header-menu">
+    <ul class="header-left-menu">
         <li><a href="">Рекламодателям</a></li>
         <li><a href="">Завершенные акции</a></li>
     </ul>
 
     <a href="" class="logo"><img src="images/logo.png" alt="логотип"/></a>
 
-    <div class="header-controls">
+    <div class="header-right-menu">
         <div class="account-menu">
             <a href="">Надежда Сергеевна&ensp;&ensp;&ensp;&ensp;</a>
             <ul class="sub-menu">
@@ -149,12 +154,80 @@
                 Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
                 venenatis vitae, justo.</span>
             <div class="bid-controls">
-                <button class="bid-submit" href="#">Одобрить</button>
-                <button class="bid-description" href="#">Подробнее</button>
+                <button class="bid-submit">Одобрить</button>
+                <button class="bid-description">Подробнее</button>
             </div>
         </div>
     </div>
     <a href="" class="more-info">Показать еще</a>
+
+    <!-- modal window -->
+    <div class="window-bid">
+        <form action="" class="form-bid">
+            <div class="close-window">&#10006;</div>
+            <span class="choose-social-title">Выбор социальной сети:</span>
+            <div class="choose-social">
+                <div class="choice-vkontakte">
+                    <div class="social-logo"></div>
+                    <label class="like">Лайк<input type="checkbox"/></label>
+                    <label class="repost">Репост<input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                </div>
+                <div class="choice-facebook">
+                    <div class="social-logo"></div>
+                    <label class="like">Лайк<input type="checkbox"/></label>
+                    <label class="repost">Репост<input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                </div>
+                <div class="choice-odnoklassniki">
+                    <div class="social-logo"></div>
+                    <label class="like">Лайк<input type="checkbox"/></label>
+                    <label class="repost">Репост<input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                </div>
+                <div class="choice-twitter">
+                    <div class="social-logo"></div>
+                    <label class="repost">Репост<input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                </div>
+                <div class="choice-instagram">
+                    <div class="social-logo"></div>
+                    <label class="like">Лайк<input type="checkbox"/></label>
+                    <label class="repost">Репост<input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="choose-place">
+                <span class="choose-place-title">Выбор места вашей акции:</span>
+                <label class="choice-first-three">
+                    <span class="usual-text">Закрепить Вашу акцию на</span>
+                    <span class="big-text">первой тройке</span>
+                    <input type="checkbox"/>
+                </label>
+                <label class="choice-first-nine">
+                    <span class="usual-text">Закрепить Вашу акцию на</span>
+                    <span class="big-text">первой девятке</span>
+                    <input type="checkbox"/>
+                </label>
+                <label class="choice-usual">
+                    <span class="big-text">Простое размещение</span>
+                    <span class="usual-text">Вашей акции</span>
+                    <input type="checkbox"/>
+                </label>
+            </div>
+
+            <div class="choose-region">
+                <span class="choose-region-title">Выбор региона:</span>
+                <div class="select-region">Вся Россия</div>
+            </div>
+            <div class="choose-time">
+                <span class="choose-time-title">Количество дней:</span>
+                <input type="text" placeholder="от 6 до 30 дней..."/>
+            </div>
+        </form>
+    </div>
 </div>
 
 <!-- AUCTIONS -->
@@ -513,7 +586,7 @@
 
     <div class="window-add-winner">
         <form action="" class="form-add-winner">
-            <div href="#" class="close-window">&#10006;</div>
+            <div class="close-window">&#10006;</div>
             <span class="add-winner-title">Добавить нового победителя...</span>
             <div class="winner-photo"><label>Добавить фото<input type="file" accept="image/*"/></label></div>
             <textarea class="winner-info" cols="" rows="10" placeholder="Добавить информацию о победителе..."></textarea>

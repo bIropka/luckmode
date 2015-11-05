@@ -9,7 +9,6 @@
     box-sizing: border-box;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
-    font-weight: 600;
 }
 
 button, input[type="submit"], input[type="reset"] {
@@ -26,6 +25,30 @@ button, input[type="submit"], input[type="reset"] {
 button:hover, input[type="submit"]:hover {
     background: linear-gradient(to bottom, #990000, #cc0000);
 }
+.close-window{
+    position:absolute;
+    right: 15px;
+    top: 15px;
+    color: #cc0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.more-info {
+    display: inline-block;
+    margin-left: 45%;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #c52f32;
+    background: url("../images/sprite-arrows.png") no-repeat 98% 105%;
+    -webkit-background-size: 10%;
+    background-size: 10%;
+}
+.clearfix {
+    clear: both;
+}
 
 body {
     max-width: 1366px;
@@ -41,26 +64,26 @@ header {
     background-size: 100%;
     padding-bottom: 5%;
 }
-.header-menu {
+.header-left-menu {
     float: left;
     list-style: none;
     margin-left: 1%;
     margin-top: 0.5%;
 }
-.header-menu li {
+.header-left-menu li {
     display: inline-block;
 }
-.header-menu li:first-child:after {
+.header-left-menu li:first-child:after {
     content: "\2002\2022\2002";
     color: white;
     vertical-align: middle;
 }
-.header-menu li a {
+.header-left-menu li a {
     text-decoration: none;
     color: white;
     text-shadow: 1px 1px black;
 }
-.header-menu li a:hover {
+.header-left-menu li a:hover {
     color: #bebebe;
 }
 
@@ -75,24 +98,25 @@ header .logo {
     width: 100%;
 }
 
-.header-controls {
+.header-right-menu {
+    width: 20%;
     float: right;
     margin-top: 0.5%;
-    margin-right: 17%;
+    margin-right: 13%;
 }
 .account-menu {
     position: relative;
     width: 100%;
 }
 .account-menu>a {
-    background: url("../images/sprite-arrows.png") no-repeat 97% -9%;
+    background: url("../images/sprite-arrows.png") no-repeat 97% -8%;
     background-size: 10%;
     color: black;
     text-decoration: none;
 }
 .account-menu:hover>a {
     background: url("../images/sprite-arrows.png") no-repeat 95% 18%;
-    background-size: 9%;
+    background-size: 10%;
 }
 .account-menu:hover .sub-menu {
     display: inherit;
@@ -104,7 +128,7 @@ header .logo {
     left: 10%;
     opacity: 0.95;
     list-style: none;
-    width: 90%;
+    width: 80%;
     background-color: white;
     border-top: none;
     -webkit-border-radius: 0 0 5px 5px;
@@ -126,22 +150,23 @@ header .logo {
     display: none;
     float: right;
     color: red;
+    margin-right: 5%;
 }
 .sub-menu li:hover .sub-menu-mark{
     display: inherit;
 }
 .city-menu {
     display: inline-block;
-    width: 80%;
-    margin-left: 25%;
+    width: 60%;
+    margin-left: 20%;
     position: relative;
     margin-top: 15%;
 }
 .city-menu>a {
     display: inline-block;
     width: 100%;
-    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 90% 50%;
-    background-size: 13%;
+    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 92% 50%;
+    background-size: 12%;
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-style: italic;
@@ -162,15 +187,13 @@ header .logo {
     box-shadow: none;
 }
 .city-menu:hover>a {
-    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 93% 78%;
-    background-size: 13%;
+    background: #e5e4e4 url("../images/sprite-arrows.png") no-repeat 92% 78%;
+    background-size: 12%;
 }
 .city-menu:hover .sub-menu {
     display: block;
 }
-.clearfix {
-    clear: both;
-}
+
 /***************** MAIN ******************
 *****************************************/
 main {
@@ -193,6 +216,7 @@ main {
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
+    font-weight: 600;
 }
 .choice:last-child {
     margin-right: 0;
@@ -292,14 +316,6 @@ main {
     background: #fff;
     border: 2px solid #cc0000;
     outline: 10px solid white;
-}
-.close-window{
-    position:absolute;
-    right: 15px;
-    top: 15px;
-    color: #cc0000;
-    text-decoration: none;
-    cursor: pointer;
 }
 .add-winner-title {
     display: inline-block;
@@ -404,7 +420,6 @@ main {
     left: 0;
     display: inline-block;
     width: 100%;
-    font-weight: 600;
     text-transform: uppercase;
 
 }
@@ -416,18 +431,60 @@ main {
 .bid-description:hover {
     background: #d2d1d1;
 }
-.more-info {
-    display: inline-block;
-    margin-left: 45%;
-    padding-right: 20px;
-    text-decoration: none;
-    font-family: "Open Sans", sans-serif;
+/********** bids modal window ********/
+.window-bid{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    /*display: none;*/
+}
+.form-bid{
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    border: 2px solid #cc0000;
+    outline: 10px solid white;
+    padding: 2.5%;
+}
+.choose-social-title, .choose-place-title, .choose-region-title, .choose-time-title {
+    font-size: 1.3em;
     font-weight: 600;
-    font-style: italic;
-    color: #c52f32;
-    background: url("../images/sprite-arrows.png") no-repeat 98% 105%;
-    -webkit-background-size: 10%;
-    background-size: 10%;
+    text-transform: uppercase;
+}
+.choose-social-title {
+     display: inline-block;
+     width: 100%;
+ }
+.choice-vkontakte, .choice-facebook, .choice-odnoklassniki, .choice-twitter, .choice-instagram {
+    display: inline-block;
+    width: 45%;
+    border: 1px solid black;
+    padding: 1% 0 1% 10%;
+}
+.choice-vkontakte {
+    float: left;
+    background: url("../images/sprite-social-2.png") no-repeat left;
+}
+.choice-facebook {
+    float: right;
+}
+.choice-odnoklassniki {
+    float: left;
+}
+.choice-twitter {
+    float: right;
+}
+.choice-instagram {
+    float: left;
 }
 /************* AUCTIONS ***************
 **************************************/
@@ -785,7 +842,7 @@ footer .logo {
     .menu li {
         font-size: 0.9em;
     }
-    .header-menu, .header-controls {
+    .header-left-menu, .header-right-menu {
         margin-top: 0.2%;
     }
     .footer-top, .footer-bottom {
@@ -807,7 +864,7 @@ footer .logo {
     .winners .winner-name {
         font-size: 1.1em;
     }
-    .header-menu a, .header-controls a {
+    .header-left-menu a, .header-right-menu a {
         font-size: 0.8em;
     }
     .odnoklassniki {
@@ -856,7 +913,7 @@ footer .logo {
         background: url("../images/header-background-small.png") no-repeat 50% 0;
         background-size: cover;
     }
-    .header-menu {
+    .header-left-menu {
         margin-left: 5%;
     }
     .winners {
@@ -978,7 +1035,7 @@ footer .logo {
 
 @media (max-width: 480px) {
 
-    .header-menu, .header-controls  {
+    .header-left-menu, .header-right-menu {
         font-size: 0.6em;
         vertical-align: top;
     }
@@ -1015,7 +1072,7 @@ footer .logo {
     .winners .winner-text {
         font-size: 0.5em;
     }
-    .header-menu a, .header-controls a {
+    .header-left-menu a, .header-right-menu a {
         font-size: 0.55em;
     }
     .add-winner {

@@ -68,12 +68,12 @@
             };
 
             $('.add-winner').click(function () {
-                $('.window-add-winner-wrap').fadeIn();
+                $('.window-add-winner').fadeIn();
             });
-            $('.window-add-winner-wrap').click(function (event) {
+            $('.window-add-winner').click(function (event) {
                 $target = $(event.target);
-                if (!$target.closest($('.window-add-winner')).length) $('.window-add-winner-wrap').fadeOut();
-                if ($target.hasClass('close')) $('.window-add-winner-wrap').fadeOut();
+                if (!$target.closest($('.form-add-winner')).length) $('.window-add-winner').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-add-winner').fadeOut();
             });
         });
     </script>
@@ -184,7 +184,7 @@
 
         <input type="search" placeholder="Поиск..." class="search-field"/>
         <div class="clearfix"></div>
-        <table class="advertisers">
+        <table class="advertisers invisible-block">
             <tr>
                 <th>Активен</th>
                 <th>Имя, Фамилия</th>
@@ -193,42 +193,42 @@
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Рекламодатель 1</td>
-                <td></td>
-                <td></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Рекламодатель 2</td>
-                <td></td>
-                <td></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Рекламодатель 3</td>
-                <td></td>
-                <td></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
             </tr>
             <tr>
                 <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
-                <td>Рекламодатель 4</td>
-                <td></td>
-                <td></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Рекламодатель 5</td>
-                <td></td>
-                <td></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
             </tr>
             <tr>
                 <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
-                <td>Рекламодатель 6</td>
-                <td></td>
-                <td></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
             </tr>
         </table>
-        <table class="participants invisible-block">
+        <table class="participants">
             <tr>
                 <th>Активен</th>
                 <th>Логин (имя)</th>
@@ -243,22 +243,10 @@
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Участник 1</td>
-                <td>Москва</td>
-                <td></td>
-                <td>М</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Участник 2</td>
-                <td>Самара</td>
-                <td></td>
-                <td>М</td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -267,10 +255,22 @@
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Участник 3</td>
-                <td>Тольятти</td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
                 <td></td>
-                <td>М</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -279,10 +279,10 @@
             </tr>
             <tr>
                 <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
-                <td>Участник 4</td>
-                <td>Сызрань</td>
-                <td></td>
-                <td>Ж</td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -291,10 +291,10 @@
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>
-                <td>Участник 5</td>
-                <td>Москва</td>
-                <td></td>
-                <td>М</td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -303,10 +303,10 @@
             </tr>
             <tr>
                 <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
-                <td>Участник 6</td>
-                <td>Казань</td>
-                <td></td>
-                <td>Ж</td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -511,16 +511,17 @@
     <button class="add-winner">добавить</button>
     <a href="" class="more-info">Показать еще</a>
 
-    <div class="window-add-winner-wrap">
-        <div class="window-add-winner">
-            <a href="#" class="close">&#10006;</a>
-            <span class="title">Добавить нового победителя...</span>
-            <img src="" alt="добавить фото"/>
-            <label>Добавить информацию о победителе<textarea name="" cols="55" rows="10"></textarea></label>
-            <button class="submit"></button>
-            <button class="cancel"></button>
-        </div>
+    <div class="window-add-winner">
+        <form action="" class="form-add-winner">
+            <div href="#" class="close-window">&#10006;</div>
+            <span class="add-winner-title">Добавить нового победителя...</span>
+            <div class="winner-photo"><label>Добавить фото<input type="file" accept="image/*"/></label></div>
+            <textarea class="winner-info" cols="" rows="10" placeholder="Добавить информацию о победителе..."></textarea>
+            <input type="submit" class="add-winner-submit" value="Добавить"/>
+            <input type="reset" class="add-winner-reset" value="Отмена"/>
+        </form>
     </div>
+
 </div>
 
 </main>

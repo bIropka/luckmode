@@ -12,7 +12,7 @@
     font-weight: 600;
 }
 
-button, input[type="submit"] {
+button, input[type="submit"], input[type="reset"] {
     background: linear-gradient(to bottom, #cc0000, #990000);
     padding: 0.7% 3%;
     color: white;
@@ -271,7 +271,7 @@ main {
     border: none;
 }
 /****** winners modal window****/
-.window-add-winner-wrap{
+.window-add-winner{
     position: fixed;
     height: 100%;
     width: 100%;
@@ -280,51 +280,91 @@ main {
     background: rgba(0,0,0,0.5);
     display: none;
 }
-.window-add-winner{
+.form-add-winner{
     position: absolute;
-    width: 50%;
-    left: 25%;
-    top: 30%;
+    width: 750px;
+    height: 320px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     background: #fff;
     border: 2px solid #cc0000;
     outline: 10px solid white;
 }
-.close{
+.close-window{
     position:absolute;
-    right:3%;
-    top: 5%;
+    right: 15px;
+    top: 15px;
     color: #cc0000;
     text-decoration: none;
+    cursor: pointer;
 }
-.window-add-winner .title {
+.add-winner-title {
     display: inline-block;
     width: 100%;
     font-family: Lobster, cursive;
     font-size: 2.25em;
     color: #cc0000;
-
+    text-align: center;
+    margin-bottom: 10px;
 }
-.window-add-winner img {
+.winner-photo {
     display: inline-block;
-    width: 33%;
-    padding-top: 21.761388%;
-    background: #e5e4e4 url("../images/background-photo.png") no-repeat 50% 40%;
-    color: #cccccc;
+    width: 36%;
+    height: 56.25%;
+    background: #f1efef url("../images/background-photo.png") no-repeat 50% 30%;
+    border: 2px solid #dedcdc;
+    text-align: center;
+    margin-left: 3%;
+    vertical-align: top;
+}
+.winner-photo label {
+    display: inline-block;
+    color: #aeaeae;
     text-transform: uppercase;
     text-decoration: underline;
-    vertical-align: middle;
+    cursor: pointer;
+    margin-top: 50%;
 }
-.window-add-winner textarea {
-    position: relative;
+.winner-photo label input {
+    display: none;
+}
+.winner-info {
     display: inline-block;
+    height: 56.25%;
+    width: 54.5%;
     resize: none;
-    vertical-align: middle;
+    border: 2px solid #f1efef;
+    padding: 2% 3%;
+    margin-left: 3%;
 }
-.window-add-winner .submit {
+.winner-info::-webkit-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.winner-info::-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.winner-info:-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.winner-info:-ms-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.winner-info:focus::-webkit-input-placeholder {color: transparent}
+.winner-info:focus::-moz-placeholder {color: transparent}
+.winner-info:focus:-moz-placeholder {color: transparent}
+.winner-info:focus:-ms-input-placeholder {color: transparent}
 
+.form-add-winner .add-winner-submit {
+    width: 20%;
+    margin-top: 3%;
+    margin-left: 43%;
+    font-size: 1em;
 }
-.window-add-winner .cancel {
-
+.form-add-winner .add-winner-reset {
+    width: 20%;
+    margin-top: 3%;
+    margin-left: 5%;
+    font-size: 1em;
+    background: #e5e4e4;
+    color: black;
+}
+.add-winner-reset:hover {
+    background: #d2d1d1;
 }
 /************* BIDS *******************
 **************************************/
@@ -564,6 +604,15 @@ td {
 .not-active-user {
     background: url("../images/sprite-icons.png") no-repeat 105% 50%;
     background-size: 500%;
+}
+.advertisers tr td:nth-child(2) input, .advertisers tr td:nth-child(3) input,
+.advertisers tr td:nth-child(4) input, .participants tr td:nth-child(2) input,
+.participants tr td:nth-child(3) input, .participants tr td:nth-child(4) input,
+.participants tr td:nth-child(5) input {
+    width: 95%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 .users-submit {
     position: absolute;

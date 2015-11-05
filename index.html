@@ -23,7 +23,6 @@
                     $('.choice').removeClass('activated');
                     $(this).addClass('activated');
                     $('.content-block').addClass('invisible-block');
-
                     if ($(this).hasClass('mark-bids')) {
                         $('.bids').removeClass('invisible-block');
                     }
@@ -41,6 +40,7 @@
                     }
                 }
             });
+
             $('.users-menu').bind('change', UsersMenuEvent);
             function UsersMenuEvent() {
                 var usersMenuValue=$('.users-menu').val();
@@ -57,6 +57,16 @@
                         break;
                 }
             };
+
+            $('.users-activity').bind('change', UsersActivityEvent);
+            function UsersActivityEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $(this).removeClass('not-active-user');
+                } else {
+                    $(this).addClass('not-active-user');
+                }
+            };
+
             $('.add-winner').click(function () {
                 $('.window-add-winner-wrap').fadeIn();
             });
@@ -168,8 +178,8 @@
 <div class="users content-block invisible-block">
     <form action="">
         <select class="users-menu">
-            <option value="advertisers">Рекламодатель</option>
-            <option value="participants">Участник</option>
+            <option value="advertisers">Рекламодатели</option>
+            <option value="participants">Участники</option>
         </select>
 
         <input type="search" placeholder="Поиск..." class="search-field"/>
@@ -182,37 +192,37 @@
                 <th>E-mail</th>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Рекламодатель 1</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Рекламодатель 2</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Рекламодатель 3</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td class="not-active-user"></td>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
                 <td>Рекламодатель 4</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Рекламодатель 5</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td class="not-active-user"></td>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
                 <td>Рекламодатель 6</td>
                 <td></td>
                 <td></td>
@@ -232,7 +242,7 @@
                 <th></th>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Участник 1</td>
                 <td>Москва</td>
                 <td></td>
@@ -244,7 +254,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Участник 2</td>
                 <td>Самара</td>
                 <td></td>
@@ -256,7 +266,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Участник 3</td>
                 <td>Тольятти</td>
                 <td></td>
@@ -268,7 +278,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="not-active-user"></td>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
                 <td>Участник 4</td>
                 <td>Сызрань</td>
                 <td></td>
@@ -280,7 +290,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="active-user"></td>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
                 <td>Участник 5</td>
                 <td>Москва</td>
                 <td></td>
@@ -292,7 +302,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td class="not-active-user"></td>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
                 <td>Участник 6</td>
                 <td>Казань</td>
                 <td></td>
@@ -312,122 +322,125 @@
 <!-- BONUS-POINTS -->
 <div class="bonus-points content-block invisible-block">
     <span class="bonus-points-title">Бонусные баллы участника</span>
-    <table>
-        <tr>
-            <th>За что начислить</th>
-            <th>Количество баллов</th>
-        </tr>
-        <tr>
-            <td>Заполнение имени</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Заполнение фамилии</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Заполнение города</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Выбор пола</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Заполнение E-mail</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Загрузка фотографии</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Пригласить друга</td>
-            <td>25 баллов</td>
-        </tr>
-        <tr>
-            <td>Желаемые призы</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Вступить в группу ВКОНТАКТЕ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Вступить в группу ОДНОКЛАССНИКИ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Вступить в группу ФЕЙСБУК</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Вступить в группу ТВИТТЕР</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Вступить в группу ИНСТАГРАММ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Поставить лайк ВКОНТАКТЕ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Поставить лайк ОДНОКЛАССНИКИ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Поставить лайк ФЕЙСБУК</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>Поставить лайк ИНСТАГРАММ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Сделать репост ВКОНТАКТЕ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Сделать репост ОДНОКЛАССНИКИ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Сделать репост ФЕЙСБУК</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Сделать репост ТВИТТЕР</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr class="gray-row">
-            <td>Сделать репост ИНСТАГРАММ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>За добавление ссылки ВКОНТАКТЕ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>За добавление ссылки ОДНОКЛАССНИКИ</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>За добавление ссылки ФЕЙСБУК</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>За добавление ссылки ТВИТТЕР</td>
-            <td>5 баллов</td>
-        </tr>
-        <tr>
-            <td>За добавление ссылки ИНСТАГРАММ</td>
-            <td>5 баллов</td>
-        </tr>
-    </table>
-    <button class="bonus-points-submit">Сохранить</button>
-    <div class="clearfix"></div>
+
+    <form action="">
+        <table class="bonus-points-table">
+            <tr>
+                <th>За что начислить</th>
+                <th>Количество баллов</th>
+            </tr>
+            <tr>
+                <td>Заполнение имени</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Заполнение фамилии</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Заполнение города</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Выбор пола</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Заполнение E-mail</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Загрузка фотографии</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Пригласить друга</td>
+                <td><label><input type="text" placeholder="25"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Желаемые призы</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ТВИТТЕР</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ТВИТТЕР</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ТВИТТЕР</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+        </table>
+        <input type="submit" class="bonus-points-submit" value="Сохранить"/>
+        <div class="clearfix"></div>
+    </form>
 </div>
 
 <!-- WINNERS -->

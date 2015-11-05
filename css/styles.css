@@ -549,13 +549,21 @@ th {
 td {
     color: #707070;
 }
-.active-user {
+.users-activity input {
+    display: none;
+}
+.users-activity {
+    display: block;
+    width: 50%;
+    padding-top: 50%;
+    cursor: pointer;
+    margin: 0 auto;
     background: url("../images/sprite-icons.png") no-repeat center;
-    background-size: 300%;
+    background-size: 500%;
 }
 .not-active-user {
-    background: url("../images/sprite-icons.png") no-repeat 115% 50%;
-    background-size: 300%;
+    background: url("../images/sprite-icons.png") no-repeat 105% 50%;
+    background-size: 500%;
 }
 .users-submit {
     position: absolute;
@@ -567,31 +575,42 @@ td {
 .bonus-points {
     width: 100%;
 }
-.bonus-points table {
-    width: 70%;
-    border-collapse: collapse;
-}
 .bonus-points-title {
     display: inline-block;
     margin-bottom: 2%;
     font-size: 1.5em;
     text-transform: uppercase;
 }
-.bonus-points th {
+.bonus-points-table {
+    width: 70%;
+    border-collapse: collapse;
+}
+.bonus-points-table tr td:nth-child(1) {width: 70%}
+.bonus-points-table tr td:nth-child(2) {width: 30%}
+.bonus-points-table th {
     font-family: Lobster, cursive;
     color: #cc0000;
     font-size: 1.5em;
     text-align: left;
     padding: 8px 15px;
 }
-.bonus-points td {
+.bonus-points-table td {
     text-align: left;
     padding: 8px 15px;
 }
-.bonus-points .gray-row {
+.bonus-points-table td input {
+    width: 10%;
+    border: none;
+    background-color: transparent;
+}
+.bonus-points-table td input:focus::-webkit-input-placeholder {color: transparent}
+.bonus-points-table td input:focus::-moz-placeholder {color: transparent}
+.bonus-points-table td input:focus:-moz-placeholder {color: transparent}
+.bonus-points-table td input:focus:-ms-input-placeholder {color: transparent}
+.bonus-points-table .gray-row {
     background: #f5f4f4;
 }
-.bonus-points button {
+.bonus-points-submit {
     float: right;
     margin-right: 30%;
     margin-top: 2%;

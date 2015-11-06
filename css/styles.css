@@ -686,6 +686,7 @@ main {
     font-size: 1.3em;
     text-transform: uppercase;
     float: left;
+    text-align: left;
 }
 .start-bid input {
     font-size: 1.1em;
@@ -820,7 +821,7 @@ td {
 .users-submit {
     position: absolute;
     right: 0;
-    bottom: -15px;
+    bottom: -6%;
 }
 /*********** BONUS-POINTS *************
 **************************************/
@@ -871,7 +872,7 @@ td {
 *****************************************/
 footer {
     width: 100%;
-    margin: 5% auto 0;
+    margin: 2.5% auto 0;
     background: linear-gradient(to bottom, #cc0000, #990000);
 }
 footer span, footer a {

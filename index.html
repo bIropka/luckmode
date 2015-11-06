@@ -54,6 +54,7 @@
                     $('.users-submit').css('right', '0').css('left', 'inherit');
                 }
             }
+
             $('.users-activity').bind('change', UsersActivityEvent);
             function UsersActivityEvent() {
                 if ($(this).find('input').prop("checked")){
@@ -80,6 +81,25 @@
                 if (!$target.closest($('.form-bid')).length) $('.window-bid').fadeOut();
                 if ($target.hasClass('close-window')) $('.window-bid').fadeOut();
             });
+
+            $('.bid-checkbox').bind('change', BidCSocialEvent);
+            function BidCSocialEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $(this).addClass('active-bid-checkbox');
+                } else {
+                    $(this).removeClass('active-bid-checkbox');
+                }
+            }
+
+            $('.choice-place').bind('change', BidPlaceEvent);
+            function BidPlaceEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $('.choice-place').removeClass('chosen-place');
+                    $(this).addClass('chosen-place');
+                } else {
+                    $(this).removeClass('chosen-place');
+                }
+            }
         });
     </script>
     <title>Admin-panel</title>
@@ -169,63 +189,70 @@
             <div class="choose-social">
                 <div class="choice-vkontakte">
                     <div class="social-logo"></div>
-                    <label class="like">Лайк<input type="checkbox"/></label>
-                    <label class="repost">Репост<input type="checkbox"/></label>
-                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<input type="checkbox"/></label>
                 </div>
                 <div class="choice-facebook">
                     <div class="social-logo"></div>
-                    <label class="like">Лайк<input type="checkbox"/></label>
-                    <label class="repost">Репост<input type="checkbox"/></label>
-                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
                 </div>
                 <div class="choice-odnoklassniki">
                     <div class="social-logo"></div>
-                    <label class="like">Лайк<input type="checkbox"/></label>
-                    <label class="repost">Репост<input type="checkbox"/></label>
-                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<input type="checkbox" checked/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<input type="checkbox"/></label>
                 </div>
                 <div class="choice-twitter">
                     <div class="social-logo"></div>
-                    <label class="repost">Репост<input type="checkbox"/></label>
-                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<input type="checkbox" checked/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
                 </div>
                 <div class="choice-instagram">
                     <div class="social-logo"></div>
-                    <label class="like">Лайк<input type="checkbox"/></label>
-                    <label class="repost">Репост<input type="checkbox"/></label>
-                    <label class="subscribe">Подписаться<input type="checkbox"/></label>
+                    <label class="like bid-checkbox">Лайк<input type="checkbox"/></label>
+                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
                 </div>
                 <div class="clearfix"></div>
             </div>
 
+            <span class="choose-place-title">Выбор места вашей акции:</span>
             <div class="choose-place">
-                <span class="choose-place-title">Выбор места вашей акции:</span>
-                <label class="choice-first-three">
+                <label class="choice-place choice-first-three chosen-place">
                     <span class="usual-text">Закрепить Вашу акцию на</span>
                     <span class="big-text">первой тройке</span>
-                    <input type="checkbox"/>
+                    <input type="checkbox" checked/>
+                    <div class="choice-place-background"></div>
                 </label>
-                <label class="choice-first-nine">
+                <label class="choice-place choice-first-nine">
                     <span class="usual-text">Закрепить Вашу акцию на</span>
                     <span class="big-text">первой девятке</span>
                     <input type="checkbox"/>
+                    <div class="choice-place-background"></div>
                 </label>
-                <label class="choice-usual">
+                <label class="choice-place choice-usual">
                     <span class="big-text">Простое размещение</span>
                     <span class="usual-text">Вашей акции</span>
                     <input type="checkbox"/>
+                    <div class="choice-place-background"></div>
                 </label>
+                <div class="clearfix"></div>
             </div>
 
             <div class="choose-region">
                 <span class="choose-region-title">Выбор региона:</span>
                 <div class="select-region">Вся Россия</div>
             </div>
+
             <div class="choose-time">
                 <span class="choose-time-title">Количество дней:</span>
-                <input type="text" placeholder="от 6 до 30 дней..."/>
+                <input type="text" placeholder="от 6 до 30 дней..." class="time-chooser"/>
             </div>
+
+            <input type="submit" class="form-bid-submit" value="Сохранить"/>
         </form>
     </div>
 </div>
@@ -251,8 +278,8 @@
 <div class="users content-block invisible-block">
     <form action="">
         <select class="users-menu">
-            <option value="advertisers">Рекламодатели</option>
             <option value="participants">Участники</option>
+            <option value="advertisers">Рекламодатели</option>
         </select>
 
         <input type="search" placeholder="Поиск..." class="search-field"/>

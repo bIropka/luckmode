@@ -412,15 +412,16 @@ main {
     font-style: italic;
     text-align: justify;
     color: #636262;
+    padding-right: 2%;
+    padding-bottom: 1%;
 }
 .bid-controls {
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 0;
     display: inline-block;
     width: 100%;
     text-transform: uppercase;
-
 }
 .bid-description {
     margin-left: 5%;
@@ -463,7 +464,7 @@ main {
 }
 .choose-social-title {
      width: 100%;
-    margin-bottom: 1%;
+     margin-bottom: 1%;
  }
 .choice-vkontakte, .choice-facebook, .choice-odnoklassniki, .choice-twitter, .choice-instagram {
     display: inline-block;
@@ -570,21 +571,19 @@ main {
     background: url("../images/sprite-bids.png") no-repeat 99.5% 98.5%;
     background-size: 700%;
 }
-.usual-text {
+.usual-text, .big-text{
     display: inline-block;
-    color: #cc0000;
     width: 100%;
     font-weight: 600;
     font-size: 1.1em;
+}
+.usual-text {
+    color: #cc0000;
     margin: 2% 3% 1%;
 }
 .big-text {
-    display: inline-block;
     color: #990000;
     text-transform: uppercase;
-    width: 100%;
-    font-weight: 600;
-    font-size: 1.1em;
     margin: 1% 3% 35%;
 }
 .choice-usual .usual-text {
@@ -637,6 +636,7 @@ main {
 **************************************/
 .auction {
     width: 100%;
+    text-align: center;
 }
 .auction-photo {
     display: inline-block;
@@ -644,8 +644,7 @@ main {
     height: 200px;
     background: #f1efef url("../images/background-photo.png") no-repeat 50% 30%;
     border: 2px solid #dedcdc;
-    text-align: center;
-    float: left;
+    vertical-align: top;
 }
 .auction-photo label {
     display: inline-block;
@@ -677,7 +676,7 @@ main {
 .auction-info {
     display: inline-block;
     width: 65%;
-    float: right;
+    margin-left: 2%;
 }
 
 .start-bid {
@@ -1014,6 +1013,25 @@ footer .logo {
     .users-menu {
         padding: 0.7% 1%;
     }
+    .auction-photo {
+        width: 210px;
+        height: 140px;
+    }
+    .auction-photo label {
+        margin-top: 55%;
+    }
+    .auction-description {
+        height: 140px;
+    }
+    .start-bid {
+        font-size: 1em;
+    }
+    .start-bid input {
+        font-size: 0.9em;
+    }
+    .event-date-title {
+        font-size: 1em;
+    }
 }
 @media (max-width: 1280px) {
 
@@ -1054,7 +1072,41 @@ footer .logo {
     .users-menu {
         font-size: 0.8em;
     }
-
+    .form-bid{
+        width: 700px;
+        height: 420px;
+        border: 1px solid #cc0000;
+        outline: 5px solid white;
+        padding: 1%;
+        font-size: 0.7em;
+    }
+    .choose-social-title, .choose-place-title {
+        font-size: 1.2em;
+    }
+    .usual-text, .big-text {
+        font-size: 0.77em;
+    }
+    .choose-region, .choose-time {
+        font-size: 1em;
+    }
+    .select-region, .time-chooser {
+        font-size: 0.9em;
+    }
+    .choice-vkontakte, .choice-facebook, .choice-odnoklassniki, .choice-twitter, .choice-instagram {
+        margin-bottom: 1%;
+    }
+    .like {
+        font-size: 0.8em;
+        background-size: 820%;
+    }
+    .repost {
+        font-size: 0.8em;
+        background-size: 650%;
+    }
+    .subscribe {
+        font-size: 0.8em;
+        background-size: 440%;
+    }
 }
 @media (max-width: 1080px) {
 
@@ -1068,7 +1120,6 @@ footer .logo {
     }
     .menu li:last-child {
         margin-right: 0;
-
     }
     .add-winner {
         left: 35px;
@@ -1117,6 +1168,15 @@ footer .logo {
     .footer-bottom span:last-child {
         margin-right: 6.5%;
     }
+    button, input[type="submit"] {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .auction-photo label {
+        font-size: 0.7em;
+        margin-top: 50%;
+    }
 }
 
 @media (max-width: 860px) {
@@ -1138,6 +1198,34 @@ footer .logo {
     }
     button, input[type="submit"] {
         font-size: 1em;
+    }
+    .form-add-winner{
+        width: 525px;
+        height: 224px;
+        border: 1px solid #cc0000;
+        outline: 5px solid white;
+    }
+    .winner-photo label {
+        margin-top: 55%;
+    }
+    .form-bid{
+        width: 420px;
+        height: 252px;
+        border: 1px solid #cc0000;
+        outline: 5px solid white;
+        padding: 1%;
+    }
+    .choose-social-title, .choose-place-title {
+        font-size: 0.7em;
+    }
+    .usual-text, .big-text {
+        font-size: 0.57em;
+    }
+    .choose-region, .choose-time {
+        font-size: 0.6em;
+    }
+    .select-region, .time-chooser {
+        font-size: 0.7em;
     }
 
 }
@@ -1170,6 +1258,14 @@ footer .logo {
     .more-winners {
         margin-top: 0;
     }
+    .auction-photo {
+        width: 105px;
+        height: 70px;
+        background-size: 40%;
+    }
+    .auction-description {
+        height: 70px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -1177,7 +1273,6 @@ footer .logo {
     * {
         font-size: 0.9em;
     }
-
     .add-winner {
         width: 75px;
         height: 20px;
@@ -1187,6 +1282,34 @@ footer .logo {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
+    }
+    .form-add-winner{
+        width: 315px;
+        height: 135px;
+        border: 1px solid #cc0000;
+        outline: 5px solid white;
+    }
+    .add-winner-title {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+    .winner-photo {
+        background-size: 40%;
+    }
+    .winner-info {
+        font-size: 0.8em;
+    }
+    .close-window{
+        right: 5px;
+        top: 5px;
+    }
+    .form-add-winner .add-winner-submit, .form-add-winner .add-winner-reset {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    button, input[type="submit"] {
+        font-size: 0.7em;
     }
 }
 
@@ -1209,6 +1332,15 @@ footer .logo {
     }
     .users-menu {
         font-size: 0.7em;
+    }
+    .start-bid {
+        font-size: 0.8em;
+    }
+    .start-bid input {
+        font-size: 0.7em;
+    }
+    .event-date-title {
+        font-size: 0.8em;
     }
 
 }
@@ -1248,12 +1380,15 @@ footer .logo {
     .users-menu {
         font-size: 0.6em;
     }
+    .bid-text {
+        font-size: 0.8em;
+    }
 }
 
 @media (max-width: 380px) {
 
     .menu li {
-        font-size: 0.43em;
+        font-size: 0.4em;
     }
     .winners .winner-text {
         font-size: 0.5em;

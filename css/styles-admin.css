@@ -1,24 +1,13 @@
 @import "styles.css";
-.more-info {
-    display: inline-block;
-    padding-right: 20px;
-    text-decoration: none;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    color: #c52f32;
-    background: url("../images/sprite-arrows.png") no-repeat 98% 105%;
-    -webkit-background-size: 10%;
-    background-size: 10%;
-}
+
 /***************** MAIN ******************
 *****************************************/
-.menu ul {
+.menu-admin ul {
     width: 100%;
     text-align: center;
     margin-bottom: 3%;
 }
-.choice {
+.menu-admin-choice {
     display:inline-block;
     background: #e5e4e4;
     padding: 1%;
@@ -30,7 +19,7 @@
     cursor: pointer;
     font-weight: 600;
 }
-.choice:last-child {
+.menu-admin-choice:last-child {
     margin-right: 0;
 }
 .active-effect {
@@ -718,7 +707,7 @@ td {
 }
 @media (max-width: 1366px) {
 
-    .menu li {
+    .menu-admin li {
         font-size: 0.9em;
     }
     .header-left-menu, .header-right-menu {
@@ -762,7 +751,7 @@ td {
 }
 @media (max-width: 1280px) {
 
-    .menu li {
+    .menu-admin li {
         font-size: 0.8em;
     }
     .winners .winner-name {
@@ -840,12 +829,12 @@ td {
     footer a {
         font-size: 0.9em;
     }
-    .menu li {
+    .menu-admin li {
         font-size: 0.7em;
         margin-right: 1%;
         width: 17%;
     }
-    .menu li:last-child {
+    .menu-admin li:last-child {
         margin-right: 0;
     }
     .add-winner {
@@ -962,7 +951,7 @@ td {
     * {
         font-size: 0.95em;
     }
-    .menu li {
+    .menu-admin li {
         font-size: 0.68em;
     }
     .winners li:nth-child(3n-1) {
@@ -1042,7 +1031,7 @@ td {
 
 @media (max-width: 540px) {
 
-    .menu li {
+    .menu-admin li {
         font-size: 0.56em;
     }
     .add-winner {
@@ -1078,7 +1067,7 @@ td {
         font-size: 0.6em;
         vertical-align: top;
     }
-    .menu li {
+    .menu-admin li {
         font-size: 0.54em;
     }
     .winners .winner-text {
@@ -1114,7 +1103,7 @@ td {
 
 @media (max-width: 380px) {
 
-    .menu li {
+    .menu-admin li {
         font-size: 0.4em;
     }
     .winners .winner-text {

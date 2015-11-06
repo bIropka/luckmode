@@ -36,6 +36,19 @@ button:hover, input[type="submit"]:hover {
 .clearfix {
     clear: both;
 }
+.more-info {
+    display: inline-block;
+    padding-right: 20px;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #c52f32;
+    background: url("../images/sprite-arrows.png") no-repeat 98% 105%;
+    -webkit-background-size: 10%;
+    background-size: 10%;
+}
+
 body {
     max-width: 1366px;
     width: 70%;

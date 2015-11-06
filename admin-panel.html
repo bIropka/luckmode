@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link href="css/styles-admin.css" rel="stylesheet">
+    <title>Admin-panel</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.choice').mouseenter(function () {
+                if (!$(this).hasClass('activated')) {
+                    $(this).addClass('active-effect');
+                }
+            });
+
+            $('.choice').mouseleave(function () {
+                if ($(this).hasClass('active-effect')) {
+                    $(this).removeClass('active-effect');
+                }
+            });
+
+            $('.choice').click(function () {
+                if (!$(this).hasClass('activated')) {
+                    $('.choice').removeClass('activated');
+                    $(this).addClass('activated');
+                    $('.content-block').addClass('invisible-block');
+                    if ($(this).hasClass('mark-bids')) {
+                        $('.bids').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-auctions')) {
+                        $('.auctions').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-users')) {
+                        $('.users').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-bonus-points')) {
+                        $('.bonus-points').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-winners')) {
+                        $('.winners').removeClass('invisible-block');
+                    }
+                }
+            });
+
+            $('.users-menu').bind('change', UsersMenuEvent);
+            function UsersMenuEvent() {
+                var usersMenuValue=$('.users-menu').val();
+                if (usersMenuValue === 'advertisers') {
+                    $('.participants').addClass('invisible-block');
+                    $('.advertisers').removeClass('invisible-block');
+                    $('.users-submit').css('left', '0').css('right', 'inherit');
+                } else if (usersMenuValue === 'participants') {
+                    $('.participants').removeClass('invisible-block');
+                    $('.advertisers').addClass('invisible-block');
+                    $('.users-submit').css('right', '0').css('left', 'inherit');
+                }
+            }
+
+            $('.users-activity').bind('change', UsersActivityEvent);
+            function UsersActivityEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $(this).removeClass('not-active-user');
+                } else {
+                    $(this).addClass('not-active-user');
+                }
+            }
+
+            $('.add-winner').click(function () {
+                $('.window-add-winner').fadeIn();
+            });
+            $('.window-add-winner').click(function (event) {
+                $target = $(event.target);
+                if (!$target.closest($('.form-add-winner')).length) $('.window-add-winner').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-add-winner').fadeOut();
+            });
+
+            $('.bid-description').click(function () {
+                $('.window-bid').fadeIn();
+            });
+            $('.window-bid').click(function (event) {
+                $target = $(event.target);
+                if (!$target.closest($('.form-bid')).length) $('.window-bid').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-bid').fadeOut();
+            });
+
+            $('.bid-checkbox').bind('change', BidCSocialEvent);
+            function BidCSocialEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $(this).addClass('active-bid-checkbox');
+                } else {
+                    $(this).removeClass('active-bid-checkbox');
+                }
+            }
+
+            $('.choice-place').bind('change', BidPlaceEvent);
+            function BidPlaceEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $('.choice-place').removeClass('chosen-place');
+                    $(this).addClass('chosen-place');
+                } else {
+                    $(this).removeClass('chosen-place');
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="header-background"></div>
+    <ul class="header-left-menu">
+        <li><a href="">Рекламодателям</a></li>
+        <li><a href="">Завершенные акции</a></li>
+    </ul>
+
+    <a href="" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+
+    <div class="header-right-menu">
+        <div class="account-menu">
+            <a href="">Надежда Сергеевна&ensp;&ensp;&ensp;&ensp;</a>
+            <ul class="sub-menu">
+                <li><a href="">Ваш профиль<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Настройки<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Выйти из системы<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+        <div class="city-menu">
+            <a href="">Самара</a>
+            <ul class="sub-menu">
+                <li><a href="">Харьков<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Новосибирск<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Алма-аты<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</header>
+<main>
+<nav class="menu">
+    <ul>
+        <li class="choice mark-bids">Заявки</li>
+        <li class="choice mark-auctions">Аукционы</li>
+        <li class="choice mark-users">Пользователи</li>
+        <li class="choice mark-bonus-points">Бонусные баллы</li>
+        <li class="choice mark-winners">Наши победители</li>
+    </ul>
+</nav>
+
+<!-- BIDS -->
+<div class="bids content-block invisible-block">
+    <div class="bid">
+        <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
+        <div class="bid-info">
+            <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+            </span>
+            <div class="bid-controls">
+                <button class="bid-submit">Одобрить</button>
+                <button class="bid-description">Подробнее</button>
+            </div>
+        </div>
+    </div>
+    <div class="bid">
+        <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
+        <div class="bid-info">
+            <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo.</span>
+            <div class="bid-controls">
+                <button class="bid-submit">Одобрить</button>
+                <button class="bid-description">Подробнее</button>
+            </div>
+        </div>
+    </div>
+    <a href="" class="more-info">Показать еще</a>
+
+    <!-- modal window -->
+    <div class="window-bid">
+        <form action="" class="form-bid">
+            <div class="close-window">&#10006;</div>
+            <span class="choose-social-title">Выбор социальной сети:</span>
+            <div class="choose-social">
+                <div class="choice-vkontakte">
+                    <div class="social-logo"></div>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<input type="checkbox"/></label>
+                </div>
+                <div class="choice-facebook">
+                    <div class="social-logo"></div>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
+                </div>
+                <div class="choice-odnoklassniki">
+                    <div class="social-logo"></div>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<input type="checkbox" checked/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<input type="checkbox"/></label>
+                </div>
+                <div class="choice-twitter">
+                    <div class="social-logo"></div>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<input type="checkbox" checked/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
+                </div>
+                <div class="choice-instagram">
+                    <div class="social-logo"></div>
+                    <label class="like bid-checkbox">Лайк<input type="checkbox"/></label>
+                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <span class="choose-place-title">Выбор места вашей акции:</span>
+            <div class="choose-place">
+                <label class="choice-place choice-first-three chosen-place">
+                    <span class="usual-text">Закрепить Вашу акцию на</span>
+                    <span class="big-text">первой тройке</span>
+                    <input type="checkbox" checked/>
+                    <span class="choice-place-background"></span>
+                </label>
+                <label class="choice-place choice-first-nine">
+                    <span class="usual-text">Закрепить Вашу акцию на</span>
+                    <span class="big-text">первой девятке</span>
+                    <input type="checkbox"/>
+                    <span class="choice-place-background"></span>
+                </label>
+                <label class="choice-place choice-usual">
+                    <span class="big-text">Простое размещение</span>
+                    <span class="usual-text">Вашей акции</span>
+                    <input type="checkbox"/>
+                    <span class="choice-place-background"></span>
+                </label>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="choose-region">
+                <span class="choose-region-title">Выбор региона:</span>
+                <div class="select-region">Вся Россия</div>
+            </div>
+
+            <div class="choose-time">
+                <span class="choose-time-title">Количество дней:</span>
+                <input type="text" placeholder="от 6 до 30 дней..." class="time-chooser"/>
+            </div>
+
+            <input type="submit" class="form-bid-submit" value="Сохранить"/>
+        </form>
+    </div>
+</div>
+
+<!-- AUCTIONS -->
+<div class="auctions content-block invisible-block">
+    <form action="" class="auction">
+        <div class="auction-photo"><label>Добавить фото<input type="file" accept="image/*"/></label></div>
+        <div class="auction-info">
+            <textarea class="auction-description" cols="" rows="10" placeholder="Добавить описание аукциона..."></textarea>
+            <label class="start-bid">Начальная ставка:<input type="text"/>баллов</label>
+            <div class="event-date">
+                <span class="event-date-title">Дата розыгрыша</span>
+                <span class="event-date-date">12 ноября 2015</span>
+            </div>
+            <input class="auction-submit" type="submit" value="Добавить"/>
+        </div>
+    </form>
+</div>
+
+<!-- USERS -->
+<div class="users content-block invisible-block">
+    <form action="">
+        <div class="users-menu-outer">
+            <select class="users-menu">
+                <option value="participants">Участники</option>
+                <option value="advertisers">Рекламодатели</option>
+            </select>
+        </div>
+
+        <input type="search" placeholder="Поиск..." class="search-field"/>
+        <div class="clearfix"></div>
+        <table class="advertisers invisible-block">
+            <tr>
+                <th>Активен</th>
+                <th>Имя, Фамилия</th>
+                <th>Город</th>
+                <th>E-mail</th>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+            </tr>
+        </table>
+        <table class="participants">
+            <tr>
+                <th>Активен</th>
+                <th>Логин (имя)</th>
+                <th>Город</th>
+                <th>E-mail</th>
+                <th>Пол</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity"><input type="checkbox" checked/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="users-activity not-active-user"><input type="checkbox"/></label></td>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td><input type="email"/></td>
+                <td><input type="text"/></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <input type="submit" class="users-submit" value="Сохранить"/>
+    </form>
+    <a href="" class="more-info">Показать еще</a>
+</div>
+
+<!-- BONUS-POINTS -->
+<div class="bonus-points content-block invisible-block">
+    <span class="bonus-points-title">Бонусные баллы участника</span>
+
+    <form action="">
+        <table class="bonus-points-table">
+            <tr>
+                <th>За что начислить</th>
+                <th>Количество баллов</th>
+            </tr>
+            <tr>
+                <td>Заполнение имени</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Заполнение фамилии</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Заполнение города</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Выбор пола</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Заполнение E-mail</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Загрузка фотографии</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Пригласить друга</td>
+                <td><label><input type="text" placeholder="25"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Желаемые призы</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ТВИТТЕР</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Вступить в группу ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>Поставить лайк ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ТВИТТЕР</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr class="gray-row">
+                <td>Сделать репост ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ВКОНТАКТЕ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ОДНОКЛАССНИКИ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ФЕЙСБУК</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ТВИТТЕР</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+            <tr>
+                <td>За добавление ссылки ИНСТАГРАММ</td>
+                <td><label><input type="text" placeholder="5"/> баллов</label></td>
+            </tr>
+        </table>
+        <input type="submit" class="bonus-points-submit" value="Сохранить"/>
+        <div class="clearfix"></div>
+    </form>
+</div>
+
+<!-- WINNERS -->
+<div class="winners content-block invisible-block">
+    <ul class="winners-table">
+        <div class="winners-row">
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Чарли Чаплин</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. </span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Мерелин Монро</span>
+                    <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Эдвард Нортон</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa.</span>
+                </div>
+            </li>
+        </div>
+        <div class="winners-row">
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Брюс Ли</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Арнольд Шварцнеггер</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                </div>
+            </li>
+            <li>
+                <img src="images/winner-photo.png" alt="фото победителя"/>
+
+                <div class="winner-data">
+                    <span class="winner-name">Энтони Хопкинс</span>
+                        <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
+                </div>
+            </li>
+        </div>
+    </ul>
+    <button class="add-winner">добавить</button>
+    <a href="" class="more-info">Показать еще</a>
+
+    <div class="window-add-winner">
+        <form action="" class="form-add-winner">
+            <div class="close-window">&#10006;</div>
+            <span class="add-winner-title">Добавить нового победителя...</span>
+            <div class="winner-photo"><label>Добавить фото<input type="file" accept="image/*"/></label></div>
+            <textarea class="winner-info" cols="" rows="10" placeholder="Добавить информацию о победителе..."></textarea>
+            <input type="submit" class="add-winner-submit" value="Добавить"/>
+            <input type="reset" class="add-winner-reset" value="Отмена"/>
+        </form>
+    </div>
+
+</div>
+
+</main>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-controls">
+            <a href="" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+            <ul class="activities">
+                <span>Новые акции</span>
+                <li><a href="">Еда</a></li>
+                <li><a href="">Развлечения и спорт</a></li>
+                <li><a href="">Красота и уход</a></li>
+                <li><a href="">Медицина</a></li>
+                <li><a href="">Образование</a></li>
+                <li><a href="">Услуги</a></li>
+            </ul>
+            <ul class="social">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+        <div class="odnoklassniki"><img src="images/odnoklassniki.jpg" alt="odnoklassniki"/></div>
+        <div class="vkontakte"><img src="images/vkontakte.jpg" alt="vkontakte"/></div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="footer-bottom">
+        <span>Акции и розыгрыши. <a href="">Luckmode.</a> 2015</span>
+        <span>Создание сайта:<a href=""> A.Goncharov WEB Studio</a></span>
+    </div>
+</footer>
+
+</body>
+</html>

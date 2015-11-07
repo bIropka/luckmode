@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <link href="css/styles-admin.css" rel="stylesheet">
-    <title>Admin-panel</title>
+    <link href="css/styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.menu-admin-choice').mouseenter(function () {
+            $('.choice').mouseenter(function () {
                 if (!$(this).hasClass('activated')) {
                     $(this).addClass('active-effect');
                 }
             });
 
-            $('.menu-admin-choice').mouseleave(function () {
+            $('.choice').mouseleave(function () {
                 if ($(this).hasClass('active-effect')) {
                     $(this).removeClass('active-effect');
                 }
             });
 
-            $('.menu-admin-choice').click(function () {
+            $('.choice').click(function () {
                 if (!$(this).hasClass('activated')) {
-                    $('.menu-admin-choice').removeClass('activated');
+                    $('.choice').removeClass('activated');
                     $(this).addClass('activated');
                     $('.content-block').addClass('invisible-block');
                     if ($(this).hasClass('mark-bids')) {
@@ -104,6 +103,7 @@
             }
         });
     </script>
+    <title>Admin-panel</title>
 </head>
 <body>
 
@@ -136,14 +136,16 @@
     </div>
     <div class="clearfix"></div>
 </header>
+
 <main>
-<nav class="menu-admin">
+
+<nav class="menu">
     <ul>
-        <li class="menu-admin-choice mark-bids">Заявки</li>
-        <li class="menu-admin-choice mark-auctions">Аукционы</li>
-        <li class="menu-admin-choice mark-users">Пользователи</li>
-        <li class="menu-admin-choice mark-bonus-points">Бонусные баллы</li>
-        <li class="menu-admin-choice mark-winners">Наши победители</li>
+        <li class="choice mark-bids">Заявки</li>
+        <li class="choice mark-auctions">Аукционы</li>
+        <li class="choice mark-users">Пользователи</li>
+        <li class="choice mark-bonus-points">Бонусные баллы</li>
+        <li class="choice mark-winners">Наши победители</li>
     </ul>
 </nav>
 

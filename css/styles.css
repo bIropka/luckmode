@@ -54,6 +54,10 @@ body {
     width: 70%;
     margin: auto;
 }
+main {
+    width: 100%;
+    text-align: center;
+}
 /**************** HEADER *****************
 *****************************************/
 header {
@@ -191,14 +195,44 @@ header .logo {
 .city-menu:hover .sub-menu {
     display: block;
 }
-
-/***************** MAIN ******************
-*****************************************/
-main {
-    width: 100%;
-    margin: 0 auto;
+/******************************************** MAIN PAGE ***********************************************
+******************************************************************************************************/
+.menu-main-choice {
+    display:inline-block;
+    padding-bottom: 2%;
     text-align: center;
+    margin-bottom: 3%;
+    background: url("../images/shadow-bottom.png") no-repeat bottom center;
+    background-size: 100% 20%;
 }
+.menu-main-choice:nth-child(2) {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.menu-main-choice a {
+    display: inline-block;
+    padding: 5% 10%;
+    background: #dbdbdb;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+}
+.menu-main-choice:first-child a {
+    padding-right: 20%;
+    background: #dbdbdb url("../images/sprite-arrows.png") no-repeat 95% center;
+    background-size: 8%;
+}
+
+
+/***************************************** END OF MAIN PAGE ********************************************
+*******************************************************************************************************/
+
+/******************************************* ADMIN-PANEL **********************************************
+*******************************************************************************************************/
+
+/***************** MENU ******************
+*****************************************/
 .menu ul {
     width: 100%;
     text-align: center;
@@ -252,7 +286,7 @@ main {
 .winners li {
     display: table-cell;
     width: 33%;
-    background: #dddddd url("../images/image-background.png") no-repeat 100% 0;
+    background: #dddddd url("../images/shadow-right.png") no-repeat 100% 0;
     background-size: 10% 100%;
     border-bottom: 25px solid white;
 }
@@ -394,7 +428,7 @@ main {
 .bid-image img {
     width: 100%;
     padding-right: 10%;
-    background: url("../images/image-background.png") no-repeat 100% 0;
+    background: url("../images/shadow-right.png") no-repeat 100% 0;
     background-size: 10% 100%;
 }
 .bid-info {
@@ -881,6 +915,9 @@ td {
     margin-right: 30%;
     margin-top: 2%;
 }
+/****************************************END OF ADMIN-PANEL ********************************************
+*******************************************************************************************************/
+
 /**************** FOOTER *****************
 *****************************************/
 footer {

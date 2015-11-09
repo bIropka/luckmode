@@ -107,6 +107,30 @@ header .logo {
     margin-top: 0.5%;
     margin-right: 13%;
 }
+.login-register {
+    width: 100%;
+    padding-left: 15%;
+    margin-bottom: 15%;
+}
+.login-register li{
+    display: inline-block;
+}
+.login-register a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+.login-register li a:hover {
+    color: #bebebe;
+}
+.login-register li:first-child {
+    text-transform: uppercase;
+}
+.login-register li:first-child:after {
+    content: "\2002/\2002";
+    color: white;
+    vertical-align: middle;
+}
 .account-menu {
     position: relative;
     width: 100%;
@@ -197,34 +221,208 @@ header .logo {
 }
 /******************************************** MAIN PAGE ***********************************************
 ******************************************************************************************************/
-.menu-main-choice {
+.taglines {
+    list-style: none;
+    margin-bottom: 2%;
+}
+.taglines li a {
+    font-size: 2.5em;
+    font-family: Lobster, cursive;
+    text-decoration: none;
+    color: #b80e14;
+}
+.taglines li:nth-child(1) {
+    float: left;
+    margin-left: 3%;
+}
+.taglines li:nth-child(2) {
+    float: right;
+    margin-right: 3%;
+}
+.tagline-yellow {
+    font-size: 1em;
+    font-family: Lobster, cursive;
+    color: #f2d75a;
+}
+.main-menu-choice {
     display:inline-block;
     padding-bottom: 2%;
     text-align: center;
-    margin-bottom: 3%;
     background: url("../images/shadow-bottom.png") no-repeat bottom center;
     background-size: 100% 20%;
 }
-.menu-main-choice:nth-child(2) {
+.main-menu-choice:first-child:hover {
+    background: none;
+}
+.main-menu-choice:nth-child(2) {
     margin-left: 10%;
     margin-right: 10%;
 }
-.menu-main-choice a {
+.main-menu-choice>a {
     display: inline-block;
-    padding: 5% 10%;
-    background: #dbdbdb;
+    padding: 10px 10%;
+    background: linear-gradient(to bottom, #edecec, #dcdcdc);
     text-decoration: none;
     text-transform: uppercase;
     color: black;
     font-weight: bold;
 }
-.menu-main-choice:first-child a {
-    padding-right: 20%;
-    background: #dbdbdb url("../images/sprite-arrows.png") no-repeat 95% center;
+.main-menu-choice>a:hover {
+    background: linear-gradient(to bottom, #dcdcdc, #edecec);
+}
+.categories {
+    display: inline-block;
+    padding: 10px 20% 10px 10%;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: url("../images/sprite-arrows.png") no-repeat 95% center, linear-gradient(to bottom, #edecec, #dcdcdc);
+    background-size: 8%;
+    cursor: pointer;
+    position: relative;
+}
+.categories:hover {
+    background: url("../images/sprite-arrows.png") no-repeat 95% center, linear-gradient(to bottom, #dcdcdc, #edecec);
     background-size: 8%;
 }
+.main-sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    width: 100%;
+    background: white;
+    opacity: 0.9;
+    z-index: 10;
+    border: 1px solid #dcdcdc;
+    display: none;
+}
+.main-sub-menu a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 2% 5%;
+    color: black;
+    text-align: left;
+}
+.main-sub-menu a:hover {
+    color: #bb0f14;
+}
+.menu .categories:hover .main-sub-menu {
+    display: block;
+}
 
-
+.title {
+    display: inline-block;
+    width: 100%;
+    font-family: Lobster, cursive;
+    font-size: 2.5em;
+    color: #b80e14;
+    margin: 3% 0 1%;
+}
+.title-image {
+    background: url("../images/title-image.jpg") no-repeat 35%;
+    background-size: 8%;
+}
+/********** MAIN-AUCTIONS ********/
+.main-auctions {
+    width: 100%;
+    list-style: none;
+}
+.main-auction {
+    position: relative;
+    display: inline-block;
+    width: 17%;
+    padding-top: 20%;
+    margin: 0 1%;
+    border: 3px solid #d61112;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    -ms-transform: skew(15deg);
+    -o-transform: skew(15deg);
+    transform: skew(15deg);
+    overflow: hidden;
+    font-weight: bold;
+    -webkit-box-shadow: -5px 5px 10px black;
+    -moz-box-shadow: -5px 5px 10px black;
+    box-shadow: -5px 5px 10px gray;
+}
+.main-auction:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -25%;
+    width: 150%;
+    padding-top: 130%;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -ms-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transform: skew(-15deg);
+    background: url("../images/main-auction-photo.jpg");
+    background-size: cover;
+}
+.main-auction-inner {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 130%;
+    background: black;
+    opacity: 0.6;
+}
+.main-auction-name, .main-auction-points {
+    display: none;
+    width: 80%;
+    position: absolute;
+    left: 20px;
+    right: 0;
+    color: white;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -ms-transform: skew(-15deg);
+    -o-transform: skew(-15deg);
+    transform: skew(-15deg);
+    text-align: left;
+    text-decoration: none;
+}
+.main-auction-name {
+    top: 10px;
+    border-bottom: 2px solid white;
+}
+.main-auction-points {
+    bottom: 10px;
+}
+.main-auction-points span {
+    font-size: 2.5em;
+}
+.main-auction:hover .main-auction-inner, .main-auction:hover .main-auction-name,
+.main-auction:hover .main-auction-points{
+    display: inline-block;
+}
+/**************** NEW EVENTS ***************/
+.new-events-table {
+    display: table;
+    width: 95%;
+    margin: 0 2.5% 0.5%;
+    border-collapse: collapse;
+}
+.new-events-row {
+    display: table-row;
+}
+.new-event {
+    display: table-cell;
+    width: 33.33%;
+    height: 100px;
+    border: 1px solid black;
+}
+.new-event-small {
+    display: table-cell;
+    width: 25%;
+    height: 100px;
+    border: 1px solid black;
+}
 /***************************************** END OF MAIN PAGE ********************************************
 *******************************************************************************************************/
 

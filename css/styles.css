@@ -48,15 +48,14 @@ button:hover, input[type="submit"]:hover {
 .clearfix {
     clear: both;
 }
-
 body {
     max-width: 1366px;
     width: 70%;
     margin: auto;
+    text-align: center;
 }
 main {
     width: 100%;
-    text-align: center;
 }
 /**************** HEADER *****************
 *****************************************/
@@ -260,15 +259,26 @@ header .logo {
     height: 100%;
     background: linear-gradient(rgba(255,255,255,.0) 60%, rgba(255,255,255,.5) 70%, rgba(255,255,255,.0) 100%);
 }
+.main-menu {
+    display: inline-block;
+    width: 95%;
+    text-align: justify;
+    text-align-last: justify;
+}
+.main-menu:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
 .main-menu-choice {
-    display:inline-block;
+    display: inline-block;
     padding-bottom: 2%;
     text-align: center;
     background: url("../images/shadow-bottom.png") no-repeat bottom center;
     background-size: 100% 20%;
-}
-.main-menu-choice:first-child:hover {
-    background: none;
+    white-space: nowrap;
 }
 .main-menu-choice:nth-child(2) {
     margin-left: 10%;
@@ -277,7 +287,7 @@ header .logo {
 .main-menu-choice>a {
     display: inline-block;
     padding: 10px 10%;
-    background: linear-gradient(to bottom, #edecec, #dcdcdc);
+    background: linear-gradient(#edecec, #dcdcdc);
     text-decoration: none;
     text-transform: uppercase;
     color: black;
@@ -292,13 +302,13 @@ header .logo {
     text-transform: uppercase;
     font-weight: bold;
     background: url("../images/sprite-arrows.png") no-repeat 95% center, linear-gradient(to bottom, #edecec, #dcdcdc);
-    background-size: 8%;
+    background-size: 8%, cover;
     cursor: pointer;
     position: relative;
 }
 .categories:hover {
     background: url("../images/sprite-arrows.png") no-repeat 95% center, linear-gradient(to bottom, #dcdcdc, #edecec);
-    background-size: 8%;
+    background-size: 8%, cover;
 }
 .main-sub-menu {
     position: absolute;
@@ -324,7 +334,7 @@ header .logo {
 .main-sub-menu a:hover {
     color: #bb0f14;
 }
-.menu .categories:hover .main-sub-menu {
+.main-menu .categories:hover .main-sub-menu {
     display: block;
 }
 
@@ -334,11 +344,12 @@ header .logo {
     font-family: Lobster, cursive;
     font-size: 2.5em;
     color: #b80e14;
-    margin: 3% 0 1%;
+    margin: 3% 0 2%;
 }
 .title-image {
     background: url("../images/title-image.jpg") no-repeat 35%;
     background-size: 8%;
+
 }
 /********** MAIN-AUCTIONS ********/
 .main-auctions {
@@ -369,7 +380,7 @@ header .logo {
     top: 0;
     left: -25%;
     width: 150%;
-    padding-top: 130%;
+    padding-top: 150%;
     -webkit-transform: skew(-15deg);
     -moz-transform: skew(-15deg);
     -ms-transform: skew(-15deg);
@@ -418,14 +429,22 @@ header .logo {
     display: inline-block;
 }
 /**************** NEW EVENTS ***************/
-.new-events-table {
+.new-events-table, .new-main-events-table {
     display: table;
     width: 95%;
-    margin: 0 2.5% 2%;
+    margin: 0 2.5% 3%;
     border-collapse: collapse;
+}
+.new-main-events-table {
+    width: 96%;
 }
 .new-events-row {
     display: table-row;
+    width: 100%;
+}
+.new-main-events-row {
+    width: 100%;
+    margin-left: 0;
 }
 .new-event, .new-event-small {
     display: table-cell;
@@ -454,22 +473,26 @@ header .logo {
 }
 .event-image img {
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
 .event-controls {
     display: inline-block;
     position: absolute;
-    bottom: 1.5%;
+    bottom: 2%;
     left: 0;
     list-style: none;
     width: 100%;
     background: rgba(0, 0, 0, 0.4);
     text-align:justify;
-    /* for IE < 8 */
     text-align-last:justify;
     line-height: 10%;
     padding-top: 1%;
+}
+.event-controls:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
 }
 .event-controls  li {
     display: inline-block;
@@ -491,13 +514,6 @@ header .logo {
 .event-controls li:nth-child(3) a {background: url("../images/sprite-event-controls.png") no-repeat 50% 50%;background-size: 800%}
 .event-controls li:nth-child(4) a {background: url("../images/sprite-event-controls.png") no-repeat 74.5% 50%;background-size: 800%}
 .event-controls li:nth-child(5) a {background: url("../images/sprite-event-controls.png") no-repeat 99.5% 50%;background-size: 800%}
-.event-controls:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-}
 .event-description {
     display: inline-block;
     font-style: italic;
@@ -505,8 +521,17 @@ header .logo {
     text-align: justify;
     padding: 2% 3%;
 }
+.new-event-small .event-description {
+    font-size: 0.9em;
+}
 /***************************************** END OF MAIN PAGE ********************************************
 *******************************************************************************************************/
+
+/**************************************** PAGE 404 *******************************************
+*********************************************************************************************/
+
+/************************************* END OF PAGE 404 ***************************************
+**********************************************************************************************/
 
 /******************************************* ADMIN-PANEL **********************************************
 *******************************************************************************************************/
@@ -1204,6 +1229,7 @@ footer {
     width: 100%;
     margin: 2.5% auto 0;
     background: linear-gradient(to bottom, #cc0000, #990000);
+    text-align: left;
 }
 footer span, footer a {
     font-family: "Open Sans", sans-serif;
@@ -1307,6 +1333,9 @@ footer .logo {
     .winners .winner-text {
         font-size: 0.9em;
     }
+    .new-event-small .event-description {
+        font-size: 0.85em;
+    }
 }
 @media (max-width: 1480px) {
 
@@ -1322,7 +1351,7 @@ footer .logo {
 }
 @media (max-width: 1366px) {
 
-    .menu li {
+    .menu .choice {
         font-size: 0.9em;
     }
     .header-left-menu, .header-right-menu {
@@ -1363,10 +1392,22 @@ footer .logo {
     .event-date-title {
         font-size: 1em;
     }
+    .title {
+        font-size: 2em;
+    }
+    .taglines li, .main-auction a, .new-event .event-title, .new-event .event-description {
+        font-size: 0.9em;
+    }
+    .event-title, .event-description {
+        font-size: 0.8em;
+    }
+    .new-event-small .event-description {
+        font-size: 0.7em;
+    }
 }
 @media (max-width: 1280px) {
 
-    .menu li {
+    .menu .choice {
         font-size: 0.8em;
     }
     .winners .winner-name {
@@ -1444,12 +1485,12 @@ footer .logo {
     footer a {
         font-size: 0.9em;
     }
-    .menu li {
+    .menu .choice {
         font-size: 0.7em;
         margin-right: 1%;
         width: 17%;
     }
-    .menu li:last-child {
+    .menu .choice:last-child {
         margin-right: 0;
     }
     .add-winner {
@@ -1508,6 +1549,10 @@ footer .logo {
         font-size: 0.7em;
         margin-top: 50%;
     }
+    .main-auctions {
+        width: 95%;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 860px) {
@@ -1558,6 +1603,12 @@ footer .logo {
     .select-region, .time-chooser {
         font-size: 0.7em;
     }
+    .main-auction a {
+        font-size: 0.8em;
+    }
+    .main-auction-name, .main-auction-points {
+        left: 10px;
+    }
 
 }
 
@@ -1566,7 +1617,7 @@ footer .logo {
     * {
         font-size: 0.95em;
     }
-    .menu li {
+    .menu .choice {
         font-size: 0.68em;
     }
     .winners li:nth-child(3n-1) {
@@ -1589,6 +1640,9 @@ footer .logo {
     .more-winners {
         margin-top: 0;
     }
+    .taglines {
+        font-size: 0.8em;
+    }
     .auction-photo {
         width: 105px;
         height: 70px;
@@ -1596,6 +1650,12 @@ footer .logo {
     }
     .auction-description {
         height: 70px;
+    }
+    .main-menu-choice a{
+        padding: 5px 10%;
+    }
+    .categories {
+        padding: 5px 20% 5px 10%;
     }
 }
 
@@ -1646,7 +1706,7 @@ footer .logo {
 
 @media (max-width: 540px) {
 
-    .menu li {
+    .menu .choice {
         font-size: 0.56em;
     }
     .add-winner {
@@ -1673,6 +1733,12 @@ footer .logo {
     .event-date-title {
         font-size: 0.8em;
     }
+    .taglines, .main-menu-choice a, .categories {
+        font-size: 0.7em;
+    }
+    .new-event .event-description, .event-description {
+        font-size: 0.6em;
+    }
 
 }
 
@@ -1682,7 +1748,7 @@ footer .logo {
         font-size: 0.6em;
         vertical-align: top;
     }
-    .menu li {
+    .menu .choice {
         font-size: 0.54em;
     }
     .winners .winner-text {
@@ -1714,11 +1780,20 @@ footer .logo {
     .bid-text {
         font-size: 0.8em;
     }
+    .main-menu-choice a{
+        padding: 3px 10%;
+    }
+    .categories {
+        padding: 3px 20% 3px 10%;
+    }
+    .taglines, .main-menu-choice a, .categories {
+        font-size: 0.55em;
+    }
 }
 
 @media (max-width: 380px) {
 
-    .menu li {
+    .menu .choice {
         font-size: 0.4em;
     }
     .winners .winner-text {
@@ -1731,6 +1806,9 @@ footer .logo {
         left: 15px;
     }
     .users-menu {
+        font-size: 0.5em;
+    }
+    .taglines, .main-menu-choice a, .categories {
         font-size: 0.5em;
     }
 }

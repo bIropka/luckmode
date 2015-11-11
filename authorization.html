@@ -5,6 +5,7 @@
     <title>Authorization</title>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/authorization-styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/pxgradient-1.0.3.js"></script>
     <script>
@@ -48,6 +49,12 @@
 
 <main>
 
+    <ul class="taglines">
+        <li><a href="#">Все <span class="tagline-yellow">акции</span> интернета!</a></li>
+        <li><a href="#">Учавствуй в <span class="tagline-yellow">розыгрышах!</span></a></li>
+        <div class="clearfix"></div>
+    </ul>
+
     <ul class="main-menu">
         <li class="main-menu-choice">
             <span class="categories">
@@ -69,7 +76,7 @@
 
     <div class="authorization-block">
         <div class="for-participants">
-            <span class="autho-title">для участников</span>
+            <span class="autho-title">для участников<div class="for-participants-icon"></div></span>
             <span>войти через:</span>
             <ul class="social-autho">
                 <li><a href="#"></a></li>
@@ -81,10 +88,11 @@
             </ul>
         </div>
         <form class="for-advertisers">
-            <input type="email"/>
-            <input type="text"/>
-            <input type="submit"/>
-            <a href="#">зарегистрироваться</a>
+            <span class="autho-title">для рекламодателей <div class="for-advertisers-icon"></div></span>
+            <input type="email" class="autho-email" placeholder="E-mail:"/>
+            <input type="password" class="autho-password" placeholder="Пароль:"/>
+            <input type="submit" class="autho-submit" value="Войти"/>
+            <a href="#" class="for-advertisers-registration">зарегистрироваться</a>
         </form>
     </div>
 

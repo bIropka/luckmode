@@ -112,6 +112,7 @@ header .logo {
     float: right;
     margin-top: 0.5%;
     margin-right: 13%;
+    text-align: left;
 }
 .login-register {
     width: 100%;
@@ -172,6 +173,7 @@ header .logo {
     box-shadow: 2px 2px 3px -1px #636262, -2px 2px 3px -1px #636262;
     z-index: 1;
     padding: 0.5% 1%;
+
 }
 .sub-menu li a {
     font-size: 0.9em;
@@ -1295,7 +1297,7 @@ footer .logo {
     width: 75%;
     margin-bottom: 5%;
 }
-.activities span {
+.footer-controls span {
     text-transform: uppercase;
     font-weight: bold;
     margin-left: -5%;

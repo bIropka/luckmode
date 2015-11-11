@@ -58,6 +58,12 @@ main {
     width: 100%;
     position: relative;
 }
+.button-add-winner {
+    border: none;
+    float: left;
+    display: none;
+    margin-left: 0.5%;
+}
 /**************** HEADER *****************
 *****************************************/
 header {
@@ -341,7 +347,7 @@ header .logo {
     font-family: Lobster, cursive;
     font-size: 2.5em;
     color: #b80e14;
-    margin: 3% 0 2%;
+    margin: 1.5% 0;
 }
 .title-image {
     background: url("../images/title-image.jpg") no-repeat 35%;
@@ -663,12 +669,7 @@ header .logo {
     font-style: italic;
     text-align: justify;
 }
-.add-winner {
-    position: absolute;
-    top: -3.5%;
-    left: 0;
-    border: none;
-}
+
 /****** winners modal window****/
 .window-add-winner{
     position: fixed;
@@ -1408,11 +1409,7 @@ footer .logo {
     .footer-top, .footer-bottom {
         width: 80%;
     }
-    .add-winner {
-        width: 130px;
-        height: 30px;
-        left: 5px;
-        padding-top: 5px;
+    .button-add-winner {
         font-size: 0.9em;
     }
     button, input[type="submit"] {
@@ -1564,9 +1561,6 @@ footer .logo {
     .menu .choice:last-child {
         margin-right: 0;
     }
-    .add-winner {
-       left: 4.5%;
-    }
 }
 @media (max-width: 1050px) {
 
@@ -1620,6 +1614,9 @@ footer .logo {
     .main-auction {
         width: 140px;
         height: 175px;
+    }
+    .button-add-winner {
+        margin-left: 5%;
     }
 }
 
@@ -1695,11 +1692,6 @@ footer .logo {
         margin-left: 0;
         margin-right: 0;
     }
-    .add-winner {
-        width: 90px;
-        height: 25px;
-        font-size: 0.7em;
-    }
     .activities {
         margin-top: 15%;
     }
@@ -1744,14 +1736,6 @@ footer .logo {
     * {
         font-size: 0.9em;
     }
-    .add-winner {
-        width: 75px;
-        height: 20px;
-        padding-top: 4px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-    }
     .form-add-winner{
         width: 315px;
         height: 135px;
@@ -1792,10 +1776,8 @@ footer .logo {
     .menu .choice {
         font-size: 0.56em;
     }
-    .add-winner {
-        width: 65px;
-        height: 15px;
-        padding-top: 2px;
+    .button-add-winner {
+        font-size: 0.7em;
     }
     .activities {
         margin-top: 10%;
@@ -1846,7 +1828,8 @@ footer .logo {
     .winners .winner-text {
         font-size: 0.6em;
     }
-    .add-winner {
+    .button-add-winner {
+        font-size: 0.6em;
     }
     .footer-controls {
         margin-left: 5%;
@@ -1906,7 +1889,8 @@ footer .logo {
     .header-left-menu a, .header-right-menu a {
         font-size: 0.55em;
     }
-    .add-winner {
+    .button-add-winner {
+        font-size: 0.5em;
     }
     .users-menu {
         font-size: 0.5em;

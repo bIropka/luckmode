@@ -24,6 +24,7 @@
                     $('.choice').removeClass('activated');
                     $(this).addClass('activated');
                     $('.content-block').addClass('invisible-block');
+                    $('.button-add-winner').css('display', 'none');
                     if ($(this).hasClass('mark-bids')) {
                         $('.bids').removeClass('invisible-block');
                     }
@@ -38,6 +39,7 @@
                     }
                     if ($(this).hasClass('mark-winners')) {
                         $('.winners').removeClass('invisible-block');
+                        $('.button-add-winner').css('display', 'inline-block');
                     }
                 }
             });
@@ -65,7 +67,7 @@
                 }
             }
 
-            $('.add-winner').click(function () {
+            $('.button-add-winner').click(function () {
                 $('.window-add-winner').fadeIn();
             });
             $('.window-add-winner').click(function (event) {
@@ -136,6 +138,7 @@
         </div>
     </div>
     <div class="clearfix"></div>
+    <button class="button-add-winner">добавить</button>
 </header>
 
 <main>
@@ -550,6 +553,7 @@
 
 <!-- WINNERS -->
 <div class="winners content-block invisible-block">
+
     <ul class="winners-table">
         <div class="winners-row">
             <li>
@@ -613,7 +617,7 @@
             </li>
         </div>
     </ul>
-    <button class="add-winner">добавить</button>
+
     <a href="" class="more-info">Показать еще</a>
 
     <div class="window-add-winner">

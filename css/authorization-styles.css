@@ -27,9 +27,9 @@
     margin-bottom: 4%;
     position: relative;
 }
-.for-participants-icon, .for-advertisers-icon {
+.for-participants .for-participants-icon, .for-advertisers-icon {
     position: absolute;
-    left: -22%;
+    left: -35%;
     top: -40%;
     width: 17%;
     padding-top: 17%;
@@ -84,7 +84,6 @@
 }
 .for-advertisers-icon {
     left: -22%;
-    top: -40%;
     background-position: 100% 50%;
 }
 .autho-email, .autho-password {

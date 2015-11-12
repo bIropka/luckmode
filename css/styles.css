@@ -389,20 +389,16 @@ header .logo {
     -moz-box-shadow: -5px 5px 10px black;
     box-shadow: -5px 5px 10px gray;
 }
-.main-auction:before {
-    position: absolute;
-    content: "";
-    bottom: -15%;
-    left: -15%;
-    width: 150%;
-    height: 150%;
+
+.main-auction img {
+    width: 250%;
+    margin-left: -50%;
+    margin-bottom: -10px;
     -webkit-transform: skew(-15deg);
     -moz-transform: skew(-15deg);
     -ms-transform: skew(-15deg);
     -o-transform: skew(-15deg);
     transform: skew(-15deg);
-    background: url("../images/main-auction-photo.jpg");
-    background-size: cover;
 }
 .main-auction-inner {
     display: none;
@@ -419,7 +415,6 @@ header .logo {
     width: 80%;
     position: absolute;
     left: 20px;
-    right: 0;
     color: white;
     -webkit-transform: skew(-15deg);
     -moz-transform: skew(-15deg);
@@ -486,7 +481,6 @@ header .logo {
 .event-image {
     position: relative;
     width: 100%;
-    border: 1px solid green;
 }
 .event-image img {
     display: inline-block;
@@ -579,11 +573,75 @@ header .logo {
     background: url("../images/logo-404.png") no-repeat;
     background-size: contain;
 }
-/************************************* END OF PAGE 404 ***************************************
-**********************************************************************************************/
+/****************** END OF PAGE 404 *************************
+*************************************************************/
 
-/******************************************* ADMIN-PANEL **********************************************
-*******************************************************************************************************/
+/*********************** EVENT *******************************
+*************************************************************/
+.private-event {
+    display: table;
+    width: 100%;
+    padding: 0 1%;
+}
+.private-event .title {
+    display: table-caption;
+    width: 100%;
+    text-align: left;
+}
+.event-row {
+    display: table-row;
+    width: 100%;
+}
+.private-event-image, .private-event-text, .event-left-column, .event-right-column {
+    display: table-cell;
+    width: 50%;
+    border: 1px solid black;
+}
+.private-event-image {
+    background: url("../images/shadow-right.png") no-repeat 100% 50%;
+    text-align: left;
+}
+.private-event-image img {
+    width: 93%;
+}
+.private-event-text {
+    vertical-align: top;
+    font-style: italic;
+    color: #909090;
+    text-align: justify;
+    padding: 1% 0.5%;
+}
+.event-condition {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+.event-condition caption{
+    width: 70%;
+    margin-left: 15%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    position: relative;
+}
+.event-condition-icon {
+    position: absolute;
+    top: 15%;
+    left: -5%;
+    width: 8%;
+    padding-top: 10%;
+    background: url("../images/sprite-event.png") no-repeat 100% 0;
+    background-size: cover;
+}
+.event-condition tr:first-child {
+    background: linear-gradient(to bottom, #cc0000, #990000);
+}
+/******************** END OF EVENT ***************************
+*************************************************************/
+
+
+/************************** ADMIN-PANEL *******************************
+***********************************************************************/
 
 /***************** MENU ******************
 *****************************************/

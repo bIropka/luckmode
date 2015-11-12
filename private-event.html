@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title>private event</title>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -47,10 +47,10 @@
 
 <main>
 
-    <span class="title">Выиграй целый день отдыха в аквапарке!</span>
-
     <div class="private-event">
-        <div class="private-event-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
+        <span class="title">Выиграй целый день отдыха в аквапарке!</span>
+        <div class="event-row">
+            <div class="private-event-image"><img src="images/bid-image.jpg" alt="фото акции"/></div>
         <span class="private-event-text">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -60,13 +60,72 @@
             Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
             consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
         </span>
-    </div>
+        </div>
+        <div class="event-row">
+            <div class="event-left-column">
+                <table class="event-condition">
+                    <caption><div class="event-condition-icon"></div>чтобы участвовать в акции, выполните такие условия:</caption>
+                    <tr>
+                        <th></th>
+                        <th>репост</th>
+                        <th>лайк</th>
+                        <th>подписаться</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20 баллов</td>
+                        <td>10 баллов</td>
+                        <td>6 баллов</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>20 баллов</td>
+                        <td>40 баллов</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>5 баллов</td>
+                        <td>5 баллов</td>
+                        <td>5 баллов</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>15 баллов</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>5 баллов</td>
+                        <td>-</td>
+                        <td>10 баллов</td>
+                    </tr>
+                </table>
 
-    <div class="left-column">
-        table
-    </div>
+                <button class="join-event">участвовать в акции!</button>
+            </div>
 
-    <div class="right-column">
+            <div class="event-right-column">
+                <div class="private-event-date">
+                    <span class="event-date-title">Дата розыгрыша</span>
+                    <span class="event-date-date">12 ноября 2015</span>
+                    <span></span>
+                    <span class="timer">timer</span>
+                </div>
+                <div class="participants-list">
+                    <span class="participants-list-title">список участников <span style="color:#c30f13; font-style:italic">(27)</span></span>
+                    <ul>
+                        <li>Филимонов Андрей</li>
+                        <li>Васильева Марина</li>
+                        <li>Ева Браун</li>
+                        <li>Вильгельм Гиндербург</li>
+                        <li>Иван Иванов</li>
+                        <li>Петр Петров</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
     </div>
 

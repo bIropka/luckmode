@@ -48,6 +48,12 @@ button:hover, input[type="submit"]:hover {
 .clearfix {
     clear: both;
 }
+.vk-icon {background:url("../images/sprite-social-2.png") no-repeat; background-size: cover}
+.od-icon {background:url("../images/sprite-social-2.png") no-repeat 60% 0; background-size: cover}
+.inst-icon {background:url("../images/sprite-social-2.png") no-repeat 100% 0; background-size: cover}
+.fb-icon {background:url("../images/sprite-social-2.png") no-repeat 80% 0; background-size: cover}
+.gg-icon {}
+.tw-icon {background:url("../images/sprite-social-2.png") no-repeat 40% 0; background-size: cover}
 body {
     max-width: 1366px;
     width: 70%;
@@ -613,12 +619,13 @@ header .logo {
 }
 .event-condition {
     text-align: center;
-    width: 100%;
+    width: 95%;
+    margin-left: 2.5%;
     border-collapse: collapse;
 }
 .event-condition caption{
     width: 70%;
-    margin-left: 15%;
+    margin: 5% 0 1% 15%;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.3em;
@@ -628,13 +635,76 @@ header .logo {
     position: absolute;
     top: 15%;
     left: -5%;
-    width: 8%;
+    width: 7%;
     padding-top: 10%;
-    background: url("../images/sprite-event.png") no-repeat 100% 0;
+    background: url("../images/sprite-icons-2.png") no-repeat 35% 0;
     background-size: cover;
 }
-.event-condition tr:first-child {
+.event-condition th {
     background: linear-gradient(to bottom, #cc0000, #990000);
+    border: none;
+    color: white;
+    text-transform: uppercase;
+}
+.event-condition tr th:nth-child(1) {width: 10%;}
+.event-condition tr th:nth-child(2) {width: 25%;}
+.event-condition tr th:nth-child(3) {width: 25%;}
+.event-condition tr th:nth-child(4) {width: 40%;}
+.event-condition td {
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    color: black;
+    font-weight: bold;
+}
+.event-condition .social-icon {
+    display: inline-block;
+    width: 50%;
+    padding-top: 50%;
+    vertical-align: middle;
+}
+.event-condition td span {
+    font-size: 1.1em;
+}
+.event-condition tr td:nth-child(2), .event-condition tr td:nth-child(4) {
+    background: #f4f4f4;
+}
+.join-event {
+    float: right;
+
+}
+.event-right-column {
+    vertical-align: top;
+}
+.private-event-date {
+
+}
+.event-date-icon {
+
+}
+.private-event-date .title, .participants-list .title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+}
+.event-date-date {
+
+}
+.private-event-date .timer {
+
+}
+.participants-list ul {
+    list-style: none;
+ }
+.participants-list .title span {
+    font-family: Lobster, cursive;
+    font-size: 1.2em;
+    color:#c30f13;
+    font-weight: 100;
+}
+.participants-list .social-icon {
+
 }
 /******************** END OF EVENT ***************************
 *************************************************************/

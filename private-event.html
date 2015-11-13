@@ -14,7 +14,6 @@
             $('.window-private-event-wrap').click(function (event) {
                 $target = $(event.target);
                 if (!$target.closest($('.window-private-event')).length) $('.window-private-event-wrap').fadeOut();
-                /*if ($target.hasClass('close-window')) $('.window-private-event-wrap').fadeOut();*/
             });
         });
 
@@ -124,7 +123,7 @@
                     <div class="timer" style="display: inline-block;width: 80%;padding-bottom: 10%;background: lightgray;">timer</div>
                 </div>
                 <div class="participants-list">
-                    <span class="participants-list-title"><div class="participants-list-icon"></div>список участников <span>(27)</span></span>
+                    <div class="participants-list-title"><div class="participants-list-icon"></div>список участников <span>(27)</span></div>
                     <ul>
                         <li><div class="social-icon vk-icon"></div>Филимонов Андрей</li>
                         <li><div class="social-icon od-icon"></div>Васильева Марина</li>

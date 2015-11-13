@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>private event</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico"/>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.join-event').click(function () {
+                $('.window-private-event-wrap').fadeIn();
+            });
+            $('.window-private-event-wrap').click(function (event) {
+                $target = $(event.target);
+                if (!$target.closest($('.window-private-event')).length) $('.window-private-event-wrap').fadeOut();
+            });
+        });
+
+    </script>
+</head>
+<body>
+<header>
+    <div class="header-background"></div>
+    <ul class="header-left-menu">
+        <li><a href="">Рекламодателям</a></li>
+        <li><a href="completed-events.html">Завершенные акции</a></li>
+    </ul>
+
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+
+    <div class="header-right-menu">
+        <div class="account-menu" style="display: none">
+            <a href="">Надежда Сергеевна&ensp;&ensp;&ensp;&ensp;</a>
+            <ul class="sub-menu">
+                <li><a href="">Ваш профиль<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Настройки<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Выйти из системы<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+        <div class="city-menu" style="display: none">
+            <a href="">Самара</a>
+            <ul class="sub-menu">
+                <li><a href="">Харьков<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Новосибирск<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Алма-аты<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+        <ul class="login-register">
+            <li><a href="authorization.html">Вход</a></li>
+            <li><a href="registration.html">Регистрация</a></li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</header>
+
+<main>
+    <div class="private-auction">
+        <span class="small-title">аукцион:</span>
+        <span class="title">Зимняя резина "Bridgestone" - 4 шт.</span>
+        <div class="private-auction-info">
+            <div class="private-auction-image"><img src="images/bid-image.jpg" alt="фото акции"/></div>
+            <div class="private-auction-description">
+                <span class="private-auction-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+            venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+            Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+            consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</span>
+                <div class="private-auction-date">
+                    <span class="private-auction-date-title">Дата проведения:</span>
+                    <span class="private-auction-date-value">12 ноября 2015</span>
+                </div>
+                <div class="private-auction-start-price">
+                    <span class="private-auction-start-price-title">Начальная цена:</span>
+                    <span class="price-value">56 баллов</span>
+                </div>
+            </div>
+        </div>
+        <div class="private-auction-bids">
+            <table class="current-bids">
+                <caption><div class="current-bids-image"></div>ставки:</caption>
+                <tr>
+                    <td><div class="social-cell vk-icon"></div></td>
+                    <td>Филимонов Андрей</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td><div class="social-cell od-icon"></div></td>
+                    <td>Петрова Катя</td>
+                    <td>70</td>
+                </tr>
+                <tr>
+                    <td><div class="social-cell inst-icon"></div></td>
+                    <td>Петров Сева</td>
+                    <td>100</td>
+                </tr>
+                <tr class="biggest-bid">
+                    <td><div class="social-cell fb-icon"></div></td>
+                    <td>Хворостьянов Дмитрий</td>
+                    <td>120</td>
+                </tr>
+            </table>
+        </div>
+        <div class="private-auction-price">
+            <div class="private-auction-price-title"><div class="current-price-image"></div>текущая цена: <span class="price-value">120 баллов</span></div>
+                <div class="user-points"><span>445</span></div>
+                <button class="place-your-bet">сделать ставку</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-controls">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+            <span>Новые акции</span>
+            <ul class="activities">
+                <li><a href="">Еда</a></li>
+                <li><a href="">Развлечения и спорт</a></li>
+                <li><a href="">Красота и уход</a></li>
+                <li><a href="">Медицина</a></li>
+                <li><a href="">Образование</a></li>
+                <li><a href="">Услуги</a></li>
+            </ul>
+            <ul class="social">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+        <div class="odnoklassniki"><img src="images/odnoklassniki.jpg" alt="odnoklassniki"/></div>
+        <div class="vkontakte"><img src="images/vkontakte.jpg" alt="vkontakte"/></div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="footer-bottom">
+        <span>Акции и розыгрыши. <a href="index.html">Luckmode.</a> 2015</span>
+        <span>Создание сайта:<a href=""> A.Goncharov WEB Studio</a></span>
+    </div>
+</footer>
+</body>
+</html>

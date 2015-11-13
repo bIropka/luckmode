@@ -625,7 +625,7 @@ header .logo {
 }
 .event-condition caption{
     width: 70%;
-    margin: 5% 0 1% 15%;
+    margin: 5% 0 2% 15%;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.3em;
@@ -722,7 +722,7 @@ header .logo {
 .participants-list-title span {
     font-family: Lobster, cursive;
     font-size: 1.2em;
-    color:#c30f13;
+    color: #c30f13;
     font-weight: 100;
 }
 .participants-list ul li {
@@ -867,6 +867,159 @@ header .logo {
 }
 /******************** END OF EVENT ***************************
 *************************************************************/
+
+/****************** PRIVATE AUCTION **************************
+*************************************************************/
+.private-auction {
+    width: 100%;
+    padding: 0 1%;
+    text-align: left;
+}
+.private-auction .small-title {
+    font-size:1.5em;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.private-auction .title {
+    width: 70%;
+    margin-left: 1%;
+    margin-bottom: 0;
+}
+.private-auction-info {
+    width: 100%;
+    border: 1px solid #dfdede;
+    padding: 1%;
+}
+.private-auction-image {
+    display: inline-block;
+    width: 49%;
+    background: url("../images/shadow-right.png") no-repeat 100% 50%;
+    background-size: 6% 100%;
+}
+.private-auction-image img {
+    width: 93%;
+}
+.private-auction-description {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+.private-auction-text {
+    display: inline-block;
+    padding: 2% 0 2% 2%;
+    text-align: justify;
+    font-style: italic;
+    color: #909090;
+}
+.private-auction-date, .private-auction-start-price {
+    width: 100%;
+    margin: 5% 0 0 2%;
+}
+.private-auction-date-title, .private-auction-start-price-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.private-auction-date-value, .price-value {
+    display: inline-block;
+    width: 50%;
+    margin-left: 1%;
+    font-size: 1.4em;
+    font-family: Lobster, cursive;
+    color: #c30f13;
+}
+.private-auction-start-price .price-value {
+    margin-left: 2.5%;
+}
+.private-auction-bids, .private-auction-price {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    text-align: center;
+    border: 1px solid black;
+}
+.current-bids {
+    width: 78%;
+    border-collapse: collapse;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+.current-bids caption {
+    text-align: left;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.current-bids-image {
+    display: inline-block;
+    width: 9%;
+    padding-top: 10%;
+    vertical-align: middle;
+    margin-left: -10%;
+    margin-right: 4%;
+    background: url("../images/sprite-icons-2.png") 83% 0;
+    background-size: cover;
+}
+.current-bids tr td:nth-child(1) {width: 15%;}
+.current-bids tr td:nth-child(2) {width: 75%;padding-left: 10%;}
+.current-bids tr td:nth-child(3) {width: 10%;}
+.current-bids td .social-cell {
+    width: 50%;
+    padding-top: 50%;
+    margin-left: 20%;
+}
+.current-bids td {
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+}
+.current-bids .biggest-bid {
+    background-color: #dcdcdc;
+}
+.private-auction-price-title {
+    width: 100%;
+    margin-top: 2%;
+    text-align: left;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-left: 10%;
+}
+.private-auction-price-title .price-value {
+    text-transform: lowercase;
+    margin-left: 3%;
+    font-weight: 100;
+    font-size: 1.2em;
+}
+.current-price-image {
+    display: inline-block;
+    width: 10%;
+    padding-top: 7%;
+    vertical-align: middle;
+    margin-left: -8%;
+    margin-right: 5%;
+    background: url("../images/sprite-icons-2.png") 100% 0;
+    background-size: cover;
+}
+.user-points {
+    display: inline-block;
+    width: 20%;
+    padding-top: 20%;
+    position: relative;
+    border: 1px solid black;
+}
+.user-points span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+}
+.place-your-bet {
+
+}
+/************* END OF PRIVATE AUCTION ***********************
+************************************************************/
 
 /******************** AUTHORIZATION ***************************
 *************************************************************/

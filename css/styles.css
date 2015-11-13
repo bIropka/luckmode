@@ -52,7 +52,7 @@ button:hover, input[type="submit"]:hover {
 .od-icon {background:url("../images/sprite-social-2.png") no-repeat 60% 0; background-size: cover}
 .inst-icon {background:url("../images/sprite-social-2.png") no-repeat 100% 0; background-size: cover}
 .fb-icon {background:url("../images/sprite-social-2.png") no-repeat 80% 0; background-size: cover}
-.gg-icon {}
+.gg-icon {background:url("../images/sprite-social-2.png") no-repeat 20% 0; background-size: cover}
 .tw-icon {background:url("../images/sprite-social-2.png") no-repeat 40% 0; background-size: cover}
 body {
     max-width: 1366px;
@@ -574,10 +574,10 @@ header .logo {
     position: absolute;
     left: 2%;
     top: 15%;
-    width: 8%;
+    width: 7%;
     padding-top: 5%;
-    background: url("../images/logo-404.png") no-repeat;
-    background-size: contain;
+    background: url("../images/sprite-icons-2.png") no-repeat 51% 0;
+    background-size: cover;
 }
 /****************** END OF PAGE 404 *************************
 *************************************************************/
@@ -709,9 +709,272 @@ header .logo {
 /******************** END OF EVENT ***************************
 *************************************************************/
 
+/******************** AUTHORIZATION ***************************
+*************************************************************/
+.authorization-block {
+    width: 100%;
+    text-align: left;
+    background: linear-gradient(to right, #edecec 45%, #cecece 50%, #edecec 55%);
+    padding: 3% 0 3%;
+    margin-bottom: 7%;
+}
+.for-participants {
+    display: inline-block;
+    width: 49%;
+    position: relative;
+}
+.for-participants span {
+    display: inline-block;
+    width: 50%;
+    margin-left: 15%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.autho-title {
+    display: inline-block;
+    width: 50%;
+    margin-left: 15%;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 4%;
+    position: relative;
+}
+.for-participants .for-participants-icon, .for-advertisers-icon {
+    position: absolute;
+    left: -35%;
+    top: -40%;
+    width: 16%;
+    padding-top: 17%;
+    background: url("../images/sprite-icons-2.png") no-repeat 85% 0;
+    background-size: cover;
+}
+.social-autho {
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    margin-top: 2%;
+}
+.social-autho li {
+    display: inline-block;
+    width: 8%;
+    margin-left: 1%;
+    vertical-align: middle;
+}
+.social-autho li:first-child {
+    margin-left: 15%;
+}
+.social-autho a {
+    display: inline-block;
+    width: 100%;
+    padding-top: 100%;
+}
+.social-autho li:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.for-advertisers {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    position: relative;
+}
+.for-advertisers .autho-title {
+    margin-left: 20%;
+}
+.for-advertisers-icon {
+    left: -22%;
+    background-position: 100% 50%;
+}
+.autho-email, .autho-password {
+    display: inline-block;
+    margin-left: 20%;
+    margin-bottom: 4%;
+    width: 70%;
+    border: 1px solid #c4c2c2;
+    padding: 1% 2%;
+}
+.autho-email::-webkit-input-placeholder, .autho-password::-webkit-input-placeholder {text-overflow:ellipsis; color: #666666;}
+.autho-email::-moz-placeholder, .autho-password::-moz-placeholder {text-overflow:ellipsis; color:#666666;}
+.autho-email:-moz-placeholder, .autho-password:-moz-placeholder {text-overflow:ellipsis; color:#666666;}
+.autho-email:-ms-input-placeholder, .autho-password:-ms-input-placeholder {text-overflow:ellipsis; color:#666666;}
+.autho-email:focus::-webkit-input-placeholder {color: transparent}
+.autho-email:focus::-moz-placeholder {color: transparent}
+.autho-email:focus:-moz-placeholder {color: transparent}
+.autho-email:focus:-ms-input-placeholder {color: transparent}
+.autho-password:focus::-webkit-input-placeholder {color: transparent}
+.autho-password:focus::-moz-placeholder {color: transparent}
+.autho-password:focus:-moz-placeholder {color: transparent}
+.autho-password:focus:-ms-input-placeholder {color: transparent}
 
-/************************** ADMIN-PANEL *******************************
-***********************************************************************/
+.for-advertisers .autho-submit {
+    padding: 0.5% 7%;
+    margin-left: 20%;
+    font-size: 1em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.for-advertisers-registration {
+    display: inline-block;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 10%;
+    float: right;
+}
+
+@media (max-width: 1366px) {
+    .autho-title {
+        font-size: 1.1em;
+    }
+    .for-advertisers .autho-submit {
+        padding: 0.4% 5%;
+        font-size: 0.9em;
+    }
+    .for-advertisers-registration {
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 560px) {
+    .autho-title {
+        font-size: 0.8em;
+    }
+    .for-advertisers .autho-submit {
+        padding: 0.4% 5%;
+        font-size: 0.7em;
+    }
+    .for-advertisers-registration {
+        font-size: 0.6em;
+        margin-top: 3%
+    }
+}
+@media (max-width: 380px) {
+    .autho-title {
+        font-size: 0.7em;
+    }
+}
+/******************** END OF AUTHORIZATION********************
+*************************************************************/
+
+/******************** REGISTRATION ***************************
+*************************************************************/
+.registration-block {
+    width: 100%;
+    text-align: left;
+    background: linear-gradient(to right, #edecec 45%, #cecece 49.9%, white 50%, #cecece 50.1%, #edecec 55%);
+    padding: 3% 0 3%;
+    margin-bottom: 7%;
+}
+.account-activation {
+    display: inline-block;
+    width: 49%;
+    position: relative;
+}
+.account-activation>span {
+    display: inline-block;
+    width: 80%;
+    margin-left: 15%;
+}
+.registr-title {
+    display: inline-block;
+    width: 80%;
+    margin-left: 20%;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+.registr-title-icon {
+    float: left;
+    width: 8%;
+    padding-top: 8%;
+    margin: -2.5% 0 0 -10%;
+    background: url("../images/sprite-icons-2.png") no-repeat 71% 0;
+    background-size: cover;
+}
+
+.fill-profile {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    position: relative;
+}
+.profile-first-name, .profile-last-name, .profile-city {
+    display: inline-block;
+    margin-left: 20%;
+    margin-bottom: 4%;
+    width: 70%;
+    border: 1px solid #c4c2c2;
+    padding: 1% 2%;
+}
+.profile-first-name::-webkit-input-placeholder, .profile-last-name::-webkit-input-placeholder {text-overflow:ellipsis; color: #666666;}
+.profile-first-name::-moz-placeholder, .profile-last-name::-moz-placeholder {text-overflow:ellipsis; color:#666666;}
+.profile-first-name:-moz-placeholder, .profile-last-name:-moz-placeholder {text-overflow:ellipsis; color:#666666;}
+.profile-first-name:-ms-input-placeholder, .profile-last-name:-ms-input-placeholder {text-overflow:ellipsis; color:#666666;}
+.profile-first-name:focus::-webkit-input-placeholder {color: transparent}
+.profile-first-name:focus::-moz-placeholder {color: transparent}
+.profile-first-name:focus:-moz-placeholder {color: transparent}
+.profile-first-name:focus:-ms-input-placeholder {color: transparent}
+.profile-last-name:focus::-webkit-input-placeholder {color: transparent}
+.profile-last-name:focus::-moz-placeholder {color: transparent}
+.profile-last-name:focus:-moz-placeholder {color: transparent}
+.profile-last-name:focus:-ms-input-placeholder {color: transparent}
+
+.profile-city {
+    background: white;
+    color: #acacac;
+    text-overflow: ellipsis;
+}
+.profile-city a {
+    float: right;
+    color: inherit;
+    text-decoration: none;
+}
+.fill-profile .profile-submit {
+    padding: 0.5% 7%;
+    margin-left: 20%;
+    font-size: 1em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 1366px) {
+    .registr-title {
+        font-size: 1.1em;
+    }
+    .fill-profile .profile-submit {
+        padding: 0.4% 5%;
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 560px) {
+    .registr-title {
+        font-size: 0.8em;
+    }
+    .fill-profile .profile-submit {
+        padding: 0.4% 5%;
+        font-size: 0.7em;
+    }
+    .account-activation>span {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 380px) {
+    .registr-title {
+        font-size: 0.7em;
+    }
+}
+/******************** END OF REGISTRATION********************
+*************************************************************/
+
+
+/******************** ADMIN-PANEL ***************************
+*************************************************************/
 
 /***************** MENU ******************
 *****************************************/
@@ -947,6 +1210,7 @@ header .logo {
     top: 0;
     background: rgba(0,0,0,0.5);
     display: none;
+    text-align: left;
 }
 .form-bid{
     position: absolute;
@@ -975,64 +1239,74 @@ header .logo {
  }
 .choice-vkontakte, .choice-facebook, .choice-odnoklassniki, .choice-twitter, .choice-instagram {
     display: inline-block;
-    width: 45%;
-    padding-left: 5%;
+    width: 50%;
     margin-bottom: 2%;
 }
-.choice-vkontakte {
-    float: left;
-    background: url("../images/sprite-social-2.png") no-repeat 0 15.5%;
-    background-size: 160%;
+.choose-social .social-icon {
+    display: inline-block;
+    width: 8%;
+    padding-top: 8%;
+    vertical-align: bottom;
 }
-.choice-facebook {
+.choice-vkontakte, .choice-odnoklassniki {
+    float: left;
+}
+.choice-facebook, .choice-twitter {
     float: right;
-    background: url("../images/sprite-social-2.png") no-repeat 0 81%;
-    background-size: 160%;
 }
-.choice-odnoklassniki {
-    float: left;
-    background: url("../images/sprite-social-2.png") no-repeat 0 35%;
-    background-size: 160%;
-}
-.choice-twitter {
-    float: right;
-    background: url("../images/sprite-social-2.png") no-repeat 0 58.5%;
-    background-size: 160%;
-}
-.choice-instagram {
-    float: left;
-    background: url("../images/sprite-social-2.png") no-repeat 0 100.1%;
-    background-size: 160%;
-}
-.bid-checkbox input {
+.choose-social input {
     display: none;
+}
+.like, .repost, .subscribe {
+    display: inline-block;
+    padding: 2% 0;
+    width: 17%;
+    margin-left: 3%;
+}
+.repost {
+    width: 20%;
+}
+.subscribe {
+    width: 28%;
+    margin-left: 3%;
 }
 .bid-checkbox {
     display: inline-block;
+    width: 37%;
+    padding-top: 30%;
+    vertical-align: middle;
     margin-left: 5%;
-    padding: 4% 0 2%;
+    background: url("../images/sprite-icons.png") 50% 0;
+    background-size: cover;
 }
-.like {
-    width: 20%;
-    background: url("../images/sprite-social-2.png") no-repeat 101.2% 99.7%;
-    background-size: 800%;
-}
-.repost {
-    width: 25%;
-    background: url("../images/sprite-social-2.png") no-repeat 101.3% 99.7%;
-    background-size: 650%;
+.repost .bid-checkbox {width: 31%; padding-top: 25%;}
+.subscribe .bid-checkbox {width: 22%; padding-top: 17.5%;}
+.choice-twitter .repost {margin-left: 24%;}
+.active-bid-checkbox {background-position: 100% 0;}
+/*.like, .repost, .subscribe {
+    display: inline-block;
+    padding: 2% 0;
+    width: 17%;
+    margin-left: 4%;
+    border: 1px solid black;
 }
 .subscribe {
-    width: 35%;
-    background: url("../images/sprite-social-2.png") no-repeat 101.2% 100%;
-    background-size: 440%;
+    width: 28%;
+    margin-left: 5%;
 }
-.choice-twitter .repost {
-    margin-left: 31%;
+.bid-checkbox {
+    display: inline-block;
+    width: 25%;
+    padding-top: 25%;
+    vertical-align: middle;
+    margin-left: 5%;
+    background: url("../images/sprite-icons-2.png");
+
+    border: 1px solid black;
 }
-.active-bid-checkbox {
-    background-position: 100% 75%;
-}
+.subscribe .bid-checkbox {width: 15%; padding-top: 15%;}
+.choice-twitter .repost {margin-left: 26%;}
+.active-bid-checkbox {background-position: 100% 75%;}*/
 .choice-place {
     display: inline-block;
     width: 30%;
@@ -1264,8 +1538,8 @@ header .logo {
 .search-field {
     width: 40%;
     float: right;
-    background: url("../images/sprite-icons.png") no-repeat 155% 50%;
-    background-size: 40%;
+    background: url("../images/sprite-icons.png") no-repeat 116% 50%;
+    background-size: 20%;
 }
 .search-field-description::-webkit-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
 .search-field::-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
@@ -1287,16 +1561,23 @@ header .logo {
 .participants {
     width: 100%;
 }
-.participants th:nth-child(1) {width: 7%;}
-.participants th:nth-child(2) {width: 15%;}
-.participants th:nth-child(3) {width: 9%;}
-.participants th:nth-child(4) {width: 15%;}
-.participants th:nth-child(5) {width: 4%;}
-.participants th:nth-child(6) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat -10% -0.5%;background-size: 500%;}
-.participants th:nth-child(7) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat 20% -0.5%; background-size: 500%;}
-.participants th:nth-child(8) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat 50% -0.5%; background-size: 500%;}
-.participants th:nth-child(9) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat 79% -0.5%; background-size: 500%;}
-.participants th:nth-child(10) {width: 10%;background: #ebeaea url("../images/sprite-social-2.png") no-repeat 109% -0.5%; background-size: 500%;}
+.participants th {background-color: #ebeaea;}
+.participants th:nth-child(1) {width: 7%;padding: 0.7% 0;}
+.participants th:nth-child(2) {width: 15%;padding: 0.7% 0;}
+.participants th:nth-child(3) {width: 9%;padding: 0.7% 0;}
+.participants th:nth-child(4) {width: 15%;padding: 0.7% 0;}
+.participants th:nth-child(5) {width: 4%;padding: 0.7% 0;}
+.participants th:nth-child(6) {width: 10%;}
+.participants th:nth-child(7) {width: 10%;}
+.participants th:nth-child(8) {width: 10%;}
+.participants th:nth-child(9) {width: 10%;}
+.participants th:nth-child(10) {width: 10%;}
+.participants .social-icon {
+    display: inline-block;
+    width: 25%;
+    padding-top: 25%;
+    vertical-align: middle;
+}
 /************** all tables *************/
 .advertisers, .participants {
     border-collapse: collapse;
@@ -1304,7 +1585,6 @@ header .logo {
 }
 th, td {
     border: 2px solid #cccccc;
-    padding: 0.7% 0;
     text-align: center;
 }
 th {
@@ -1313,6 +1593,7 @@ th {
 }
 td {
     color: #707070;
+    padding: 0.7% 0;
 }
 .users-activity input {
     display: none;

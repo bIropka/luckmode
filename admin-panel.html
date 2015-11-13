@@ -85,12 +85,12 @@
                 if ($target.hasClass('close-window')) $('.window-bid').fadeOut();
             });
 
-            $('.bid-checkbox').bind('change', BidCSocialEvent);
+            $('.choose-social label').bind('change', BidCSocialEvent);
             function BidCSocialEvent() {
                 if ($(this).find('input').prop("checked")){
-                    $(this).addClass('active-bid-checkbox');
+                    $(this).find('bid-checkbox').addClass('active-bid-checkbox');
                 } else {
-                    $(this).removeClass('active-bid-checkbox');
+                    $(this).find('bid-checkbox').removeClass('active-bid-checkbox');
                 }
             }
 
@@ -199,35 +199,36 @@
             <span class="choose-social-title">Выбор социальной сети:</span>
             <div class="choose-social">
                 <div class="choice-vkontakte">
-                    <div class="social-logo"></div>
-                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
-                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox">Подписаться<input type="checkbox"/></label>
+                    <div class="social-icon vk-icon"></div>
+                    <label class="like">Лайк<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox" checked/></label>
+                    <label class="repost">Репост<span class="bid-checkbox"></span><input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<span class="bid-checkbox"></span><input type="checkbox"/></label>
                 </div>
                 <div class="choice-facebook">
-                    <div class="social-logo"></div>
-                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
-                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
+                    <div class="social-icon fb-icon"></div>
+                    <label class="like">Лайк<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox" checked/></label>
+                    <label class="repost">Репост<span class="bid-checkbox"></span><input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox"/></label>
                 </div>
                 <div class="choice-odnoklassniki">
-                    <div class="social-logo"></div>
-                    <label class="like bid-checkbox active-bid-checkbox">Лайк<input type="checkbox" checked/></label>
-                    <label class="repost bid-checkbox active-bid-checkbox">Репост<input type="checkbox" checked/></label>
-                    <label class="subscribe bid-checkbox">Подписаться<input type="checkbox"/></label>
+                    <div class="social-icon od-icon"></div>
+                    <label class="like">Лайк<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox" checked/></label>
+                    <label class="repost">Репост<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<span class="bid-checkbox"></span><input type="checkbox"/></label>
                 </div>
                 <div class="choice-twitter">
-                    <div class="social-logo"></div>
-                    <label class="repost bid-checkbox active-bid-checkbox">Репост<input type="checkbox" checked/></label>
-                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
-                </div>
-                <div class="choice-instagram">
-                    <div class="social-logo"></div>
-                    <label class="like bid-checkbox">Лайк<input type="checkbox"/></label>
-                    <label class="repost bid-checkbox">Репост<input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<input type="checkbox" checked/></label>
+                    <div class="social-icon tw-icon"></div>
+                    <label class="repost">Репост<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox"/></label>
                 </div>
                 <div class="clearfix"></div>
+                <div class="choice-instagram">
+                    <div class="social-icon inst-icon"></div>
+                    <label class="like">Лайк<span class="bid-checkbox"></span><input type="checkbox" checked/></label>
+                    <label class="repost">Репост<span class="bid-checkbox"></span><input type="checkbox"/></label>
+                    <label class="subscribe">Подписаться<span class="bid-checkbox active-bid-checkbox"></span><input type="checkbox"/></label>
+                </div>
+
             </div>
 
             <span class="choose-place-title">Выбор места вашей акции:</span>
@@ -347,11 +348,11 @@
                 <th>Город</th>
                 <th>E-mail</th>
                 <th>Пол</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th><div class="social-icon vk-icon"></div></th>
+                <th><div class="social-icon od-icon"></div></th>
+                <th><div class="social-icon tw-icon"></div></th>
+                <th><div class="social-icon fb-icon"></div></th>
+                <th><div class="social-icon inst-icon"></div></th>
             </tr>
             <tr>
                 <td><label class="users-activity"><input type="checkbox" checked/></label></td>

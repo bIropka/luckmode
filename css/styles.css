@@ -601,10 +601,10 @@ header .logo {
 .private-event-image, .private-event-text, .event-left-column, .event-right-column {
     display: table-cell;
     width: 50%;
-    border: 1px solid black;
 }
 .private-event-image {
     background: url("../images/shadow-right.png") no-repeat 100% 50%;
+    background-size: 6% 100%;
     text-align: left;
 }
 .private-event-image img {
@@ -670,41 +670,200 @@ header .logo {
 }
 .join-event {
     float: right;
-
+    margin-top: 10%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 .event-right-column {
     vertical-align: top;
+    text-align: left;
+    padding-left: 15%;
 }
-.private-event-date {
-
+.private-event-date, .participants-list {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5%;
 }
-.event-date-icon {
-
+.event-date-icon, .participants-list-icon {
+    display: inline-block;
+    width: 11%;
+    padding-top: 10%;
+    vertical-align: middle;
+    margin-left: -17%;
+    margin-right: 5%;
+    background: url("../images/sprite-icons-2.png");
+    background-size: cover;
 }
-.private-event-date .title, .participants-list .title {
+.participants-list-icon {
+    background: url("../images/sprite-icons-2.png") 20% 0;
+    background-size: cover;
+}
+.private-event-date-title, .participants-list-title {
     font-family: "Open Sans", sans-serif;
     font-size: 1.3em;
     text-transform: uppercase;
     color: black;
     font-weight: bold;
+    width: 100%;
+    margin: 0;
 }
 .event-date-date {
-
+    font-size: 1.1em;
+    margin-bottom: 5%;
 }
-.private-event-date .timer {
-
+.private-event-date span {
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .participants-list ul {
     list-style: none;
  }
-.participants-list .title span {
+.participants-list-title span {
     font-family: Lobster, cursive;
     font-size: 1.2em;
     color:#c30f13;
     font-weight: 100;
 }
+.participants-list ul li {
+    display: inline-block;
+    width: 60%;
+}
 .participants-list .social-icon {
-
+    display: inline-block;
+    width: 6%;
+    padding-top: 6%;
+    vertical-align: middle;
+    margin-right: 5%;
+}
+.event-right-column .show-all {
+    float: right;
+    color: #1f89b0;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-right: 20%;
+}
+/*************** window private event **************/
+.window-private-event-wrap{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    overflow: auto;
+}
+.window-private-event{
+    position: absolute;
+    width: 550px;
+    height: 780px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    border: 2px solid #cc0000;
+    outline: 10px solid white;
+}
+.window-private-event .title {
+    margin: 0;
+    font-size: 1.7em;
+}
+.window-private-event ul {
+    list-style: none;
+    width: 100%;
+}
+.window-private-event span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+.event-window-title {
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 0.5% 0 0;
+}
+.window-private-event>.event-window-title {
+    margin: 2% 0 1%;
+}
+.make0like .event-window-title {margin: 0;}
+.window-private-event-wrap .window-private-event .social-cell {
+    display: inline-block;
+    width: 5%;
+    padding-top: 5%;
+    vertical-align: middle;
+    margin-right: 5%;
+    margin-bottom: 1%;
+}
+.window-private-event-wrap .window-private-event .social-cell a {
+    display: inline-block;
+    width: 100%;
+    padding-top: 100%;
+}
+.window-private-event .social-link {
+    display: inline-block;
+    color: #767676;
+    margin-right: 5%;
+    font-size: 0.9em;
+}
+.join-group, .make-repost {
+    background-color: #ecebeb;
+    margin-top: 2%;
+    padding-bottom: 1%;
+}
+.window-private-event p {
+    display: inline-block;
+    width: 80%;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+.window-footer {
+    display: inline-block;
+    width: 100%;
+}
+.window-footer div, .window-footer ul {
+    display: inline-block;
+    width: 29%;
+    font-size: 0.8em;
+}
+.window-footer .window-footer-left {
+    width: 27%;
+}
+.window-footer .window-footer-right {
+    width: 38%;
+}
+.window-footer ul {
+    margin: 3% 0 1% 2%;
+}
+.window-footer li {
+    display: inline-block;
+    width: 18%;
+    vertical-align: middle;
+}
+.window-footer li a {
+    display: inline-block;
+    width: 100%;
+    padding-top: 100%;
+}
+/************ end of window private event **********/
+@media (max-width: 1366px) {
+    .event-condition caption {
+        font-size: 1em;
+    }
+}
+@media (max-width: 800px) {
+    .window-private-event{
+        width: 450px;
+        height: 650px;
+    }
+}
+@media (max-width: 640px) {
+    .window-private-event{
+        width: 330px;
+        height: 480px;
+    }
 }
 /******************** END OF EVENT ***************************
 *************************************************************/

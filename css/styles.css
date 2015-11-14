@@ -1400,6 +1400,78 @@ header .logo {
 /******************** END OF REGISTRATION********************
 *************************************************************/
 
+/****************** FOR-ADVERTISERS *************************
+*************************************************************/
+.block-for-advertisers, .block-how-it-work, .block-calculator,
+.block-our-advantages, .block-our-achievements, .block-reviews {
+    width: 100%;
+}
+.block-for-advertisers .title, .block-how-it-work .title, .block-calculator .title,
+  .block-our-advantages .title, .block-our-achievements .title, .block-reviews .title {
+    display: inline-block;
+    width: 100%;
+    font-size: 3.5em;
+}
+.block-for-advertisers {
+    background: url("../images/advert-background-1.jpg");
+    background-size: cover;
+}
+.block-for-advertisers .description {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.add-bid {
+    font-weight: bold;
+    margin: 5% 0 3%;
+}
+.block-how-it-work ul {
+    list-style: none;
+    display: table;
+    width: 80%;
+    margin: 0 auto;
+}
+.block-how-it-work ul li {
+    display: table-row;
+}
+.step-icon {
+    display: table-cell;
+    width: 20%;
+    padding-top: 20%;
+    border: 1px solid black;
+}
+.step-graphic-line {
+    display: table-cell;
+    position: relative;
+    width: 0.5%;
+    background-color: #c40f13;
+}
+.step-graphic-circle {
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    width: 34px;
+    height: 34px;
+    border: 8px solid #c40f13;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: white;
+}
+.step-text {
+    display: table-cell;
+    width: 79.5%;
+    border: 1px solid black;
+}
+.main-text {
+
+}
+.secondary-text {
+
+}
+/*************** END OF FOR-ADVERTISERS *********************
+*************************************************************/
 
 /******************** ADMIN-PANEL ***************************
 *************************************************************/
@@ -2004,16 +2076,16 @@ td {
 }
 .users-activity {
     display: block;
-    width: 50%;
+    width: 60%;
     padding-top: 50%;
     cursor: pointer;
     margin: 0 auto;
-    background: url("../images/sprite-icons.png") no-repeat center;
-    background-size: 500%;
+    background: url("../images/sprite-icons.png") center;
+    background-size: cover;
 }
 .not-active-user {
-    background: url("../images/sprite-icons.png") no-repeat 105% 50%;
-    background-size: 500%;
+    background: url("../images/sprite-icons.png") 100% 0;
+    background-size: cover;
 }
 .advertisers tr td:nth-child(2) input, .advertisers tr td:nth-child(3) input,
 .advertisers tr td:nth-child(4) input, .participants tr td:nth-child(2) input,

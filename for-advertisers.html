@@ -1,10 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Auctions</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+
+    </script>
 </head>
 <body>
+<header>
+    <div class="header-background"></div>
+    <ul class="header-left-menu">
+        <li><a href="">Рекламодателям</a></li>
+        <li><a href="completed-events.html">Завершенные акции</a></li>
+    </ul>
 
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+
+    <div class="header-right-menu">
+        <div class="account-menu" style="display: none">
+            <a href="">Надежда Сергеевна&ensp;&ensp;&ensp;&ensp;</a>
+            <ul class="sub-menu">
+                <li><a href="">Ваш профиль<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Настройки<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Выйти из системы<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+        <ul class="login-register">
+            <li><a href="authorization.html">Вход</a></li>
+            <li><a href="registration.html">Регистрация</a></li>
+        </ul>
+        <div class="city-menu" style="margin-top: 0">
+            <a href="">Самара</a>
+            <ul class="sub-menu">
+                <li><a href="">Харьков<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Новосибирск<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Алма-аты<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</header>
+
+<main>
+
+    <div class="block-for-advertisers">
+        <span class="title">Проводите розыгрыши в соц. сетях<br> проще и эффективнее</span>
+        <span class="description">Luckmode избавляет от проблем при проведении розыгрышей,<br> чтобы помочь сосредоточиться на главном</span>
+        <button class="add-bid">подать заявку</button>
+    </div>
+
+    <div class="block-how-it-work">
+        <span class="title">Как это работает</span>
+        <ul>
+            <li>
+                <div class="step-icon"></div>
+                <div class="step-graphic-line"><div class="step-graphic-circle"></div></div>
+                <div class="step-text">
+                    <span class="main-text">Создайте конкурс, указав условия</span>
+                    <span class="secondary-text"># хештег, подписка на почту пользователя и др.</span>
+                </div>
+            </li>
+            <li>
+                <div class="step-icon"></div>
+                <div class="step-graphic-line">
+                    <div class="step-graphic-circle"></div>
+                </div>
+                <div class="step-text">
+                    <span class="main-text">конкурс будет опубликован в соц.сетях</span>
+                    <span class="secondary-text">Это привлечёт внимание возможных участников</span>
+                </div>
+            </li>
+            <li>
+                <div class="step-icon"></div>
+                <div class="step-graphic-line">
+                    <div class="step-graphic-circle"></div>
+                </div>
+                <div class="step-text">
+                    <span class="main-text">Участники публикуют свои предложения</span>
+                    <span class="secondary-text">Учитываются указанные условия</span>
+                </div>
+            </li>
+            <li>
+                <div class="step-icon"></div>
+                <div class="step-graphic-line">
+                    <div class="step-graphic-circle"></div>
+                </div>
+                <div class="step-text">
+                    <span class="main-text">Предложения появляются на нашем сайте</span>
+                    <span class="secondary-text">Возможна модерация при нарушении условий</span>
+                </div>
+            </li>
+            <li>
+                <div class="step-icon"></div>
+                <div class="step-graphic-line">
+                    <div class="step-graphic-circle"></div>
+                </div>
+                <div class="step-text">
+                    <span class="main-text">сайт выбирает победителя</span>
+                    <span class="secondary-text">генератором чисел, по количеству лайков или вручную организатором</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="block-calculator">
+        <form action="" class="form-calculator">
+            <span class="choose-social-title">Выбор социальной сети:</span>
+            <div class="choose-social">
+                <div class="choice-vkontakte">
+                    <div class="social-icon vk-icon"></div>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                </div>
+                <div class="choice-facebook">
+                    <div class="social-icon fb-icon"></div>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                </div>
+                <div class="choice-odnoklassniki">
+                    <div class="social-icon od-icon"></div>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                </div>
+                <div class="choice-twitter">
+                    <div class="social-icon tw-icon"></div>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                </div>
+                <div class="clearfix"></div>
+                <div class="choice-instagram">
+                    <div class="social-icon inst-icon"></div>
+                    <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                </div>
+
+            </div>
+
+            <span class="choose-place-title">Выбор места вашей акции:</span>
+            <div class="choose-place">
+                <label class="choice-place choice-first-three chosen-place">
+                    <span class="usual-text">Закрепить Вашу акцию на</span>
+                    <span class="big-text">первой тройке</span>
+                    <input type="checkbox" checked/>
+                    <span class="choice-place-background"></span>
+                </label>
+                <label class="choice-place choice-first-nine">
+                    <span class="usual-text">Закрепить Вашу акцию на</span>
+                    <span class="big-text">первой девятке</span>
+                    <input type="checkbox"/>
+                    <span class="choice-place-background"></span>
+                </label>
+                <label class="choice-place choice-usual">
+                    <span class="big-text">Простое размещение</span>
+                    <span class="usual-text">Вашей акции</span>
+                    <input type="checkbox"/>
+                    <span class="choice-place-background"></span>
+                </label>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="choose-region">
+                <span class="choose-region-title">Выбор региона:</span>
+                <div class="select-region">Вся Россия</div>
+            </div>
+
+            <div class="calculate-cost">
+                <span class="calculate-cost-title">Рассчитать стоимость:</span>
+                <span class="days-number">Количество дней:<span class="value">17</span></span>
+                <span class="audience-coverage">Вирусный охват аудитории:<span class="value">85000</span></span>
+                <span class="final-cost">стоимость заказа:<span class="value">2550</span></span>
+            </div>
+
+            <input type="text"/>
+            <input type="email"/>
+            <input type="submit" class="form-calculator-submit" value="Зарегистрироваться"/>
+        </form>
+    </div>
+
+    <div class="block-our-advantages">
+        <span class="title">Наши преимущества</span>
+        <div class="advantages-image"></div>
+        <ul>
+            <li>повышение индексации сайта по Вашему ключевому запросу</li>
+            <li>новые подписчики для вашего сообщества</li>
+            <li>реальные рекомендации из социальных сетей</li>
+        </ul>
+    </div>
+
+    <div class="block-our-achievements">
+        <span class="title">Наши достижения</span>
+        <ul>
+            <li><span class="achievement"><span class="value">3</span>года успешной работы</span></li>
+            <li><span class="achievement">сэкономлено до<span class="value">70%</span>рекламных бюджетов клиентов</span></li>
+            <li><span class="achievement">проведено более<span class="value">3500</span>рекламных акций</span></li>
+            <li><span class="achievement">собрано более<span class="value">5млн.</span>лайков</span></li>
+            <li><span class="achievement"><span class="value">73%</span>клиентов остаются с нами</span></li>
+        </ul>
+    </div>
+
+    <div class="block-reviews">
+        <span class="title">Отзывы клиентов</span>
+        <ul>
+            <li class="review">
+                <div class="review-image"><img src="" alt="логотип заказчика"/></div>
+                <div class="review-body">
+                    <span class="review-name">Чернова Валентина, </span>
+                    <span class="review-city">Москва</span>
+                    <span class="review-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                        Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget
+                        , arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+                        pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                        Aenean vulputate eleifend tellus.</span>
+                </div>
+            </li>
+            <li class="review">
+                <div class="review-image"><img src="" alt="логотип заказчика"/></div>
+                <div class="review-body">
+                    <span class="review-name">Александр, </span>
+                    <span class="review-city">Самара</span>
+                    <span class="review-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                        Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget
+                        , arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+                        pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                        Aenean vulputate eleifend tellus.</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</main>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-controls">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+            <span>Новые акции</span>
+            <ul class="activities">
+                <li><a href="">Еда</a></li>
+                <li><a href="">Развлечения и спорт</a></li>
+                <li><a href="">Красота и уход</a></li>
+                <li><a href="">Медицина</a></li>
+                <li><a href="">Образование</a></li>
+                <li><a href="">Услуги</a></li>
+            </ul>
+            <ul class="social">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+        <div class="odnoklassniki"><img src="images/odnoklassniki.jpg" alt="odnoklassniki"/></div>
+        <div class="vkontakte"><img src="images/vkontakte.jpg" alt="vkontakte"/></div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="footer-bottom">
+        <span>Акции и розыгрыши. <a href="index.html">Luckmode.</a> 2015</span>
+        <span>Создание сайта:<a href=""> A.Goncharov WEB Studio</a></span>
+    </div>
+</footer>
 </body>
 </html>

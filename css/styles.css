@@ -935,7 +935,6 @@ header .logo {
     width: 49%;
     vertical-align: top;
     text-align: center;
-    border: 1px solid black;
 }
 .current-bids {
     width: 78%;
@@ -945,7 +944,7 @@ header .logo {
 }
 .current-bids caption {
     text-align: left;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -977,20 +976,26 @@ header .logo {
 .current-bids .biggest-bid {
     background-color: #dcdcdc;
 }
+.private-auction-price {
+    text-align: center;
+}
 .private-auction-price-title {
     width: 100%;
     margin-top: 2%;
-    text-align: left;
-    font-size: 1.7em;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
     padding-left: 10%;
 }
 .private-auction-price-title .price-value {
+    display: inline-block;
+    width: 30%;
     text-transform: lowercase;
     margin-left: 3%;
     font-weight: 100;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 .current-price-image {
     display: inline-block;
@@ -1003,20 +1008,131 @@ header .logo {
     background-size: cover;
 }
 .user-points {
-    display: inline-block;
-    width: 20%;
+    width: 30%;
     padding-top: 20%;
     position: relative;
-    border: 1px solid black;
+    margin: 0 auto;
+    background: url("../images/points-image.png");
+    background-size: cover;
 }
 .user-points span {
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
+    top: 32%;
+    font-size: 2em;
+    color: #d6d6d6;
+    font-weight: bold;
 }
 .place-your-bet {
+    margin-top: 10%;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    padding: 1% 2%;
+}
+/************ modal window **************/
+.window-bet-wrap{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    overflow: auto;
+}
+.window-bet{
+    position: absolute;
+    width: 380px;
+    height: 220px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    border: 2px solid #cc0000;
+    outline: 10px solid white;
+}
+.window-bet .title {
+    font-size: 2em;
+}
+.window-bet form {
+    text-align: left;
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 10%;
+    float: left;
+}
+.window-bet .small-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.window-bet input[type="text"] {
+    width: 70%;
+    border: 1px solid #dfdede;
+    margin: 5% 0 10%;
+    font-size: 1.3em;
+}
+.window-bet input[type="submit"] {
+    padding: 3px 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 8px;
+}
+.window-bet .user-points {
+    width: 40%;
+    padding-top: 30%;
+    float: right;
+    margin-top: 8%;
+    margin-right: 8%;
+}
+.window-bet .user-points span{
+    font-size: 1.5em;
+}
 
+/****************************************/
+@media (max-width: 1366px){
+    .private-auction-text {
+        font-size: 0.9em;
+    }
+    .private-auction-date, .private-auction-start-price {
+        margin-top: 2%;
+        font-size: 0.9em;
+    }
+    .user-points span {
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 1280px){
+    .current-bids caption, .private-auction-price-title {
+        font-size: 1em;
+    }
+    .private-auction-text {
+        font-size: 0.8em;
+    }
+    .user-points span {
+        font-size: 1.2em;
+    }
+    .place-your-bet {
+        margin-top: 5%;
+    }
+}
+@media (max-width: 800px){
+    .window-bet {
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 640px){
+    .window-bet {
+        font-size: 1.6em;
+    }
+}
+@media (max-width: 560px){
+    .private-auction .title, .private-auction .small-title  {
+        font-size: 1.5em;
+    }
 }
 /************* END OF PRIVATE AUCTION ***********************
 ************************************************************/

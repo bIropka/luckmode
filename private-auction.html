@@ -8,12 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.join-event').click(function () {
-                $('.window-private-event-wrap').fadeIn();
+            $('.place-your-bet').click(function () {
+                $('.window-bet-wrap').fadeIn();
             });
-            $('.window-private-event-wrap').click(function (event) {
+            $('.window-bet-wrap').click(function (event) {
                 $target = $(event.target);
-                if (!$target.closest($('.window-private-event')).length) $('.window-private-event-wrap').fadeOut();
+                if (!$target.closest($('.window-bet')).length) $('.window-bet-wrap').fadeOut();
             });
         });
 
@@ -107,6 +107,18 @@
             <div class="private-auction-price-title"><div class="current-price-image"></div>текущая цена: <span class="price-value">120 баллов</span></div>
                 <div class="user-points"><span>445</span></div>
                 <button class="place-your-bet">сделать ставку</button>
+        </div>
+    </div>
+    <div class="window-bet-wrap">
+        <div class="window-bet">
+            <span class="title">Сделайте Вашу ставку!</span>
+            <form action="">
+                <label>Моя ставка
+                    <input type="text"/>
+                </label>
+                <input type="submit" value="ok"/>
+            </form>
+            <div class="user-points"><span>445</span></div>
         </div>
     </div>
 </main>

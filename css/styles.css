@@ -1437,22 +1437,32 @@ header .logo {
 }
 .step-icon {
     display: table-cell;
-    width: 20%;
-    padding-top: 20%;
-    border: 1px solid black;
+    width: 30%;
 }
+.step-icon div {
+    width: 55%;
+    padding-top: 45%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.block-how-it-work ul li:nth-child(1) .step-icon div {background: url("../images/sprite-icons-3.png") no-repeat -4% 0;background-size: cover}
+.block-how-it-work ul li:nth-child(2) .step-icon div {background: url("../images/sprite-icons-3.png") 50% 0;background-size: cover}
+.block-how-it-work ul li:nth-child(3) .step-icon div {background: url("../images/sprite-icons-3.png") 77% 0;background-size: cover}
+.block-how-it-work ul li:nth-child(4) .step-icon div {background: url("../images/sprite-icons-3.png")  no-repeat 105% 0;background-size: cover}
+.block-how-it-work ul li:nth-child(5) .step-icon div {background: url("../images/sprite-icons-3.png") 23% 0;background-size: cover}
 .step-graphic-line {
     display: table-cell;
     position: relative;
-    width: 0.5%;
+    border: 2px solid #c40f13;
     background-color: #c40f13;
 }
 .step-graphic-circle {
     position: absolute;
-    left: -15px;
-    top: 50%;
+    left: -18px;
+    top: 42%;
     width: 34px;
     height: 34px;
+    display: inline-block;
     border: 8px solid #c40f13;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -1461,13 +1471,51 @@ header .logo {
 }
 .step-text {
     display: table-cell;
-    width: 79.5%;
-    border: 1px solid black;
+    width: 70%;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 10%;
+    font-weight: bold;
 }
 .main-text {
-
+    display: inline-block;
+    width: 100%;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    margin-bottom: 1%;
 }
 .secondary-text {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.2em;
+    color: #777777;
+}
+.block-calculator {
+    background: url("../images/advert-background-2.jpg");
+    background-size: cover;
+}
+
+
+
+
+
+.advantages-image {
+    display: inline-block;
+    width: 35%;
+    padding-top: 25%;
+    background: url("../images/advert-background-3.png");
+    background-size: cover;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+.block-our-advantages ul {
+    display: inline-block;
+    width: 45%;
+    list-style: none;
+    border: 1px solid black;
+}
+
+.block-our-advantages ul li {
 
 }
 /*************** END OF FOR-ADVERTISERS *********************

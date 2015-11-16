@@ -21,6 +21,10 @@
     <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
 
     <div class="header-right-menu">
+        <ul class="login-register">
+            <li><a href="authorization.html">Вход</a></li>
+            <li><a href="registration.html">Регистрация</a></li>
+        </ul>
         <div class="account-menu" style="display: none">
             <a href="">Надежда Сергеевна&ensp;&ensp;&ensp;&ensp;</a>
             <ul class="sub-menu">
@@ -29,18 +33,14 @@
                 <li><a href="">Выйти из системы<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
             </ul>
         </div>
-        <div class="city-menu" style="display: none">
-            <a href="">Самара</a>
+        <div class="city-menu">
+            <a href="">Выбрать регион</a>
             <ul class="sub-menu">
                 <li><a href="">Харьков<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
                 <li><a href="">Новосибирск<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
                 <li><a href="">Алма-аты<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
             </ul>
         </div>
-        <ul class="login-register">
-            <li><a href="authorization.html">Вход</a></li>
-            <li><a href="registration.html">Регистрация</a></li>
-        </ul>
     </div>
     <div class="clearfix"></div>
 </header>
@@ -81,9 +81,9 @@
         <form class="fill-profile">
             <span class="registr-title">заполните свой профиль </span>
             <input type="text" class="profile-first-name" placeholder="Имя:"/>
-            <input type="text" class="profile-last-name" placeholder="Фамилия:"/>
+            <input type="email" class="profile-last-name" placeholder="email"/>
             <span class="profile-city">Ваш город: <a href="#">&#9660;</a></span>
-            <input type="submit" class="profile-submit" value="Войти"/>
+            <input type="submit" class="profile-submit" value="Зарегистрироваться"/>
         </form>
     </div>
 

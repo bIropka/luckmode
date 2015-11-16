@@ -4,24 +4,55 @@
     <meta charset="UTF-8">
     <title>Auctions</title>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script>
-
+        $(document).ready(function () {
+            $('.bid-checkbox').bind('change', BidCSocialEvent);
+            function BidCSocialEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $(this).addClass('active-bid-checkbox');
+                } else {
+                    $(this).removeClass('active-bid-checkbox');
+                }
+            }
+            $('.choice-place').bind('change', BidPlaceEvent);
+            function BidPlaceEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $('.choice-place').removeClass('chosen-place');
+                    $(this).addClass('chosen-place');
+                } else {
+                    $(this).removeClass('chosen-place');
+                }
+            }
+        });
+        $(function() {
+            $('.time-scale' ).slider({
+                min: 6,
+                max: 30,
+                range: "min",
+                value: 14,
+                slide: function( event, ui ) {
+                    $('.days-number .value').html(ui.value);
+                }
+            });
+        });
     </script>
 </head>
 <body>
 <header>
     <div class="header-background"></div>
     <ul class="header-left-menu">
-        <li><a href="">Рекламодателям</a></li>
+        <li><a href="for-advertisers.html">Рекламодателям</a></li>
         <li><a href="completed-events.html">Завершенные акции</a></li>
     </ul>
 
     <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
 
     <div class="header-right-menu">
-        <div class="account-menu" style="display: none">
+        <div class="account-menu">
             <a href="">Надежда Сергеевна&ensp;&ensp;&ensp;&ensp;</a>
             <ul class="sub-menu">
                 <li><a href="">Ваш профиль<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
@@ -29,11 +60,7 @@
                 <li><a href="">Выйти из системы<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
             </ul>
         </div>
-        <ul class="login-register">
-            <li><a href="authorization.html">Вход</a></li>
-            <li><a href="registration.html">Регистрация</a></li>
-        </ul>
-        <div class="city-menu" style="margin-top: 0">
+        <div class="city-menu">
             <a href="">Самара</a>
             <ul class="sub-menu">
                 <li><a href="">Харьков<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
@@ -41,8 +68,13 @@
                 <li><a href="">Алма-аты<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
             </ul>
         </div>
+        <ul class="login-register" style="display: none">
+            <li><a href="authorization.html">Вход</a></li>
+            <li><a href="registration.html">Регистрация</a></li>
+        </ul>
     </div>
     <div class="clearfix"></div>
+    <button class="button-add-winner">добавить</button>
 </header>
 
 <main>
@@ -110,8 +142,8 @@
     <div class="block-calculator">
         <span class="title">Калькулятор</span>
         <form action="" class="form-calculator">
-            <span class="choose-social-title">Выбор социальной сети:</span>
             <div class="choose-social">
+                <span class="choose-social-title">Выбор социальной сети:</span>
                 <div class="choice-vkontakte">
                     <div class="social-icon vk-icon"></div>
                     <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
@@ -135,13 +167,13 @@
                     <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
                     <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
                 </div>
-                <div class="clearfix"></div>
                 <div class="choice-instagram">
                     <div class="social-icon inst-icon"></div>
                     <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
                     <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
                     <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
                 </div>
+                <div class="clearfix"></div>
 
             </div>
 
@@ -173,15 +205,20 @@
                 <div class="select-region">Вся Россия</div>
             </div>
 
-            <div class="calculate-cost">
-                <span class="calculate-cost-title">Рассчитать стоимость:</span>
-                <span class="days-number">Количество дней:<span class="value">17</span></span>
-                <span class="audience-coverage">Вирусный охват аудитории:<span class="value">85000</span></span>
-                <span class="final-cost">стоимость заказа:<span class="value">2550</span></span>
+            <span class="calculate-cost-title">Рассчитать стоимость:</span>
+            <div class="time-scale ">
+                <span class="min">минимум - 6 дней</span>
+                <span class="max">максимум - 30 дней</span>
             </div>
 
-            <input type="text"/>
-            <input type="email"/>
+            <div class="calculate-cost">
+                <span class="days-number">Количество дней:<span class="value">14</span></span>
+                <span class="audience-coverage">Вирусный охват аудитории:<span class="value">85000</span></span>
+                <span class="final-cost">стоимость заказа:<span class="value">2550 руб.</span></span>
+            </div>
+
+            <input class="adver-name" type="text" placeholder="Ваше имя"/>
+            <input class="adver-email" type="email" placeholder="Ваш E-mail"/>
             <input type="submit" class="form-calculator-submit" value="Зарегистрироваться"/>
         </form>
     </div>
@@ -199,11 +236,11 @@
     <div class="block-our-achievements">
         <span class="title">Наши достижения</span>
         <ul>
-            <li><span class="achievement"><span class="value">3</span>года успешной работы</span></li>
-            <li><span class="achievement">сэкономлено до<span class="value">70%</span>рекламных бюджетов клиентов</span></li>
-            <li><span class="achievement">проведено более<span class="value">3500</span>рекламных акций</span></li>
-            <li><span class="achievement">собрано более<span class="value">5млн.</span>лайков</span></li>
-            <li><span class="achievement"><span class="value">73%</span>клиентов остаются с нами</span></li>
+            <li><span><span class="value">3</span>года<br> успешной работы</span></li>
+            <li><span>сэкономлено до<span class="value">70%</span>рекламных<br> бюджетов клиентов</span></li>
+            <li><span>проведено более<span class="value">3500</span>рекламных<br> акций</span></li>
+            <li><span>собрано более<span class="value">5млн.</span>лайков</span></li>
+            <li><span><span class="value">73%</span>клиентов<br> остаются с нами</span></li>
         </ul>
     </div>
 
@@ -211,7 +248,7 @@
         <span class="title">Отзывы клиентов</span>
         <ul>
             <li class="review">
-                <div class="review-image"><img src="" alt="логотип заказчика"/></div>
+                <div class="review-image"><img src="images/advert-logos-1.png" alt="логотип заказчика"/></div>
                 <div class="review-body">
                     <span class="review-name">Чернова Валентина, </span>
                     <span class="review-city">Москва</span>
@@ -223,9 +260,10 @@
                         pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
                         Aenean vulputate eleifend tellus.</span>
                 </div>
+                <div class="clearfix"></div>
             </li>
             <li class="review">
-                <div class="review-image"><img src="" alt="логотип заказчика"/></div>
+                <div class="review-image"><img src="images/advert-logos-2.png" alt="логотип заказчика"/></div>
                 <div class="review-body">
                     <span class="review-name">Александр, </span>
                     <span class="review-city">Самара</span>
@@ -237,9 +275,12 @@
                         pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
                         Aenean vulputate eleifend tellus.</span>
                 </div>
+                <div class="clearfix"></div>
             </li>
         </ul>
     </div>
+
+    <button>вход в личный кабинет</button>
 
 </main>
 

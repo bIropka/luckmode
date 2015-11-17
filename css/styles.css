@@ -2760,6 +2760,9 @@ footer .logo {
         top: -20px;
         font-size: 0.7em;
     }
+    .block-calculator .like, .block-calculator .repost, .block-calculator .subscribe {
+        font-size: 0.9em;
+    }
 
 }
 @media (max-width: 1280px) {
@@ -2811,6 +2814,9 @@ footer .logo {
     }
     .taglines li a {
         font-size: 2em;
+    }
+    .block-calculator .like, .block-calculator .repost, .block-calculator .subscribe {
+        font-size: 0.8em;
     }
 
 }
@@ -2892,6 +2898,9 @@ footer .logo {
     }
     .menu .choice:last-child {
         margin-right: 0;
+    }
+    .block-calculator .like, .block-calculator .repost, .block-calculator .subscribe {
+        font-size: 0.7em;
     }
 }
 @media (max-width: 1050px) {

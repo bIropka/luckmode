@@ -54,6 +54,27 @@ button:hover, input[type="submit"]:hover {
 .fb-icon {background:url("../images/sprite-social-2.png") no-repeat 80% 0; background-size: cover}
 .gg-icon {background:url("../images/sprite-social-2.png") no-repeat 20% 0; background-size: cover}
 .tw-icon {background:url("../images/sprite-social-2.png") no-repeat 40% 0; background-size: cover}
+
+.discounts-block {
+    position: absolute;
+    width: 22%;
+    padding-top: 20%;
+    left: -5%;
+    top: -1%;
+    z-index: 10;
+}
+.discounts-20 {
+    background: url("../images/discounts-sprite.png") 50% 0;
+    background-size: cover;
+}
+.discounts-50 {
+    background: url("../images/discounts-sprite.png");
+    background-size: cover;
+}
+.discounts-90 {
+    background: url("../images/discounts-sprite.png") 98% 0;
+    background-size: cover;
+}
 body {
     max-width: 1366px;
     width: 70%;
@@ -237,8 +258,25 @@ header .logo {
 /******************************************** MAIN PAGE ***********************************************
 ******************************************************************************************************/
 .taglines {
+    position: relative;
     list-style: none;
     margin-bottom: 2%;
+}
+.taglines li:nth-child(1)  {
+    text-align: left;
+}
+.taglines-image  {
+    position: absolute;
+    width: 20%;
+    padding-top: 14%;
+    top: -50%;
+    left: 40%;
+    background: url("../images/main-background.jpg");
+    background-size: cover;
+    z-index: -1;
+}
+.fix-for-main {
+    margin-top: 4%;
 }
 .taglines li a {
     font-size: 2.5em;
@@ -474,6 +512,7 @@ header .logo {
     width: 25%;
 }
 .event-body {
+    position: relative;
     width: 90%;
 }
 .new-event .event-title {
@@ -483,7 +522,7 @@ header .logo {
     display: inline-block;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 5% 0 5% 10%;
+    padding: 3% 0 3% 10%;
 }
 .event-image {
     position: relative;
@@ -2583,6 +2622,9 @@ footer .logo {
     .main-text {
         font-size: 1.5em;
     }
+    .taglines-image  {
+        left: 45%;
+    }
 }
 @media (max-width: 1480px) {
 
@@ -2622,6 +2664,9 @@ footer .logo {
     }
     .calculate-cost span, .min, .max {
         font-size: 0.9em;
+    }
+    .taglines-image  {
+        top: -35%;
     }
 
 }
@@ -2763,6 +2808,9 @@ footer .logo {
     .time-scale .min, .time-scale .max {
         top: -20px;
         font-size: 0.6em;
+    }
+    .taglines li a {
+        font-size: 2em;
     }
 
 }
@@ -2908,6 +2956,9 @@ footer .logo {
     .time-scale .min, .time-scale .max {
         top: -20px;
         font-size: 0.6em;
+    }
+    .taglines-image {
+        top: -60%;
     }
 }
 

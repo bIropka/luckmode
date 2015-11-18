@@ -750,7 +750,7 @@ header .logo {
     width: 100%;
     margin: 0;
 }
-.event-date-date {
+.event-date-value {
     font-size: 1.1em;
     margin-bottom: 5%;
 }
@@ -2261,22 +2261,34 @@ header .logo {
 .auction-photo label input {
     display: none;
 }
+.input-auction-name {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5% 3%;
+    border: 2px solid #f1efef;
+    font-weight: 100;
+    margin-bottom: 1%;
+}
 .auction-description {
     display: inline-block;
-    height: 200px;
+    height: 163px;
     width: 100%;
     resize: none;
     border: 2px solid #f1efef;
     padding: 2% 3%;
 }
-.auction-description::-webkit-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
-.auction-description::-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
-.auction-description:-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
-.auction-description:-ms-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.auction-description::-webkit-input-placeholder, .input-auction-name::-webkit-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.auction-description::-moz-placeholder, .input-auction-name::-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.auction-description:-moz-placeholder, .input-auction-name:-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.auction-description:-ms-input-placeholder, .input-auction-name:-ms-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
 .auction-description:focus::-webkit-input-placeholder {color: transparent}
 .auction-description:focus::-moz-placeholder {color: transparent}
 .auction-description:focus:-moz-placeholder {color: transparent}
 .auction-description:focus:-ms-input-placeholder {color: transparent}
+.input-auction-name:focus::-webkit-input-placeholder {color: transparent}
+.input-auction-name:focus::-moz-placeholder {color: transparent}
+.input-auction-name:focus:-moz-placeholder {color: transparent}
+.input-auction-name:focus:-ms-input-placeholder {color: transparent}
 .auction-info {
     display: inline-block;
     width: 65%;
@@ -2317,12 +2329,19 @@ header .logo {
     font-size: 1.3em;
     margin-bottom: 5%;
 }
-.event-date-date {
+.event-date-value {
     display: inline-block;
-    width: 100%;
+    margin: 0 auto;
     font-family: Lobster, cursive;
     color: #cc0000;
     font-size: 1.3em;
+    cursor: pointer;
+}
+.input-event-date-value {
+    display: block;
+    height: 0;
+    width: 1px;
+    border: none;
 }
 .auctions-list {
     width: 100%;
@@ -2330,6 +2349,14 @@ header .logo {
     padding-top: 5%;
     border-top: 5px solid #dddddd;
     list-style: none;
+}
+.auction-name {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1%;
 }
 .auction-date {
     width: 100%;
@@ -2730,7 +2757,7 @@ footer .logo {
         margin-top: 55%;
     }
     .auction-description {
-        height: 140px;
+        height: 103px;
     }
     .start-bid {
         font-size: 1em;
@@ -3119,8 +3146,12 @@ footer .logo {
         height: 70px;
         background-size: 40%;
     }
+    .input-auction-name {
+        padding: 0.2% 3%;
+    }
     .auction-description {
-        height: 70px;
+        padding: 0.2% 3%;
+        height: 43px;
     }
     .main-menu-choice a{
         padding: 5px 10%;
@@ -3209,6 +3240,9 @@ footer .logo {
     .time-scale .max {
         right: -10px;
         left: inherit;
+    }
+    .auction-description {
+        height: 50px;
     }
 }
 

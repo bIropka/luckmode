@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.choice').mouseenter(function () {
@@ -103,6 +105,7 @@
                     $(this).removeClass('chosen-place');
                 }
             }
+            $( '.input-event-date-value' ).datepicker();
         });
     </script>
     <title>Admin-panel</title>
@@ -162,6 +165,7 @@
     <div class="bid">
         <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
         <div class="bid-info">
+            <span class="auction-name">Акция 1</span>
             <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                 Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                 Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
@@ -179,6 +183,7 @@
     <div class="bid">
         <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
         <div class="bid-info">
+            <span class="auction-name">Акция 2</span>
             <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                 Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                 Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
@@ -273,11 +278,12 @@
     <form action="" class="auction">
         <div class="auction-photo"><label>Добавить фото<input type="file" accept="image/*"/></label></div>
         <div class="auction-info">
+            <input type="text" class="input-auction-name" placeholder="Название аукциона..."/>
             <textarea class="auction-description" cols="" rows="10" placeholder="Добавить описание аукциона..."></textarea>
             <label class="start-bid">Начальная ставка:<input type="text"/>баллов</label>
             <div class="event-date">
                 <span class="event-date-title">Дата розыгрыша</span>
-                <span class="event-date-date">12 ноября 2015</span>
+                <label class="event-date-value">12 ноября 2015<input class="input-event-date-value" type="date"/></label>
             </div>
             <input class="auction-submit" type="submit" value="Добавить"/>
         </div>
@@ -286,14 +292,15 @@
         <li>
             <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
             <div class="bid-info">
-            <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
-                consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-            </span>
+                <span class="auction-name">Акция 1</span>
+                <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                    consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                </span>
                 <div class="auction-date">
                     <span class="auction-date-title">Дата проведения:</span>
                     <span class="auction-date-value">12 ноября 2015</span>
@@ -303,14 +310,15 @@
         <li>
             <div class="bid-image"><img src="images/bid-image.jpg" alt="фото заявки"/></div>
             <div class="bid-info">
-            <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
-                consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-            </span>
+                <span class="auction-name">Акция 2</span>
+                <span class="bid-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                    consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                </span>
                 <div class="auction-date">
                     <span class="auction-date-title">Дата проведения:</span>
                     <span class="auction-date-value">12 ноября 2015</span>
@@ -620,9 +628,7 @@
                 <div class="winner-data">
                     <span class="winner-name">Эдвард Нортон</span>
                         <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa.</span>
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
                 </div>
             </li>
         </ul>
@@ -651,8 +657,6 @@
                 <div class="winner-data">
                     <span class="winner-name">Энтони Хопкинс</span>
                         <span class="winner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
                         Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</span>
                 </div>
             </li>

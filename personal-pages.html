@@ -6,6 +6,39 @@
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+        $(document).ready(function () {
+            $('.choice').mouseenter(function () {
+                if (!$(this).hasClass('activated')) {
+                    $(this).addClass('active-effect');
+                }
+            });
+
+            $('.choice').mouseleave(function () {
+                if ($(this).hasClass('active-effect')) {
+                    $(this).removeClass('active-effect');
+                }
+            });
+
+            $('.choice').click(function () {
+                if (!$(this).hasClass('activated')) {
+                    $('.choice').removeClass('activated');
+                    $(this).addClass('activated');
+                    $('.content-block').addClass('invisible-block');
+                    if ($(this).hasClass('mark-info')) {
+                        $('.personal-info').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-events-now')) {
+                        $('.personal-events-now').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-events')) {
+                        $('.personal-events').removeClass('invisible-block');
+                    }
+                    if ($(this).hasClass('mark-auctions')) {
+                        $('.personal-auctions').removeClass('invisible-block');
+                    }
+                }
+            });
+        });
     </script>
     <title>Personal pages</title>
 </head>
@@ -48,16 +81,361 @@
 </header>
 
 <main>
-
-    <nav class="personal-menu">
-        <ul>
-            <li class="choice mark-bids">Заявки</li>
+    <span class="personal-page-title">Участник</span>
+    <nav>
+        <ul class="personal-menu">
+            <li class="choice mark-info">Персональная информация</li>
+            <li class="choice mark-events-now">Действующие акции</li>
+            <li class="choice mark-events">Все акции</li>
             <li class="choice mark-auctions">Аукционы</li>
-            <li class="choice mark-users">Пользователи</li>
-            <li class="choice mark-bonus-points">Бонусные баллы</li>
-            <li class="choice mark-winners">Наши победители</li>
         </ul>
     </nav>
+
+    <!-- personal-info -->
+    <div class="personal-info content-block invisible-block">
+        <h1>personal-info</h1>
+    </div>
+    <!-- personal-events-now -->
+    <div class="personal-events-now content-block invisible-block">
+        <div class="personal-block-title">
+            <div class="personal-image"></div>
+            <span class="personal-block-info">у вас сейчас <span class="personal-value">14</span> действующих акций</span>
+        </div>
+
+        <div class="new-events-table">
+            <ul class="new-events-row">
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+            </ul>
+            <ul class="new-events-row">
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+            </ul>
+        </div>
+    </div>
+    <!-- personal-events -->
+    <div class="personal-events content-block invisible-block">
+        <div class="personal-block-title">
+            <div class="personal-image"></div>
+            <span class="personal-block-info">всего у вас <span class="personal-value">25</span> акций</span>
+        </div>
+
+        <div class="new-events-table">
+            <ul class="new-events-row">
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+            </ul>
+            <ul class="new-events-row">
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+            </ul>
+        </div>
+    </div>
+    <!-- personal-auctions -->
+    <div class="personal-auctions content-block invisible-block">
+        <div class="personal-block-title">
+            <div class="personal-image"></div>
+            <span class="personal-block-info">у вас <span class="personal-value">7</span> аукционов</span>
+        </div>
+
+        <div class="new-events-table">
+            <ul class="new-events-row">
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+            </ul>
+            <ul class="new-events-row">
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
+            </ul>
+        </div>
+    </div>
+
+    <a href="" class="more-info">Показать еще</a>
 
 </main>
 

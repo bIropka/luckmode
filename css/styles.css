@@ -1845,16 +1845,16 @@ header .logo {
 .choice:last-child {
     margin-right: 0;
 }
-.active-effect {
+.active-effect, .activated {
     background: none;
     border: 2px solid red;
     border-bottom: transparent;
 }
-.activated {
+/*.activated {
     background: none;
     border: 2px solid red;
     border-bottom: transparent;
-}
+}*/
 .invisible-block {
     display: none;
 }
@@ -2545,6 +2545,96 @@ td {
 /****************************************END OF ADMIN-PANEL ********************************************
 *******************************************************************************************************/
 
+/*************PERSONAL PAGES**************
+*****************************************/
+
+/********** personal menu****************/
+.personal-page-title {
+    display: inline-block;
+    width: 95%;
+    margin: 0 auto;
+    text-align: left;
+    color: #cc0000;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.personal-menu {
+    width: 95%;
+    text-align: justify;
+    text-align-last: justify;
+    margin: 0 auto;
+    list-style: none;
+}
+.personal-menu:after {
+    display: inline-block;
+    width: 100%;
+    content: "";
+    height: 0;
+}
+.personal-menu .choice {
+    width: auto;
+    padding: 1% 5%;
+}
+.personal-block-title {
+    display: inline-block;
+    width: 95%;
+    margin: 0.5% auto;
+    text-align: left;
+}
+.personal-image {
+    display: inline-block;
+    width: 4.5%;
+    padding-top: 5%;
+    vertical-align: middle;
+    margin-right: 3%;
+}
+.personal-block-info {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.personal-value {
+    font-size: 1em;
+}
+.personal-auctions .new-events-row, .personal-events-now .new-events-row,
+.personal-events .new-events-row {
+    border-top: 20px solid white;
+}
+
+/********** personal info****************/
+.personal-info {
+
+}
+/********** personal events now****************/
+.personal-events-now {
+
+}
+.personal-events-now .personal-image {
+    background: url("../images/sprite-icons-4.png") 78% 0;
+    background-size: cover;
+}
+/********** personal events****************/
+.personal-events {
+
+}
+.personal-events .personal-image {
+    background: url("../images/sprite-icons-4.png") 37% 0;
+    background-size: cover;
+}
+/********** personal auctions****************/
+.personal-auctions {
+    width: 100%;
+}
+.personal-auctions .personal-image {
+    background: url("../images/sprite-icons-4.png") 16% 0;
+    background-size: cover;
+}
+/**********END OF PERSONAL PAGES*********
+****************************************/
+
+
 /**************** FOOTER *****************
 *****************************************/
 footer {
@@ -2680,6 +2770,9 @@ footer .logo {
         width: 180px;
         height: 225px;
     }
+    .personal-menu .choice {
+        padding: 1% 4%;
+    }
 }
 @media (max-width: 1480px) {
 
@@ -2726,7 +2819,9 @@ footer .logo {
     .auction-date {
         font-size: 0.9em;
     }
-
+    .personal-menu .choice {
+        padding: 1% 3%;
+    }
 
 }
 @media (max-width: 1366px) {
@@ -2883,6 +2978,9 @@ footer .logo {
     .block-calculator .like, .block-calculator .repost, .block-calculator .subscribe {
         font-size: 0.8em;
     }
+    .personal-menu .choice {
+        padding: 1% 2%;
+    }
 
 }
 @media (max-width: 1190px) {
@@ -2951,6 +3049,9 @@ footer .logo {
     }
     .tagline-red, .tagline-yellow {
         font-size: 1.8em;
+    }
+    .personal-menu .choice, .personal-page-title {
+        font-size: 0.9em;
     }
 
 }
@@ -3295,6 +3396,9 @@ footer .logo {
         top: -10px;
         font-size: 0.5em;
     }
+    .personal-menu .choice, .personal-page-title {
+        font-size: 0.8em;
+    }
 
 }
 
@@ -3376,6 +3480,10 @@ footer .logo {
     }
     .calculate-cost .value {
         font-size: 1.2em;
+    }
+    .personal-menu .choice, .personal-page-title {
+        font-size: 0.65em;
+        padding: 0.3% 1%;
     }
 
 }

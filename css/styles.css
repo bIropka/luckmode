@@ -422,8 +422,8 @@ header .logo {
 .main-auction {
     position: relative;
     display: inline-block;
-    width: 160px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     border: 3px solid #d61112;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
@@ -1455,7 +1455,7 @@ header .logo {
     font-size: 3em;
 }
 .block-for-advertisers {
-    background: url("../images/advert-background-1.jpg");
+    background: url('../images/advert-background-1.jpg');
     background-size: cover;
 }
 .block-for-advertisers .description {
@@ -1886,16 +1886,16 @@ header .logo {
 .winners img {
     width: 90%;
     margin-right: 10%;
+    border-bottom: 5px solid white;
 }
 .winner-data {
     width: 90%;
     margin-right: 10%;
-    border-top: 5px solid white;
 }
 .winners .winner-name {
     display: inline-block;
     width: 100%;
-    margin: 5% 0 3%;
+    margin: 3% 0 3%;
     font-size: 1.3em;
     color: #CC0000;
     text-align: center;
@@ -2649,6 +2649,10 @@ footer .logo {
     .taglines-image  {
         left: 45%;
     }
+    .main-auction {
+        width: 180px;
+        height: 225px;
+    }
 }
 @media (max-width: 1480px) {
 
@@ -2662,8 +2666,8 @@ footer .logo {
         font-size: 0.8em;
     }
     .main-auction {
-        width: 145px;
-        height: 182px;
+        width: 160px;
+        height: 200px;
     }
     .main-auction-name {
         font-size: 0.8em;
@@ -2750,8 +2754,8 @@ footer .logo {
         font-size: 0.7em;
     }
     .main-auction {
-        width: 140px;
-        height: 175px;
+        width: 145px;
+        height: 182px;
     }
     .main-auction-points span {
         font-size: 1.5em;
@@ -2827,8 +2831,8 @@ footer .logo {
         font-size: 0.9em;
     }
     .main-auction {
-        width: 120px;
-        height: 150px;
+        width: 132px;
+        height: 165px;
     }
     .main-auction-name {
         font-size: 0.6em;
@@ -2939,6 +2943,10 @@ footer .logo {
     .block-calculator .like, .block-calculator .repost, .block-calculator .subscribe {
         font-size: 0.7em;
     }
+    .main-auction {
+        width: 128px;
+        height: 160px;
+    }
 }
 @media (max-width: 1050px) {
 
@@ -3005,6 +3013,10 @@ footer .logo {
     }
     .taglines-image {
         top: -60%;
+    }
+    .main-auction {
+        width: 140px;
+        height: 175px;
     }
 }
 
@@ -3117,8 +3129,8 @@ footer .logo {
         padding: 5px 20% 5px 10%;
     }
     .main-auction {
-        width: 100px;
-        height: 125px;
+        width: 120px;
+        height: 150px;
     }
     .main-auction-name {
         font-size: 0.5em;
@@ -3170,8 +3182,8 @@ footer .logo {
         font-size: 0.7em;
     }
     .main-auction {
-        width: 80px;
-        height: 100px;
+        width: 100px;
+        height: 125px;
         border: 2px solid #d61112;
     }
     .step-graphic-circle {
@@ -3233,8 +3245,8 @@ footer .logo {
         font-size: 0.6em;
     }
     .main-auction {
-        width: 64px;
-        height: 80px;
+        width: 80px;
+        height: 100px;
     }
     .main-auction-name, .main-auction-points {
         left: 5px;
@@ -3303,8 +3315,8 @@ footer .logo {
         font-size: 0.7em;
     }
     .main-auction {
-        width: 56px;
-        height: 70px;
+        width: 64px;
+        height: 80px;
     }
     .main-auction-name {
         font-size: 0.4em;
@@ -3353,5 +3365,9 @@ footer .logo {
     }
     .taglines, .main-menu-choice a, .categories {
         font-size: 0.5em;
+    }
+    .main-auction {
+        width: 60px;
+        height: 75px;
     }
 }

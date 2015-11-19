@@ -55,6 +55,8 @@ button:hover, input[type="submit"]:hover {
 .gg-icon {background:url("../images/sprite-social-2.png") no-repeat 20% 0; background-size: cover}
 .tw-icon {background:url("../images/sprite-social-2.png") no-repeat 40% 0; background-size: cover}
 
+.active-image {background: url("../images/sprite-icons-5.png") 100% 0;background-size: cover;}
+.not-active-image {background: url("../images/sprite-icons-5.png");background-size: cover;}
 .discounts-block {
     position: absolute;
     width: 22%;
@@ -63,18 +65,9 @@ button:hover, input[type="submit"]:hover {
     top: -1%;
     z-index: 10;
 }
-.discounts-20 {
-    background: url("../images/discounts-sprite.png") 50% 0;
-    background-size: cover;
-}
-.discounts-50 {
-    background: url("../images/discounts-sprite.png");
-    background-size: cover;
-}
-.discounts-90 {
-    background: url("../images/discounts-sprite.png") 98% 0;
-    background-size: cover;
-}
+.discounts-20 {background: url("../images/discounts-sprite.png") 50% 0;background-size: cover;}
+.discounts-50 {background: url("../images/discounts-sprite.png");background-size: cover;}
+.discounts-90 {background: url("../images/discounts-sprite.png") 98% 0;background-size: cover;}
 body {
     max-width: 1366px;
     width: 70%;
@@ -755,8 +748,11 @@ header .logo {
     margin-bottom: 5%;
 }
 .private-event-date span {
+    display: inline-block;
+    width: 100%;
     text-transform: uppercase;
     font-weight: bold;
+    margin-top: 5%;
 }
 .participants-list ul {
     list-style: none;
@@ -1050,8 +1046,8 @@ header .logo {
     background-size: cover;
 }
 .user-points {
-    width: 30%;
-    padding-top: 20%;
+    width: 33%;
+    padding-top: 24%;
     position: relative;
     margin: 0 auto;
     background: url("../images/points-image.png");
@@ -1124,7 +1120,7 @@ header .logo {
     border-radius: 8px;
 }
 .window-bet .user-points {
-    width: 40%;
+    width: 41%;
     padding-top: 30%;
     float: right;
     margin-top: 8%;
@@ -2605,14 +2601,82 @@ td {
 
 /********** personal info****************/
 .personal-info {
+    width: 95%;
+    margin: 0 auto;
+}
+.personal-points .personal-image {
+    background: url("../images/sprite-icons-4.png") 100% 0;
+    background-size: cover;
+}
+.vk-points, .od-points, .inst-points, .fb-points, .tw-points {
+    padding: 1% 0;
+    border-bottom: 2px solid #f5f4f4;
+}
+.personal-points .personal-social {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    text-align: left;
+}
+.personal-points .social-icon {
+    display: inline-block;
+    width: 7%;
+    padding-top: 7%;
+    vertical-align: middle;
+}
+.personal-points .social-link {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    color: #919090;
+    padding-left: 3%;
+    font-weight: bold;
+}
+.points-cost {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.points-value {
+    font-size: 1em;
+}
+.personal-points .social-checkbox {
+    display: inline-block;
+    width: 8%;
+    padding-top: 10%;
+    vertical-align: top;
+    float: right;
+    clear: both;
+    margin-top: -2%;
+}
+.personal-points .user-points {
+    display: inline-block;
+    width: 32%;
+    padding-top: 24%;
+    float: right;
+}
+.personal-points .user-points span {
+    font-size: 2.5em;
+}
+.personal-data .personal-image {
+    background: url("../images/sprite-icons-4.png") 59% 0;
+    background-size: cover;
+}
 
+.personal-invite .personal-image {
+    background: url("../images/sprite-icons-4.png");
+    background-size: cover;
+}
+.personal-info .more-info {
+    background: none;
 }
 /********** personal events now****************/
 .personal-events-now {
 
 }
 .personal-events-now .personal-image {
-    background: url("../images/sprite-icons-4.png") 78% 0;
+    background: url("../images/sprite-icons-4.png") 77% 0;
     background-size: cover;
 }
 /********** personal events****************/
@@ -2822,6 +2886,9 @@ footer .logo {
     .personal-menu .choice {
         padding: 1% 3%;
     }
+    .points-cost {
+        font-size: 1.2em;
+    }
 
 }
 @media (max-width: 1366px) {
@@ -2922,6 +2989,9 @@ footer .logo {
     }
     .auction-date {
         font-size: 0.8em;
+    }
+    .points-cost {
+        font-size: 1.1em;
     }
 
 }
@@ -3484,6 +3554,12 @@ footer .logo {
     .personal-menu .choice, .personal-page-title {
         font-size: 0.65em;
         padding: 0.3% 1%;
+    }
+    .personal-points .user-points span {
+        font-size: 2em;
+    }
+    .points-cost {
+        font-size: 1em;
     }
 
 }

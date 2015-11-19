@@ -21,11 +21,13 @@
 
             $('.choice').click(function () {
                 if (!$(this).hasClass('activated')) {
-                    $('.choice').removeClass('activated');
+                    $('.choice').removeClass('activated').css('border-bottom', '2px solid transparent');
+
                     $(this).addClass('activated');
                     $('.content-block').addClass('invisible-block');
                     if ($(this).hasClass('mark-info')) {
                         $('.personal-info').removeClass('invisible-block');
+                        $(this).css('border-bottom', '2px solid red');
                     }
                     if ($(this).hasClass('mark-events-now')) {
                         $('.personal-events-now').removeClass('invisible-block');
@@ -93,7 +95,83 @@
 
     <!-- personal-info -->
     <div class="personal-info content-block invisible-block">
-        <h1>personal-info</h1>
+        <div class="personal-points">
+            <div class="personal-block-title">
+                <div class="personal-image"></div>
+                <span class="personal-block-info">баллы за участие</span>
+            </div>
+            <div class="personal-social">
+                <div class="vk-points">
+                    <div class="social-icon vk-icon"></div>
+                    <div class="social-link"></div>
+                    <div class="points-cost"><span class="points-value">10</span> баллов</div>
+                    <div class="social-checkbox not-active-image"></div>
+                </div>
+                <div class="od-points">
+                    <div class="social-icon od-icon"></div>
+                    <div class="social-link">http://www.odnoklassniki.ru/</div>
+                    <div class="points-cost"><span class="points-value">8</span> баллов</div>
+                    <div class="social-checkbox active-image"></div>
+                </div>
+                <div class="inst-points">
+                    <div class="social-icon inst-icon"></div>
+                    <div class="social-link">se1fmadegod@example.com</div>
+                    <div class="points-cost"><span class="points-value">15</span> баллов</div>
+                    <div class="social-checkbox active-image"></div>
+                </div>
+                <div class="fb-points">
+                    <div class="social-icon fb-icon"></div>
+                    <div class="social-link"></div>
+                    <div class="points-cost"><span class="points-value">6</span> баллов</div>
+                    <div class="social-checkbox not-active-image"></div>
+                </div>
+                <div class="tw-points">
+                    <div class="social-icon tw-icon"></div>
+                    <div class="social-link">se1fmadegod@example.com</div>
+                    <div class="points-cost"><span class="points-value">20</span> баллов</div>
+                    <div class="social-checkbox active-image"></div>
+                </div>
+            </div>
+            <div class="user-points"><span>256</span></div>
+        </div>
+        <div class="personal-data">
+            <div class="personal-block-title">
+                <div class="personal-image"></div>
+                <span class="personal-block-info">персональные данные</span>
+            </div>
+            <form action="" class="user-data">
+                <div class="user-photo"><span class="points-value">(+5 баллов)</span><label>Добавить фото<input type="file" accept="image/*"/></label></div>
+                <div class="data-block">
+                    <label><input type="text"/></label>
+                    <label><input type="text"/></label>
+                    <label><select></select></label>
+                    <label><select></select></label>
+                    <label><input type="email"/></label>
+                    <button></button>
+                    <input type="reset"/>
+                </div>
+            </form>
+            <div class="desired-prizes">
+                <span class="desired-prizes-title">
+                    <span class="points-value">(+5 баллов)</span>
+                    <span class="prize-choice">Ipad</span>
+                    <span class="prize-choice">Ноутбук</span>
+                    <span class="prize-choice">Смартфон</span>
+                    <span class="prize-choice">Электронная книга</span>
+                    <span class="prize-choice">Плазменный телевизор</span>
+                    <span class="prize-choice">Поездка на курорт</span>
+                    <span class="prize-choice">Билет в кино</span>
+                </span>
+            </div>
+        </div>
+        <div class="personal-invite">
+            <div class="personal-block-title">
+                <div class="personal-image"></div>
+                <span class="personal-block-info">пригласить друга</span>
+            </div>
+        </div>
+
+        <a href="" class="more-info">Показать все</a>
     </div>
     <!-- personal-events-now -->
     <div class="personal-events-now content-block invisible-block">
@@ -211,6 +289,7 @@
                 </li><!-- the end of the event -->
             </ul>
         </div>
+        <a href="" class="more-info">Показать еще</a>
     </div>
     <!-- personal-events -->
     <div class="personal-events content-block invisible-block">
@@ -328,12 +407,13 @@
                 </li><!-- the end of the event -->
             </ul>
         </div>
+        <a href="" class="more-info">Показать еще</a>
     </div>
     <!-- personal-auctions -->
     <div class="personal-auctions content-block invisible-block">
         <div class="personal-block-title">
             <div class="personal-image"></div>
-            <span class="personal-block-info">у вас <span class="personal-value">7</span> аукционов</span>
+            <span class="personal-block-info">у вас <span class="personal-value">12</span> аукционов</span>
         </div>
 
         <div class="new-events-table">
@@ -431,11 +511,23 @@
                     </div>
                 </li><!-- the end of the event -->
 
+                <li class="new-event-small"><!-- the beginning of the event -->
+                    <div class="event-body">
+                        <span class="event-title">Развлечения и спорт</span>
+                        <div class="event-image">
+                            <img src="images/event-image.jpg" alt="event image"/>
+                        </div>
+                    <span class="event-description">
+                        Разнообразный и богатый опыт реализация намеченных плановых заданий
+                        обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+                    </span>
+                    </div>
+                </li><!-- the end of the event -->
+
             </ul>
         </div>
+        <a href="" class="more-info">Показать еще</a>
     </div>
-
-    <a href="" class="more-info">Показать еще</a>
 
 </main>
 

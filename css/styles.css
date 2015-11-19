@@ -2604,6 +2604,11 @@ td {
     width: 95%;
     margin: 0 auto;
 }
+.points-value {
+    color: #807f7f;
+    margin-right: 1%;
+    text-transform: uppercase;
+}
 .personal-points .personal-image {
     background: url("../images/sprite-icons-4.png") 100% 0;
     background-size: cover;
@@ -2663,7 +2668,97 @@ td {
     background: url("../images/sprite-icons-4.png") 59% 0;
     background-size: cover;
 }
-
+.personal-data {
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+}
+.user-data {
+    display: inline-block;
+    width: 70%;
+    border: 1px solid black;
+}
+.block-user-photo {
+    display: inline-block;
+    width: 25%;
+    margin-left: 10%;
+}
+.user-photo-title {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 3%;
+}
+.user-photo {
+    width: 90%;
+    padding-top: 90%;
+    position: relative;
+    color: #807f7f;
+    border: 1px solid black;
+}
+.user-photo .points-value {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: auto;
+}
+.user-photo label {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 100;
+}
+.user-photo input[type="file"] {
+    display: none;
+}
+.data-block {
+    display: inline-block;
+    width: 64%;
+    border: 1px solid black;
+}
+.desired-prizes {
+    display: inline-block;
+    width: 22%;
+    float: right;
+    clear: both;
+}
+.desired-prizes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.desired-prizes th {
+    font-size: 0.95em;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 0.5%;
+    padding: 1.5% 0 1.5% 3%;
+    border: 1px solid #a4a3a3;
+    background: none;
+}
+.desired-prizes th .points-value {
+    float: right;
+    clear: both;
+    font-weight: 100;
+}
+.desired-prizes td {
+    border: 1px solid #a4a3a3;
+    padding: 1.5% 7%;
+    color: #807f7f;
+    font-size: 0.95em;
+    text-align: left;
+}
+.desired-prizes button {
+    float: right;
+    clear: both;
+    margin-top: 3%;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
 .personal-invite .personal-image {
     background: url("../images/sprite-icons-4.png");
     background-size: cover;

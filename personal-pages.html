@@ -140,28 +140,36 @@
                 <span class="personal-block-info">персональные данные</span>
             </div>
             <form action="" class="user-data">
-                <div class="user-photo"><span class="points-value">(+5 баллов)</span><label>Добавить фото<input type="file" accept="image/*"/></label></div>
+                <div class="block-user-photo">
+                    <span class="user-photo-title">Ваше фото:</span>
+                    <div class="user-photo">
+                        <span class="points-value">(+5 баллов)</span>
+                        <label>Добавить фото<input type="file" accept="image/*"/></label>
+                    </div>
+                </div>
+
                 <div class="data-block">
-                    <label><input type="text"/></label>
-                    <label><input type="text"/></label>
-                    <label><select></select></label>
-                    <label><select></select></label>
-                    <label><input type="email"/></label>
-                    <button></button>
-                    <input type="reset"/>
+                    <label>Имя:<input type="text"/></label>
+                    <label>Фамилия:<input type="text"/></label>
+                    <label>Ваш город:<select></select></label>
+                    <label>Пол:<select></select></label>
+                    <label>Эл. почта:<input type="email"/></label>
+                    <button>редактировать</button>
+                    <input type="submit" value="сохранить"/>
                 </div>
             </form>
             <div class="desired-prizes">
-                <span class="desired-prizes-title">
-                    <span class="points-value">(+5 баллов)</span>
-                    <span class="prize-choice">Ipad</span>
-                    <span class="prize-choice">Ноутбук</span>
-                    <span class="prize-choice">Смартфон</span>
-                    <span class="prize-choice">Электронная книга</span>
-                    <span class="prize-choice">Плазменный телевизор</span>
-                    <span class="prize-choice">Поездка на курорт</span>
-                    <span class="prize-choice">Билет в кино</span>
-                </span>
+                <table class="desired-prizes-table">
+                    <tr><th>Желаемые призы <span class="points-value">(+5 баллов)</span></th></tr>
+                    <tr><td>Ipad</td></tr>
+                    <tr><td>Ноутбук</td></tr>
+                    <tr><td>Смартфон</td></tr>
+                    <tr><td>Электронная книга</td></tr>
+                    <tr><td>Плазменный телевизор</td></tr>
+                    <tr><td>Поездка на курорт</td></tr>
+                    <tr><td>Билет в кино</td></tr>
+                </table>
+                <button>добавить</button>
             </div>
         </div>
         <div class="personal-invite">

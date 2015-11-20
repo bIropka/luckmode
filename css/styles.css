@@ -2408,7 +2408,7 @@ header .logo {
     background: url("../images/sprite-icons.png") no-repeat 116% 50%;
     background-size: 20%;
 }
-.search-field-description::-webkit-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
+.search-field::-webkit-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
 .search-field::-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
 .search-field:-moz-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
 .search-field:-ms-input-placeholder {text-overflow:ellipsis; color: #aeaeae; font-style: italic;}
@@ -2957,6 +2957,127 @@ td {
 /**********END OF PERSONAL PAGES*********
 ****************************************/
 
+/***********PERSONAL ADVERTISER***********
+******************************************/
+.block {
+    width: 95%;
+    margin: 2% auto;
+}
+.personal-advertiser-title {
+    display: inline-block;
+    color: #cc0000;
+    font-size: 2em;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding: 1% 0;
+    background: #ededed;
+    text-transform: uppercase;
+    margin-bottom: 3%;
+}
+.add-event-general {
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+}
+.add-event-general .add-photo {
+    display: inline-block;
+    width: 30%;
+    padding-top: 25%;
+    background: #ededed url("../images/background-photo.png") no-repeat 50% 20%;
+    background-size: 35%;
+    position: relative;
+    border: 1px solid #c3c2c2;
+}
+.add-event-general .add-photo label {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    text-transform: uppercase;
+    color: #807f7f;
+    cursor: pointer;
+}
+.add-event-general .add-photo input {
+    display: none;
+}
+.event-info {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    position: relative;
+    border: 1px solid black;
+}
+.add-event-description {
+    width: 95%;
+    height: 200px;
+    margin-left: 4%;
+    resize: none;
+    border: 1px solid #c3c2c2;
+    padding: 1% 2%;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+.add-event-date {
+    display: inline-block;
+    width: 95%;
+    margin-left: 4%;
+    margin-top: 14%;
+}
+.add-event-date-title {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 1%;
+}
+.add-event-date .mark{
+    float: right;
+    position: relative;
+    right: 3%;
+    top: 5px;
+    z-index: 1;
+    color: #807f7f;
+}
+.add-event-date input {
+    width: 60%;
+    float: right;
+    position: relative;
+    left: 3%;
+    padding: 1% 2%;
+    border: 1px solid #c3c2c2;
+    font-weight: bold;
+}
+.add-event-description:focus::-webkit-input-placeholder {color: transparent}
+.add-event-description:focus::-moz-placeholder {color: transparent}
+.add-event-description:focus:-moz-placeholder {color: transparent}
+.add-event-description:focus:-ms-input-placeholder {color: transparent}
+.add-event-date input:focus::-webkit-input-placeholder {color: transparent}
+.add-event-date input:focus::-moz-placeholder {color: transparent}
+.add-event-date input:focus:-moz-placeholder {color: transparent}
+.add-event-date input:focus:-ms-input-placeholder {color: transparent}
+.money-block {
+    display: inline-block;
+    width: 29%;
+    vertical-align: top;
+    float: right;
+    clear: both;
+    text-align: center;
+    border: 1px solid black;
+}
+.add-event-general .user-points {
+    width: 79%;
+    padding-top: 58%;
+    background: url("../images/points-image.png");
+    background-size: cover;
+    margin-top: 3%;
+}
+.to-put-money {
+    margin-top: 12%;
+}
+/*******END OF PERSONAL ADVERTISER********
+******************************************/
 
 /**************** FOOTER *****************
 *****************************************/
@@ -3099,6 +3220,9 @@ footer .logo {
     .data-block li:nth-child(6){
         margin-right: 9%;
     }
+    .add-event-date {
+        margin-top: 8%;
+    }
 }
 @media (max-width: 1480px) {
 
@@ -3160,74 +3284,98 @@ footer .logo {
     .data-block li:nth-child(6){
         margin-right: 6%;
     }
+    .add-event-description {
+        height: 170px;
+    }
 }
 @media (max-width: 1366px) {
 
     .menu .choice {
         font-size: 0.9em;
     }
+
     .header-left-menu, .header-right-menu {
         margin-top: 0.2%;
     }
+
     .footer-top, .footer-bottom {
         width: 80%;
     }
+
     .button-add-winner {
         font-size: 0.9em;
     }
+
     button, input[type="submit"] {
         font-size: 1.2em;
     }
+
     .users-menu {
         padding: 0.7% 1%;
     }
+
     .auction-photo {
         width: 210px;
         height: 140px;
     }
+
     .auction-photo label {
         margin-top: 55%;
     }
+
     .auction-description {
         height: 103px;
     }
+
     .start-bid {
         font-size: 1em;
     }
+
     .start-bid input {
         font-size: 0.9em;
     }
+
     .event-date-title {
         font-size: 1em;
     }
+
     .title {
         font-size: 2em;
     }
+
     .new-event .event-title, .new-event .event-description {
         font-size: 0.9em;
     }
+
     .event-title, .event-description {
         font-size: 0.8em;
     }
+
     .new-event-small .event-description {
         font-size: 0.7em;
     }
+
     .main-auction {
         width: 145px;
         height: 182px;
     }
+
     .main-auction-points span {
         font-size: 1.5em;
     }
+
     .city-menu {
         width: 70%;
     }
+
     .main-text {
         font-size: 1.1em;
     }
+
     .secondary-text {
         font-size: 0.9em;
     }
+
     .step-graphic-circle {
         left: -15px;
         top: 40px;
@@ -3235,43 +3383,58 @@ footer .logo {
         height: 30px;
         border-width: 6px;
     }
+
     .block-our-achievements span {
         font-size: 0.8em;
     }
+
     .block-our-achievements .value {
         font-size: 3.5em;
     }
+
     .block-reviews .review-text {
         font-size: 0.8em;
     }
+
     .calculate-cost span {
         font-size: 0.8em;
     }
+
     .time-scale .min, .time-scale .max {
         top: -20px;
         font-size: 0.7em;
     }
+
     .block-calculator .like, .block-calculator .repost, .block-calculator .subscribe {
         font-size: 0.9em;
     }
+
     .tagline-red, .tagline-yellow {
         font-size: 2.3em;
     }
+
     .auction-date {
         font-size: 0.8em;
     }
+
     .points-cost {
         font-size: 1.1em;
     }
 
-    .data-block li:nth-child(6){
+    .data-block li:nth-child(6) {
         margin-right: 4%;
     }
+
     .user-photo .points-value {
         top: 5px;
     }
+
     .user-photo label {
         bottom: 5px;
+    }
+
+    .add-event-date {
+        margin-top: 5%;
     }
 }
 @media (max-width: 1280px) {
@@ -3335,6 +3498,12 @@ footer .logo {
     }
     .user-photo label {
         font-size: 0.8em;
+    }
+    .add-event-description {
+        height: 150px;
+    }
+    .add-event-date {
+        margin-top: 8%;
     }
 
 }
@@ -3435,6 +3604,21 @@ footer .logo {
     }
     .data-block li:nth-child(6){
         margin-right: 0;
+    }
+    .add-event-description {
+        height: 120px;
+    }
+    .add-event-date {
+        margin-top: 10%;
+    }
+    .add-event-date-title, .add-event-date input {
+        font-size: 0.8em;
+    }
+    .to-put-money {
+        font-size: 0.8em;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
     }
 }
 @media (max-width: 1050px) {

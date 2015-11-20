@@ -1,10 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>For advertisers</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+
+    </script>
 </head>
 <body>
+<header>
+    <div class="header-background"></div>
+    <ul class="header-left-menu">
+        <li><a href="for-advertisers.html">Рекламодателям</a></li>
+        <li><a href="completed-events.html">Завершенные акции</a></li>
+    </ul>
 
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+
+    <div class="header-right-menu">
+        <div class="account-menu">
+            <a href="">Надежда Сергеевна&ensp;&ensp;&ensp;&ensp;</a>
+            <ul class="sub-menu">
+                <li><a href="">Ваш профиль<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Настройки<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Выйти из системы<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+        <div class="city-menu">
+            <a href="">Самара</a>
+            <ul class="sub-menu">
+                <li><a href="">Харьков<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Новосибирск<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+                <li><a href="">Алма-аты<span class="sub-menu-mark">&ensp;&bull;&ensp;</span></a></li>
+            </ul>
+        </div>
+        <ul class="login-register" style="display: none">
+            <li><a href="authorization.html">Вход</a></li>
+            <li><a href="registration.html">Регистрация</a></li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <button class="button-add-winner">добавить</button>
+</header>
+
+<main>
+
+    <span class="personal-page-title">Рекламодатель</span>
+
+    <div class="block">
+        <span class="personal-advertiser-title">добавить акцию</span>
+        <form action="" class="add-event">
+            <div class="add-event-general">
+                <div class="add-photo"><label>Загрузить фото<input type="file" accept="image/*"/></label></div>
+                <div class="event-info">
+                    <textarea class="add-event-description" cols="" rows="5"
+                              placeholder="Добавить описание акции..."></textarea>
+                    <label class="add-event-date"><span class="add-event-date-title">дата запуска:</span><span class="mark">&#9660;</span>
+                        <input type="date" placeholder="Сегодня"/>
+                    </label>
+                </div>
+                <div class="money-block">
+                    <div class="user-points"><span>650</span></div>
+                    <button class="to-put-money">пополнить</button>
+                </div>
+
+            </div>
+
+            <div class="add-event-social">
+                <span class="choose-social-title">Выбор социальной сети:</span>
+                <div class="choice-vkontakte">
+                    <div class="social-icon vk-icon"></div>
+                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                </div>
+                <div class="choice-facebook">
+                    <div class="social-icon fb-icon"></div>
+                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                </div>
+                <div class="choice-odnoklassniki">
+                    <div class="social-icon od-icon"></div>
+                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                </div>
+                <div class="choice-twitter">
+                    <div class="social-icon tw-icon"></div>
+                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                    <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                </div>
+                <div class="choice-instagram">
+                    <div class="social-icon inst-icon"></div>
+                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                    <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                </div>
+            </div>
+            <button class="to-update-data">введены не все данные</button>
+            <button class="save-update">ok</button>
+
+            <div class="choose-place">
+                <div class="choose-place">
+                    <label class="choice-place choice-first-three chosen-place">
+                        <span class="usual-text">Закрепить Вашу акцию на</span>
+                        <span class="big-text">первой тройке</span>
+                        <input type="checkbox" checked/>
+                        <span class="choice-place-background"></span>
+                    </label>
+                    <label class="choice-place choice-first-nine">
+                        <span class="usual-text">Закрепить Вашу акцию на</span>
+                        <span class="big-text">первой девятке</span>
+                        <input type="checkbox"/>
+                        <span class="choice-place-background"></span>
+                    </label>
+                    <label class="choice-place choice-usual">
+                        <span class="big-text">Простое размещение</span>
+                        <span class="usual-text">Вашей акции</span>
+                        <input type="checkbox"/>
+                        <span class="choice-place-background"></span>
+                    </label>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="choose-region">
+                <span class="choose-region-title">Выбор региона:</span>
+                <div class="select-region">Вся Россия</div>
+            </div>
+
+            <div class="calculator">
+                <span class="calculate-cost-title">Рассчитать стоимость:</span>
+                <div class="time-scale ">
+                    <span class="min">минимум - 6 дней</span>
+                    <span class="max">максимум - 30 дней</span>
+                </div>
+                <div class="calculate-cost">
+                    <span class="days-number">Количество дней:<span class="value">14</span></span>
+                    <span class="audience-coverage">Вирусный охват аудитории:<span class="value">85000</span></span>
+                    <span class="final-cost">стоимость заказа:<span class="value">2550 руб.</span></span>
+                </div>
+            </div>
+            <input type="submit" value="оформить заказ"/>
+        </form>
+    </div>
+
+    <div class="block">
+        <span class="personal-advertiser-title">набранные баллы</span>
+    </div>
+
+    <div class="block">
+        <span class="personal-advertiser-title">действующие акции</span>
+    </div>
+
+    <div class="block">
+        <span class="personal-advertiser-title">ожидают одобрения</span>
+    </div>
+
+    <div class="block">
+        <span class="personal-advertiser-title">архив акций</span>
+    </div>
+
+</main>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-controls">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="логотип"/></a>
+            <span>Новые акции</span>
+            <ul class="activities">
+                <li><a href="">Еда</a></li>
+                <li><a href="">Развлечения и спорт</a></li>
+                <li><a href="">Красота и уход</a></li>
+                <li><a href="">Медицина</a></li>
+                <li><a href="">Образование</a></li>
+                <li><a href="">Услуги</a></li>
+            </ul>
+            <ul class="social">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+        <div class="odnoklassniki"><img src="images/odnoklassniki.jpg" alt="odnoklassniki"/></div>
+        <div class="vkontakte"><img src="images/vkontakte.jpg" alt="vkontakte"/></div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="footer-bottom">
+        <span>Акции и розыгрыши. <a href="index.html">Luckmode.</a> 2015</span>
+        <span>Создание сайта:<a href=""> A.Goncharov WEB Studio</a></span>
+    </div>
+</footer>
 </body>
 </html>

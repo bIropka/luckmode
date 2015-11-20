@@ -40,6 +40,9 @@
                     }
                 }
             });
+            $('.to-change-data').click(function (){
+                $('.field').prop('disabled', false);
+            });
         });
     </script>
     <title>Personal pages</title>
@@ -139,24 +142,44 @@
                 <div class="personal-image"></div>
                 <span class="personal-block-info">персональные данные</span>
             </div>
-            <form action="" class="user-data">
-                <div class="block-user-photo">
+            <form action="" class="user-data" onsubmit="return false">
+                <div class="user-photo">
                     <span class="user-photo-title">Ваше фото:</span>
-                    <div class="user-photo">
-                        <span class="points-value">(+5 баллов)</span>
-                        <label>Добавить фото<input type="file" accept="image/*"/></label>
-                    </div>
+                    <span class="points-value">(+5 баллов)</span>
+                    <label>Добавить фото<input type="file" accept="image/*"/></label>
                 </div>
 
-                <div class="data-block">
-                    <label>Имя:<input type="text"/></label>
-                    <label>Фамилия:<input type="text"/></label>
-                    <label>Ваш город:<select></select></label>
-                    <label>Пол:<select></select></label>
-                    <label>Эл. почта:<input type="email"/></label>
-                    <button>редактировать</button>
-                    <input type="submit" value="сохранить"/>
-                </div>
+                <ul class="data-block">
+                    <li>
+                        <span class="points-value">(+5 баллов)</span>
+                        <label><span class="field-name">Имя:</span><input class="field" type="text" placeholder="Введите имя" disabled/></label>
+                    </li>
+                    <li>
+                        <span class="points-value">(+5 баллов)</span>
+                        <label><span class="field-name">Фамилия:</span><input class="field" type="text" placeholder="Введите фамилию" disabled/>
+                        </label>
+                    </li>
+                    <li>
+                        <span class="data-block-marker">&#9660;</span>
+                        <span class="points-value">(+5 баллов)</span>
+                        <label>
+                            <span class="field-name">Ваш город:</span><select class="field" disabled><option selected="selected">Выберите город</option></select>
+                    </label>
+                    </li>
+                    <li>
+                        <span class="data-block-marker">&#9660;</span>
+                        <span class="points-value">(+5 баллов)</span>
+                        <label><span class="field-name">Пол:</span><select class="field" disabled><option selected="selected">Выберите пол</option><option>Мужской</option><option>Женский</option></select></label>
+                    </li>
+                    <li>
+                        <span class="points-value">(+5 баллов)</span>
+                        <label><span class="field-name">Эл. почта:</span><input class="field" type="email" placeholder="Введите Ваш эл. адрес" disabled/></label>
+                    </li>
+                    <li><button class="to-change-data">редактировать</button></li>
+                    <li>
+                        <input type="submit" value="сохранить"/>
+                    </li>
+                </ul>
             </form>
             <div class="desired-prizes">
                 <table class="desired-prizes-table">

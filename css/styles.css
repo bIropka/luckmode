@@ -1846,11 +1846,6 @@ header .logo {
     border: 2px solid red;
     border-bottom: transparent;
 }
-/*.activated {
-    background: none;
-    border: 2px solid red;
-    border-bottom: transparent;
-}*/
 .invisible-block {
     display: none;
 }
@@ -2609,6 +2604,7 @@ td {
     margin-right: 1%;
     text-transform: uppercase;
 }
+/***********personal points*********/
 .personal-points .personal-image {
     background: url("../images/sprite-icons-4.png") 100% 0;
     background-size: cover;
@@ -2639,12 +2635,15 @@ td {
 }
 .points-cost {
     display: inline-block;
+    width: 20%;
     vertical-align: middle;
     font-weight: bold;
     font-size: 1.3em;
 }
 .points-value {
     font-size: 1em;
+    color: #807f7f;
+    font-weight: bold;
 }
 .personal-points .social-checkbox {
     display: inline-block;
@@ -2657,69 +2656,155 @@ td {
 }
 .personal-points .user-points {
     display: inline-block;
-    width: 32%;
-    padding-top: 24%;
+    width: 24%;
+    padding-top: 18%;
     float: right;
 }
 .personal-points .user-points span {
-    font-size: 2.5em;
+    font-size: 2.3em;
 }
+/*************personal data**********/
 .personal-data .personal-image {
     background: url("../images/sprite-icons-4.png") 59% 0;
     background-size: cover;
 }
 .personal-data {
     width: 100%;
-    text-align: left;
-    border: 1px solid black;
+    margin-top: 3%;
 }
 .user-data {
     display: inline-block;
     width: 70%;
-    border: 1px solid black;
-}
-.block-user-photo {
-    display: inline-block;
-    width: 25%;
-    margin-left: 10%;
 }
 .user-photo-title {
-    width: 100%;
-    display: inline-block;
-    margin-bottom: 3%;
+    position: absolute;
+    top: -20%;
+    left: 0;
+    color: #807f7f;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 .user-photo {
-    width: 90%;
-    padding-top: 90%;
+    display: inline-block;
+    width: 20%;
+    padding-top: 20%;
+    margin-left: 6%;
+    margin-top: 4%;
     position: relative;
     color: #807f7f;
-    border: 1px solid black;
+    border: 2px solid #adacac;
 }
 .user-photo .points-value {
+    display: inline-block;
+    width: 100%;
     position: absolute;
     top: 10px;
     left: 0;
-    right: 0;
-    margin: auto;
-    overflow: auto;
+    text-align: center;
 }
 .user-photo label {
+    display: inline-block;
+    width: 100%;
     position: absolute;
     bottom: 10px;
-    left: 20px;
+    left: 0;
     font-style: italic;
     text-decoration: underline;
     cursor: pointer;
     font-weight: 100;
+    text-align: center;
+    font-size: 0.9em;
 }
 .user-photo input[type="file"] {
     display: none;
 }
 .data-block {
     display: inline-block;
-    width: 64%;
-    border: 1px solid black;
+    width: 73%;
+    text-align: right;
+    vertical-align: top;
 }
+.data-block li {
+     display: inline-block;
+     width: 100%;
+     position: relative;
+     margin: 2% 0;
+ }
+.data-block li:first-child {
+    margin-top: 0;
+}
+.data-block li .points-value {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+}
+.data-block input, .data-block select {
+    display: inline-block;
+    width: 70%;
+    border: 1px solid #c8c7c7;
+    padding: 1% 2%;
+    margin-left: 5%;
+}
+.data-block input:focus::-webkit-input-placeholder {color: transparent}
+.data-block input:focus::-moz-placeholder {color: transparent}
+.data-block input:focus:-moz-placeholder {color: transparent}
+.data-block input:focus:-ms-input-placeholder {color: transparent}
+.data-block select {
+    color: #807f7f;
+    padding-left: 1.3%;
+}
+.data-block select {
+    /*for WebKit*/
+    -webkit-appearance: none;
+    /* for FF */
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    /* for IE */
+    -ms-appearance: none;
+    appearance: none!important;
+}
+.days-number select::-ms-expand {
+    display: none;
+}
+
+.data-block-marker {
+    position: absolute;
+    right: 1%;
+    color: #807f7f;
+    top: 25%;
+}
+.field-name {
+    display: inline-block;
+    width: 25%;
+    font-size: 1.2em;
+    color: #807f7f;
+    font-weight: bold;
+}
+.data-block li:nth-child(6){
+    width: 30%;
+    margin-right: 8%;
+}
+.data-block li:nth-child(7) {
+    width: 30%;
+    margin-right: 1.5%;
+}
+.data-block li .to-change-data {
+    width: 100%;
+    padding: 3% 5%;
+    font-weight: bold;
+}
+.data-block li input[type="submit"] {
+    width: 100%;
+    padding: 3% 5%;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(#edecec, #dcdcdc);
+}
+.data-block li input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #dcdcdc, #edecec);
+}
+/*************desired prizes******/
 .desired-prizes {
     display: inline-block;
     width: 22%;
@@ -2742,7 +2827,6 @@ td {
 .desired-prizes th .points-value {
     float: right;
     clear: both;
-    font-weight: 100;
 }
 .desired-prizes td {
     border: 1px solid #a4a3a3;
@@ -2984,7 +3068,9 @@ footer .logo {
     .points-cost {
         font-size: 1.2em;
     }
-
+    .personal-points .user-points span {
+        top: 25%;
+    }
 }
 @media (max-width: 1366px) {
 

@@ -40,8 +40,11 @@
                     }
                 }
             });
-            $('.to-change-data').click(function (){
+            $('.to-update-data').click(function (){
                 $('.field').prop('disabled', false);
+            });
+            $('.save-update').click(function (){
+                $('.field').prop('disabled', true);
             });
         });
     </script>
@@ -175,9 +178,9 @@
                         <span class="points-value">(+5 баллов)</span>
                         <label><span class="field-name">Эл. почта:</span><input class="field" type="email" placeholder="Введите Ваш эл. адрес" disabled/></label>
                     </li>
-                    <li><button class="to-change-data">редактировать</button></li>
+                    <li><button class="to-update-data">редактировать</button></li>
                     <li>
-                        <input type="submit" value="сохранить"/>
+                        <input class="save-update" type="submit" value="сохранить"/>
                     </li>
                 </ul>
             </form>
@@ -198,9 +201,36 @@
         <div class="personal-invite">
             <div class="personal-block-title">
                 <div class="personal-image"></div>
-                <span class="personal-block-info">пригласить друга</span>
+                <span class="personal-block-info">пригласить друга <span class="points-value">(+25 баллов)</span></span>
             </div>
+            <div class="link-for-invite-block">
+                <span class="link-for-invite-title">Пригласить отправив ссылку:</span>
+                <div class="link-for-invite">
+                    <span>www.yriksjdh234/ru</span>
+                    <p>* Вы можете скопировать ссылку и разместить её на форуме, выслать по SKYPE, по эл. почте и др.</p>
+                </div>
+            </div>
+            <span class="personal-block-info">ваши приглашённые друзья</span>
+            <table>
+                <tr>
+                    <th>Когда</th>
+                    <th>кто</th>
+                </tr>
+                <tr>
+                    <td>15 октября 2015</td>
+                    <td>Парамонова Марина</td>
+                </tr>
+                <tr>
+                    <td>19 октября 2015</td>
+                    <td>Васильев Сергей</td>
+                </tr>
+                <tr>
+                    <td>21 октября 2015</td>
+                    <td>Фирчук Петр</td>
+                </tr>
+            </table>
         </div>
+
 
         <a href="" class="more-info">Показать все</a>
     </div>

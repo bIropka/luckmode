@@ -1757,6 +1757,10 @@ header .logo {
     width: 100%;
     text-align: justify;
 }
+
+/**************** END OF FOR-ADVERTISERS *********************
+*************************************************************/
+
 /*************** HOW-IT-WORK *********************
 *************************************************/
 .how-it-work {
@@ -2642,7 +2646,7 @@ td {
 }
 .points-value {
     font-size: 1em;
-    color: #807f7f;
+    color: black;
     font-weight: bold;
 }
 .personal-points .social-checkbox {
@@ -2682,7 +2686,7 @@ td {
     left: 0;
     color: #807f7f;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .user-photo {
     display: inline-block;
@@ -2693,6 +2697,8 @@ td {
     position: relative;
     color: #807f7f;
     border: 2px solid #adacac;
+    background: url("../images/background-photo.png") no-repeat 50% 50%;
+    background-size: 50%;
 }
 .user-photo .points-value {
     display: inline-block;
@@ -2744,6 +2750,10 @@ td {
     border: 1px solid #c8c7c7;
     padding: 1% 2%;
     margin-left: 5%;
+    background: none;
+}
+.data-block input:focus, .data-block select:focus {
+    background: none;
 }
 .data-block input:focus::-webkit-input-placeholder {color: transparent}
 .data-block input:focus::-moz-placeholder {color: transparent}
@@ -2764,7 +2774,7 @@ td {
     -ms-appearance: none;
     appearance: none!important;
 }
-.days-number select::-ms-expand {
+.data-block select::-ms-expand {
     display: none;
 }
 
@@ -2777,31 +2787,37 @@ td {
 .field-name {
     display: inline-block;
     width: 25%;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #807f7f;
     font-weight: bold;
 }
 .data-block li:nth-child(6){
-    width: 30%;
-    margin-right: 8%;
+    width: 35%;
+    margin-right: 11%;
 }
 .data-block li:nth-child(7) {
-    width: 30%;
-    margin-right: 1.5%;
+    width: 35%;
 }
-.data-block li .to-change-data {
-    width: 100%;
-    padding: 3% 5%;
+.data-block li .to-update-data {
+    padding: 2% 5%;
     font-weight: bold;
+    font-size: 1em;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
 }
-.data-block li input[type="submit"] {
-    width: 100%;
-    padding: 3% 5%;
+.data-block li .save-update {
+    padding: 2% 0;
     font-weight: bold;
     color: black;
     background: linear-gradient(#edecec, #dcdcdc);
+    font-size: 1em;
+    border: none;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
 }
-.data-block li input[type="submit"]:hover {
+.data-block li .save-update:hover {
     background: linear-gradient(to bottom, #dcdcdc, #edecec);
 }
 /*************desired prizes******/
@@ -2842,10 +2858,74 @@ td {
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
+    font-size: 1em;
+}
+/*************personal invite***********/
+.personal-invite {
+    width: 100%;
+    margin-top: 2%;
 }
 .personal-invite .personal-image {
     background: url("../images/sprite-icons-4.png");
     background-size: cover;
+}
+.personal-block-info .points-value {
+    color: #807f7f;
+    margin-left: 7%;
+}
+.link-for-invite-block {
+    width: 100%;
+    margin-left: 10%;
+    text-align: left;
+}
+.link-for-invite-title {
+    color: #807f7f;
+    vertical-align: top;
+}
+.link-for-invite {
+    display: inline-block;
+    margin-left: 3%;
+    width: 30%;
+}
+.link-for-invite span {
+    display: inline-block;
+    width: 100%;
+    padding: 1% 2%;
+    border: 2px solid #c7c6c6;
+    color: #807f7f;
+}
+.link-for-invite p {
+    font-size: 0.8em;
+}
+.personal-invite>.personal-block-info {
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    padding-left: 10%;
+    margin-top: 2%;
+}
+.personal-invite table {
+    width: 50%;
+    margin-top: 2%;
+    border-collapse: collapse;
+    margin-left: 10%;
+    border: 2px solid #c7c6c6;
+    margin-bottom: 2%;
+}
+.personal-invite table th {
+    border: 2px solid #c7c6c6;
+    background: none;
+    color: black;
+    padding: 2% 5%;
+    text-transform: uppercase;
+    text-align: left;
+}
+.personal-invite table th:first-child {
+    width: 40%;
+}
+.personal-invite table td {
+    padding: 2% 5%;
+    text-align: left;
 }
 .personal-info .more-info {
     background: none;
@@ -3016,6 +3096,9 @@ footer .logo {
     .personal-menu .choice {
         padding: 1% 4%;
     }
+    .data-block li:nth-child(6){
+        margin-right: 9%;
+    }
 }
 @media (max-width: 1480px) {
 
@@ -3070,6 +3153,12 @@ footer .logo {
     }
     .personal-points .user-points span {
         top: 25%;
+    }
+    .desired-prizes th {
+        font-size: 0.8em;
+    }
+    .data-block li:nth-child(6){
+        margin-right: 6%;
     }
 }
 @media (max-width: 1366px) {
@@ -3175,6 +3264,15 @@ footer .logo {
         font-size: 1.1em;
     }
 
+    .data-block li:nth-child(6){
+        margin-right: 4%;
+    }
+    .user-photo .points-value {
+        top: 5px;
+    }
+    .user-photo label {
+        bottom: 5px;
+    }
 }
 @media (max-width: 1280px) {
 
@@ -3231,6 +3329,12 @@ footer .logo {
     }
     .personal-menu .choice {
         padding: 1% 2%;
+    }
+    .user-photo .points-value {
+        font-size: 0.9em;
+    }
+    .user-photo label {
+        font-size: 0.8em;
     }
 
 }
@@ -3326,6 +3430,12 @@ footer .logo {
         width: 128px;
         height: 160px;
     }
+    .desired-prizes th {
+        font-size: 0.65em;
+    }
+    .data-block li:nth-child(6){
+        margin-right: 0;
+    }
 }
 @media (max-width: 1050px) {
 
@@ -3397,6 +3507,9 @@ footer .logo {
         width: 140px;
         height: 175px;
     }
+    .desired-prizes th {
+        font-size: 0.8em;
+    }
 }
 
 @media (max-width: 860px) {
@@ -3465,6 +3578,9 @@ footer .logo {
     }
     .calculate-cost .value {
         padding-left: 5px;
+    }
+    .desired-prizes th {
+        font-size: 0.7em;
     }
 
 }
@@ -3741,6 +3857,17 @@ footer .logo {
     }
     .points-cost {
         font-size: 1em;
+    }
+    .user-photo .points-value {
+        font-size: 0.8em;
+        top: 2px;
+    }
+    .user-photo label {
+        font-size: 0.7em;
+        bottom: 2px;
+    }
+    .user-photo-title {
+        top: -30%;
     }
 
 }

@@ -41,15 +41,30 @@
                 }
             });
 
-            $('.to-put-money').click(function () {
+            /*$('.to-put-money').click(function () {
                 $('.window-payment-successful').fadeIn();
             });
-            /*$('.window-bid').click(function (event) {
+            $('.window-payment-successful').click(function (event) {
                 $target = $(event.target);
-                if (!$target.closest($('.form-bid')).length) $('.window-bid').fadeOut();
-                if ($target.hasClass('close-window')) $('.window-bid').fadeOut();
+                if (!$target.closest($('.payment-successful')).length) $('.window-payment-successful').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-payment-successful').fadeOut();
             });*/
+            /* payment with error, modal window*/
+            $('.to-put-money').click(function () {
+                $('.window-payment-error').fadeIn();
+            });
+            $('.window-payment-error').click(function (event) {
+                $target = $(event.target);
+                if (!$target.closest($('.payment-error')).length) $('.window-payment-error').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-payment-error').fadeOut();
+            });
 
+            $('.to-update-data-social').click(function (){
+                $('.field').prop('disabled', false);
+            });
+            $('.save-update-social').click(function (){
+                $('.field').prop('disabled', true);
+            });
         });
     </script>
 </head>
@@ -95,7 +110,7 @@
 
     <div class="block">
         <span class="personal-advertiser-title">добавить акцию</span>
-        <form action="" class="add-event">
+        <form action="" class="add-event" onsubmit="return false">
             <div class="add-event-general">
                 <div class="add-photo">
                     <label>Загрузить фото<input type="file" accept="image/*"/></label>
@@ -119,41 +134,41 @@
                 <ul>
                     <li class="choice-vkontakte">
                         <span class="social-icon vk-icon"></span>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
+                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-facebook">
                         <div class="social-icon fb-icon"></div>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
+                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-odnoklassniki">
                         <div class="social-icon od-icon"></div>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
+                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
+                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-twitter">
                         <div class="social-icon tw-icon"></div>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
+                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-instagram">
                         <div class="social-icon inst-icon"></div>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
+                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                 </ul>
@@ -191,6 +206,9 @@
                 <span class="add-event-region-title">Выбор региона:</span><span class="mark">&#9660;</span>
                 <select class="add-event-region-select">
                     <option selected="selected">Вся Россия</option>
+                    <option value="Kharkov">Харьков</option>
+                    <option value="Mariupol">Мариуполь</option>
+                    <option value="Odessa">Одесса</option>
                 </select>
             </label>
 

@@ -21,6 +21,7 @@ button, input[type="submit"], input[type="reset"] {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 button:hover, input[type="submit"]:hover {
     background: linear-gradient(to bottom, #990000, #cc0000);
@@ -1538,7 +1539,16 @@ header .logo {
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.3);
 }
-.block-calculator .choose-social .choice-instagram {
+.block-calculator .choice-twitter {
+    text-align: left;
+}
+.block-calculator .choice-twitter .social-icon {
+    margin-left: 8%;
+}
+.block-calculator .choice-twitter .repost {
+    margin-left: 26%;
+}
+.block-calculator .form-calculator .choose-social .choice-instagram {
     float: left;
 }
 .block-calculator .choose-place {
@@ -1561,6 +1571,10 @@ header .logo {
     width: 100%;
     text-align: left;
     margin: 3% 0 2% 5%;
+}
+.block-calculator .calculate-cost-title {
+    width: 90%;
+    margin-left: 8%;
 }
 .block-calculator .calculate-cost-title {
     margin-bottom: 0;
@@ -1818,13 +1832,10 @@ header .logo {
 /*********** END OF HOW-IT-WORK ******************
 *************************************************/
 
-/*************** END OF FOR-ADVERTISERS *********************
-*************************************************************/
 /******************** ADMIN-PANEL ***************************
 *************************************************************/
 
-/***************** MENU ******************
-*****************************************/
+/***************** MENU ******************/
 .menu ul {
     width: 100%;
     text-align: center;
@@ -2120,10 +2131,11 @@ header .logo {
     margin-left: 5%;
     background: url("../images/sprite-icons.png") 50% 0;
     background-size: cover;
+    cursor: pointer;
 }
 .repost .bid-mark {width: 31%; padding-top: 25%;}
 .subscribe .bid-mark {width: 22%; padding-top: 17.5%;}
-.choice-twitter .repost {margin-left: 24%;}
+.window-bid .choice-twitter .repost {margin-left: 23.5%;}
 .active-bid-checkbox .bid-mark {background-position: 100% 0;}
 .choice-place {
     display: inline-block;
@@ -2282,8 +2294,6 @@ header .logo {
     border: 2px solid #f1efef;
     color: #c6c6c6;
     font-style: italic;
-}
-.select-auction-category .mark {
     float: right;
 }
 
@@ -3438,7 +3448,7 @@ td {
     text-transform: lowercase;
 }
 /***********modal windows*************/
-.window-payment-successful {
+.window-payment-successful, .window-payment-error {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -3448,28 +3458,26 @@ td {
     display: none;
     text-align: center;
 }
-.payment-successful {
+.payment-successful, .payment-error {
     position: absolute;
     width: 360px;
     height: 150px;
     margin: auto;
-    left: 300px;
-    right: auto;
+    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
     background: #fff;
     border: 2px solid #cc0000;
     outline: 10px solid white;
 }
-/*.payment-error {
+.payment-error {
     height: 100px;
-    left: auto;
-    right: 300px;
-}*/
+}
 .payment-successful .title {
     margin: 0 0 2%;
 }
-.payment-successful .info/*, .payment-error .info */{
+.payment-successful .info, .payment-error .info {
     display: inline-block;
     width: 70%;
     font-size: 1.3em;

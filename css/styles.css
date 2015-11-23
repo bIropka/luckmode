@@ -55,7 +55,7 @@ button:hover, input[type="submit"]:hover {
 .gg-icon {background:url("../images/sprite-social-2.png") no-repeat 20% 0; background-size: cover}
 .tw-icon {background:url("../images/sprite-social-2.png") no-repeat 40% 0; background-size: cover}
 
-.active-image {background: url("../images/sprite-icons-5.png") 100% 0;background-size: cover;}
+.active-image {background: url("../images/sprite-icons-5.png") no-repeat 104% 0;background-size: cover;}
 .not-active-image {background: url("../images/sprite-icons-5.png");background-size: cover;}
 .discounts-block {
     position: absolute;
@@ -2090,7 +2090,7 @@ header .logo {
     padding-top: 8%;
     vertical-align: bottom;
 }
-.choice-vkontakte, .choice-odnoklassnikim {
+.choice-vkontakte, .choice-odnoklassniki {
     float: left;
 }
 .choice-facebook, .choice-twitter {
@@ -2762,8 +2762,6 @@ td {
 .data-block select {
     color: #807f7f;
     padding-left: 1.3%;
-}
-.data-block select {
     /*for WebKit*/
     -webkit-appearance: none;
     /* for FF */
@@ -2930,17 +2928,9 @@ td {
 .personal-info .more-info {
     background: none;
 }
-/********** personal events now****************/
-.personal-events-now {
-
-}
 .personal-events-now .personal-image {
     background: url("../images/sprite-icons-4.png") 77% 0;
     background-size: cover;
-}
-/********** personal events****************/
-.personal-events {
-
 }
 .personal-events .personal-image {
     background: url("../images/sprite-icons-4.png") 37% 0;
@@ -2978,12 +2968,12 @@ td {
 .add-event-general {
     width: 100%;
     text-align: left;
-    border: 1px solid black;
+    position: relative;
 }
 .add-event-general .add-photo {
     display: inline-block;
-    width: 30%;
-    padding-top: 25%;
+    width: 25%;
+    padding-top: 20%;
     background: #ededed url("../images/background-photo.png") no-repeat 50% 20%;
     background-size: 35%;
     position: relative;
@@ -3003,51 +2993,52 @@ td {
 .add-event-general .add-photo input {
     display: none;
 }
-.event-info {
-    display: inline-block;
-    width: 40%;
-    vertical-align: top;
-    position: relative;
-    border: 1px solid black;
-}
 .add-event-description {
-    width: 95%;
-    height: 200px;
-    margin-left: 4%;
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    height: 190px;
     resize: none;
     border: 1px solid #c3c2c2;
     padding: 1% 2%;
     font-weight: bold;
-    vertical-align: bottom;
+    margin-left: 3%;
+}
+.add-event-date-title {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    bottom: 2px;
+    left: 25%;
 }
 .add-event-date {
     display: inline-block;
-    width: 95%;
-    margin-left: 4%;
-    margin-top: 14%;
-}
-.add-event-date-title {
-    display: inline-block;
-    text-transform: uppercase;
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+    text-align: left;
+    padding: 0.5% 2%;
+    color: #c3c2c2;
     font-weight: bold;
-    margin-top: 1%;
+    border: 1px solid #c3c2c2;
+    cursor: pointer;
 }
 .add-event-date .mark{
     float: right;
     position: relative;
-    right: 3%;
-    top: 5px;
-    z-index: 1;
+    right: 2%;
+    top: 2px;
     color: #807f7f;
 }
-.add-event-date input {
-    width: 60%;
-    float: right;
-    position: relative;
-    left: 3%;
-    padding: 1% 2%;
-    border: 1px solid #c3c2c2;
-    font-weight: bold;
+.input-event-date {
+    display: block;
+    height: 0;
+    width: 1px;
+    border: none;
 }
 .add-event-description:focus::-webkit-input-placeholder {color: transparent}
 .add-event-description:focus::-moz-placeholder {color: transparent}
@@ -3059,22 +3050,409 @@ td {
 .add-event-date input:focus:-ms-input-placeholder {color: transparent}
 .money-block {
     display: inline-block;
-    width: 29%;
+    width: 26%;
     vertical-align: top;
     float: right;
-    clear: both;
     text-align: center;
-    border: 1px solid black;
 }
 .add-event-general .user-points {
     width: 79%;
     padding-top: 58%;
     background: url("../images/points-image.png");
     background-size: cover;
-    margin-top: 3%;
 }
 .to-put-money {
-    margin-top: 12%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 15%;
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    padding: 0.5%;
+
+}
+/*********add event social**********/
+.add-event-social {
+    width: 100%;
+    margin: 5% 0;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+.add-event-social ul {
+    width: 95%;
+    margin: 0 auto;
+}
+.add-event-social .choose-social-title {
+    text-align: center;
+    margin: 1% auto;
+    font-size: 1.5em;
+}
+.add-event-social ul li {
+     width: 100%;
+     margin: 1% 0;
+    white-space: nowrap;
+ }
+.add-event-social .social-icon {
+    display: inline-block;
+    width: 4%;
+    padding-top: 4%;
+    vertical-align: middle;
+}
+.link-to-topic {
+    display: inline-block;
+    width: auto;
+    margin: 0 0 0 1%;
+    vertical-align: middle;
+}
+.link-to-topic input {
+    width: 55%;
+    background-color: #f7f7f7;
+    border: none;
+    border-bottom: 2px solid #a3a2a2;
+    margin-left: 2%;
+}
+.link-to-topic input:focus {
+    border-bottom: none;
+    background-color: white;
+}
+.add-event-social .bid-checkbox {
+    display: inline-block;
+    padding: 0;
+    vertical-align: middle;
+    margin: 0 0 0 10px;
+}
+.add-event-social .like {
+     width: 70px;
+ }
+.add-event-social .repost {
+    width: 85px;
+}
+.choice-twitter .repost {
+    margin-left: 95px;
+}
+.add-event-social .subscribe {
+    width: 130px;
+}
+.add-event-social .social-link {
+    display: inline-block;
+    width: 40%;
+    vertical-align: middle;
+    color: #807f7f;
+    text-decoration: underline;
+    text-align: center;
+}
+.add-event-social input[type="checkbox"] {
+    display: none;
+}
+.add-event-social .bid-mark {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url("../images/sprite-icons-5.png") no-repeat -40% 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+.add-event-social .active-bid-checkbox .bid-mark {
+    background-position: 100% 50%;
+}
+.control-block-social {
+    text-align: left;
+    margin-bottom: 3%;
+}
+.to-update-data-social {
+    margin-left: 2.5%;
+    background: linear-gradient(#edecec, #dcdcdc);
+    color: black;
+    padding: 0.5% 1%;
+}
+.to-update-data-social:hover {
+    background: linear-gradient(#dcdcdc, #edecec);
+}
+.save-update-social {
+    margin-left: 3%;
+    padding: 0.5% 1%;
+}
+/*****************************************/
+.add-event .choice-place {
+    background-color: #f7f7f7;
+    padding: 1%;
+    margin-bottom: 5%;
+}
+/******************************************/
+.add-event-region {
+    display: inline-block;
+    width: 60%;
+    text-align: left;
+    position: relative;
+    margin-bottom: 5%;
+}
+.add-event-region-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 4%;
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+.add-event-region-select {
+    display: inline-block;
+    border: 1px solid #807f7f;
+    font-weight: bold;
+    color: #807f7f;
+    float: right;
+    width: 45%;
+    padding: 0.5% 0;
+    /*for WebKit*/
+    -webkit-appearance: none;
+    /* for FF */
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    /* for IE */
+    -ms-appearance: none;
+    appearance: none!important;
+    cursor: pointer;
+    background: transparent;
+}
+.add-event-region .mark {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    color: #807f7f;
+    cursor: pointer;
+    font-size: 1.3em;
+    z-index: -1;
+}
+/******************************************/
+.add-event-calculator {
+    width: 100%;
+    margin-bottom: 2%;
+    background-color: #f7f7f7;
+}
+.add-event-calculator .time-scale, .add-event-calculator .calculate-cost {
+    width: 80%;
+}
+.add-event-calculator .calculate-cost {
+    width: 95%;
+}
+.add-event .personal-advertiser-submit {
+    margin-bottom: 4%;
+    padding: 1% 3%;
+    font-weight: bold;
+}
+/*********personal advertiser points*******/
+.discount-for-points {
+    width: 25%;
+    border-collapse: collapse;
+    float: left;
+    clear: both;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.discount-for-points caption {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: bold;
+    padding: 0.5% 2% 8%;
+}
+.discount-for-points td {
+    border: none;
+    border-bottom: 1px solid #b3b2b2;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: left;
+    padding: 3% 3% 3%;
+    color: black;
+}
+.user-points-block {
+    width: 50%;
+    margin-left: 35%;
+}
+.user-points-title {
+    display: inline-block;
+    width: 70%;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+.user-points-block .user-points {
+    width: 47.5%;
+    padding-top: 35%;
+}
+/*************personal advertiser events now************/
+.block .private-event-image {
+    width: 40%;
+    background: none;
+}
+.block .private-event-text {
+    width: 60%;
+    padding: 0;
+}
+.block .private-event-image div {
+    width: 100%;
+    background: url("../images/shadow-right.png") no-repeat 100% 0;
+    background-size: 7% 100%;
+}
+.block .private-event-text .title{
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    margin: 0 0 3% 0;
+}
+.private-event-statistic {
+    display: inline-block;
+    width: 98%;
+    margin: 1% auto 3%;
+    text-align: left;
+}
+.private-event-statistic li {
+    display: inline-block;
+    width: 30%;
+    margin-right: 3%;
+}
+.private-event-statistic .data-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+.private-event-statistic .data-value {
+    font-size: 1.5em;
+    color: #807f7f;
+    border: 2px solid #cfcece;
+    padding: 1% 4%;
+    margin-left: 5%;
+    font-weight: bold;
+}
+.block .more-info {
+    margin-bottom: 5%;
+}
+/*********personal advertiser events on moderation**********/
+.private-event {
+    margin-bottom: 2%;
+}
+.private-event-text {position: relative}
+.block .private-event-text .text-fix {
+    display: inline-block;
+    padding: 0 0 6% 0;
+}
+.private-event-control {
+    display: inline-block;
+    width: 100%;
+    background-color: #f7f7f7;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1% 3%;
+}
+.private-event-control-title, .private-event-status, .private-event-status-value {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-style: normal;
+}
+.private-event-control-title {
+    line-height: 2em;
+}
+.private-event-control label {
+    display: inline-block;
+    width: 25%;
+    margin-left: 3%;
+    padding: 1% 2%;
+    font-size: 1.3em;
+    cursor: pointer;
+    border: 2px solid #bebebe;
+    background-color: white;
+}
+.private-event-control label .mark {
+    font-size: 1.1em;
+    vertical-align: middle;
+    float: right;
+    margin-right: 1%;
+}
+.private-event-control-input {
+    display: inline-block;
+    width: 1px;
+    height: 0;
+    border: none;
+}
+.private-event-status {
+    display: inline-block;
+    color: #cc0000;
+    float: right;
+    line-height: 2em;
+}
+.private-event-status-value {
+    font-size: 1.1em;
+}
+/*************run again**************/
+.archive .private-event-image {
+    width: 20%;
+}
+.block .archive .text-fix {
+    padding: 0 0 3% 0;
+}
+.block .archive .title {
+    margin: 0 0 1% 0;
+}
+.run-again {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #cc0000;
+    text-transform: lowercase;
+}
+/***********modal windows*************/
+.window-payment {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    text-align: center;
+}
+.payment-successful, .payment-error {
+    position: absolute;
+    width: 360px;
+    height: 150px;
+    margin: auto;
+    left: 300px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    border: 2px solid #cc0000;
+    outline: 10px solid white;
+}
+.payment-error {
+    height: 100px;
+    left: auto;
+    right: 300px;
+}
+.payment-successful .title {
+    margin: 0 0 2%;
+}
+.payment-successful .info, .payment-error .info {
+    display: inline-block;
+    width: 70%;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.payment-successful .sub-title {
+    font-size: 1.8em;
+    margin: 2% 0 0;
 }
 /*******END OF PERSONAL ADVERTISER********
 ******************************************/
@@ -3220,9 +3598,23 @@ footer .logo {
     .data-block li:nth-child(6){
         margin-right: 9%;
     }
-    .add-event-date {
-        margin-top: 8%;
+    .add-event-description {
+        height: 150px;
     }
+    .add-event-social .social-link {
+        width: 33%;
+        text-align: left;
+    }
+    .link-to-topic, .bid-checkbox, .add-event-social .social-link  {
+        font-size: 0.9em;
+    }
+    .user-points-title, .discount-for-points caption {
+        font-size: 1.3em;
+    }
+    .private-event-control {
+        font-size: 0.9em;
+    }
+
 }
 @media (max-width: 1480px) {
 
@@ -3281,12 +3673,31 @@ footer .logo {
     .desired-prizes th {
         font-size: 0.8em;
     }
-    .data-block li:nth-child(6){
-        margin-right: 6%;
-    }
     .add-event-description {
-        height: 170px;
+        height: 130px;
     }
+    .link-to-topic {
+        width: 220px;
+    }
+    .link-to-topic input {
+        width: 45%;
+    }
+    .add-event-social .social-link, .bid-checkbox, .link-to-topic {
+        font-size: 0.85em;
+    }
+    .user-points-title, .discount-for-points caption {
+        font-size: 1.2em;
+    }
+    .discount-for-points td {
+        font-size: 1.1em;
+    }
+    .private-event-statistic .data-name {
+        font-size: 1.1em;
+    }
+    .private-event-statistic .data-value {
+        font-size: 1.3em;
+    }
+
 }
 @media (max-width: 1366px) {
 
@@ -3326,23 +3737,18 @@ footer .logo {
     .auction-description {
         height: 103px;
     }
-
     .start-bid {
         font-size: 1em;
     }
-
     .start-bid input {
         font-size: 0.9em;
     }
-
     .event-date-title {
         font-size: 1em;
     }
-
     .title {
         font-size: 2em;
     }
-
     .new-event .event-title, .new-event .event-description {
         font-size: 0.9em;
     }
@@ -3359,23 +3765,18 @@ footer .logo {
         width: 145px;
         height: 182px;
     }
-
     .main-auction-points span {
         font-size: 1.5em;
     }
-
     .city-menu {
         width: 70%;
     }
-
     .main-text {
         font-size: 1.1em;
     }
-
     .secondary-text {
         font-size: 0.9em;
     }
-
     .step-graphic-circle {
         left: -15px;
         top: 40px;
@@ -3387,19 +3788,15 @@ footer .logo {
     .block-our-achievements span {
         font-size: 0.8em;
     }
-
     .block-our-achievements .value {
         font-size: 3.5em;
     }
-
     .block-reviews .review-text {
         font-size: 0.8em;
     }
-
     .calculate-cost span {
         font-size: 0.8em;
     }
-
     .time-scale .min, .time-scale .max {
         top: -20px;
         font-size: 0.7em;
@@ -3435,6 +3832,27 @@ footer .logo {
 
     .add-event-date {
         margin-top: 5%;
+    }
+    .add-event-description {
+        height: 120px;
+    }
+    .add-event-social .social-link, .bid-checkbox, .link-to-topic {
+        font-size: 0.8em;
+    }
+    .link-to-topic {
+        width: 200px;
+    }
+    .user-points-title, .discount-for-points caption {
+        font-size: 1.1em;
+    }
+    .discount-for-points td {
+        font-size: 1em;
+    }
+    .private-event-control {
+        font-size: 0.8em;
+    }
+    .private-event-text .text-fix {
+        font-size: 0.9em;
     }
 }
 @media (max-width: 1280px) {
@@ -3499,11 +3917,50 @@ footer .logo {
     .user-photo label {
         font-size: 0.8em;
     }
-    .add-event-description {
-        height: 150px;
-    }
     .add-event-date {
         margin-top: 8%;
+    }
+    .add-event-date-title {
+        font-size: 1.1em;
+    }
+    .add-event-date {
+        font-size: 0.9em;
+        padding: 0.2% 3%;
+    }
+    .add-event-social .like {
+        width: 50px;
+    }
+    .add-event-social .repost {
+        width: 60px;
+    }
+    .choice-twitter .repost {
+        margin-left: 73px;
+    }
+    .add-event-social .subscribe {
+        width: 105px;
+    }
+    .add-event-social .bid-mark {
+        width: 30px;
+        height: 30px;
+    }
+    .private-event-statistic li:last-child {
+        width: 20%;
+    }
+    .private-event-statistic .data-name {
+        font-size: 1em;
+    }
+    .private-event-statistic .data-value {
+        font-size: 1.2em;
+    }
+    .private-event-control label {
+        font-size: 1em;
+    }
+    .private-event-status-value {
+        font-size: 1em;
+    }
+    .block .private-event-text .title {
+        font-size: 1.2em;
+        margin-bottom: 1%;
     }
 
 }
@@ -3577,6 +4034,30 @@ footer .logo {
     .personal-menu .choice, .personal-page-title {
         font-size: 0.9em;
     }
+    .add-event-social .social-link, .bid-checkbox, .link-to-topic {
+        font-size: 0.7em;
+    }
+    .link-to-topic {
+        width: 170px;
+    }
+    .link-to-topic input {
+        width: 40%;
+    }
+    .user-points-title, .discount-for-points caption {
+        font-size: 1em;
+    }
+    .discount-for-points td {
+        font-size: 0.9em;
+    }
+    .private-event-statistic .data-name {
+        font-size: 0.9em;
+    }
+    .private-event-statistic .data-value {
+        font-size: 1.1em;
+    }
+    .private-event-text .text-fix {
+        font-size: 0.85em;
+    }
 
 }
 @media (max-width: 1080px) {
@@ -3608,17 +4089,14 @@ footer .logo {
     .add-event-description {
         height: 120px;
     }
-    .add-event-date {
-        margin-top: 10%;
-    }
-    .add-event-date-title, .add-event-date input {
-        font-size: 0.8em;
-    }
     .to-put-money {
         font-size: 0.8em;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
+    }
+    .add-event-description {
+        height: 110px;
     }
 }
 @media (max-width: 1050px) {
@@ -3694,6 +4172,21 @@ footer .logo {
     .desired-prizes th {
         font-size: 0.8em;
     }
+    .add-event-date {
+        margin-top: 12%;
+    }
+    .add-event-description {
+        height: 140px;
+    }
+    .add-event-social  {
+        text-align: center;
+    }
+    .personal-advertiser-title {
+        font-size: 1.5em;
+    }
+    .private-event-text .text-fix {
+        font-size: 1em;
+    }
 }
 
 @media (max-width: 860px) {
@@ -3766,6 +4259,12 @@ footer .logo {
     .desired-prizes th {
         font-size: 0.7em;
     }
+    .add-event-description {
+        height: 120px;
+    }
+    .private-event-text .text-fix {
+        font-size: 0.89em;
+    }
 
 }
 
@@ -3828,10 +4327,26 @@ footer .logo {
     .calculate-cost .value {
         font-size: 1.5em;
     }
+    .add-event-description {
+        height: 100px;
+    }
+    .link-to-topic {
+        text-align: left;
+        width: 120px;
+    }
+    .private-event-text {
+        font-size: 0.85em;
+    }
+    .personal-advertiser-title {
+        font-size: 1.2em;
+    }
+    .private-event-text .text-fix {
+        font-size: 1em;
+    }
 
 }
 
-@media (max-width: 640px) {
+@media (max-width: 650px) {
 
     * {
         font-size: 0.9em;
@@ -3895,6 +4410,28 @@ footer .logo {
     }
     .auction-description {
         height: 50px;
+    }
+    .add-event-description {
+        height: 80px;
+    }
+    .bid-checkbox {
+        margin: 0;
+    }
+    .add-event-social .like {
+        width: 30px;
+    }
+    .add-event-social .repost {
+        width: 30px;
+    }
+    .choice-twitter .repost {
+        margin-left: 52px;
+    }
+    .add-event-social .subscribe {
+        width: 60px;
+    }
+    .add-event-social .bid-mark {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -4053,6 +4590,36 @@ footer .logo {
     .user-photo-title {
         top: -30%;
     }
+    .add-event-description {
+        height: 60px;
+    }
+    .link-to-topic {
+        width: 90px;
+    }
+    .add-event-social ul {
+        width: 100%;
+    }
+    .add-event-date-title {
+        font-size: 0.9em;
+    }
+    .user-points-title, .discount-for-points caption {
+        font-size: 0.8em;
+    }
+    .discount-for-points td {
+        font-size: 0.75em;
+    }
+    .private-event-statistic .data-name {
+        font-size: 0.75em;
+    }
+    .private-event-statistic .data-value {
+        font-size: 0.8em;
+    }
+    .private-event-text {
+        font-size: 0.8em;
+    }
+    .private-event-text .text-fix {
+        font-size: 0.9em;
+    }
 
 }
 
@@ -4079,5 +4646,8 @@ footer .logo {
     .main-auction {
         width: 60px;
         height: 75px;
+    }
+    .private-event-text {
+        font-size: 0.75em;
     }
 }

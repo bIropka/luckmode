@@ -2,14 +2,53 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>For advertisers</title>
+    <title>Personal advertiser</title>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script>
-
+        $(document).ready(function () {
+            $( '.input-event-date' ).datepicker();
+            $( '.private-event-control-input' ).datepicker();
+            $('.bid-checkbox').bind('change', BidCSocialEvent);
+            function BidCSocialEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $(this).addClass('active-bid-checkbox');
+                } else {
+                    $(this).removeClass('active-bid-checkbox');
+                }
+            }
+            $('.choice-place').bind('change', BidPlaceEvent);
+            function BidPlaceEvent() {
+                if ($(this).find('input').prop("checked")){
+                    $('.choice-place').removeClass('chosen-place');
+                    $(this).addClass('chosen-place');
+                } else {
+                    $(this).removeClass('chosen-place');
+                }
+            }
+        });
+        $(function() {
+            $('.time-scale' ).slider({
+                min: 6,
+                max: 30,
+                range: "min",
+                value: 14,
+                slide: function( event, ui ) {
+                    $('.days-number .value').html(ui.value);
+                }
+            });
+            $('.to-put-money').click(function () {
+                $('.window-payment').fadeIn();
+            });
+            $('.window-payment').click(function (event) {
+                $target = $(event.target);
+                if (!$target.closest($('.window-payment-error')).length) $('.window-payment').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-payment').fadeOut();
+            });
+        });
     </script>
 </head>
 <body>
@@ -56,14 +95,16 @@
         <span class="personal-advertiser-title">добавить акцию</span>
         <form action="" class="add-event">
             <div class="add-event-general">
-                <div class="add-photo"><label>Загрузить фото<input type="file" accept="image/*"/></label></div>
-                <div class="event-info">
-                    <textarea class="add-event-description" cols="" rows="5"
-                              placeholder="Добавить описание акции..."></textarea>
-                    <label class="add-event-date"><span class="add-event-date-title">дата запуска:</span><span class="mark">&#9660;</span>
-                        <input type="date" placeholder="Сегодня"/>
-                    </label>
+                <div class="add-photo">
+                    <label>Загрузить фото<input type="file" accept="image/*"/></label>
                 </div>
+                <textarea class="add-event-description" cols="" rows="5" placeholder="Добавить описание акции..."></textarea>
+                <span class="add-event-date-title">дата запуска</span>
+                <label class="add-event-date">
+                    Сегодня<span class="mark">&#9660;</span>
+                    <input type="date" class="input-event-date"/>
+                </label>
+
                 <div class="money-block">
                     <div class="user-points"><span>650</span></div>
                     <button class="to-put-money">пополнить</button>
@@ -73,48 +114,52 @@
 
             <div class="add-event-social">
                 <span class="choose-social-title">Выбор социальной сети:</span>
-                <div class="choice-vkontakte">
-                    <div class="social-icon vk-icon"></div>
-                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
-                </div>
-                <div class="choice-facebook">
-                    <div class="social-icon fb-icon"></div>
-                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
-                </div>
-                <div class="choice-odnoklassniki">
-                    <div class="social-icon od-icon"></div>
-                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                    <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                    <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
-                </div>
-                <div class="choice-twitter">
-                    <div class="social-icon tw-icon"></div>
-                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                    <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
-                </div>
-                <div class="choice-instagram">
-                    <div class="social-icon inst-icon"></div>
-                    <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
-                    <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
-                    <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
-                    <span class="social-link">https://vk.com/topic-42654803_27567419</span>
-                </div>
+                <ul>
+                    <li class="choice-vkontakte">
+                        <span class="social-icon vk-icon"></span>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                    </li>
+                    <li class="choice-facebook">
+                        <div class="social-icon fb-icon"></div>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                    </li>
+                    <li class="choice-odnoklassniki">
+                        <div class="social-icon od-icon"></div>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                    </li>
+                    <li class="choice-twitter">
+                        <div class="social-icon tw-icon"></div>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                    </li>
+                    <li class="choice-instagram">
+                        <div class="social-icon inst-icon"></div>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text"/></label>
+                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox"/></label>
+                        <span class="social-link">https://vk.com/topic-42654803_27567419</span>
+                    </li>
+                </ul>
             </div>
-            <button class="to-update-data">введены не все данные</button>
-            <button class="save-update">ok</button>
+            <div class="control-block-social">
+                <button class="to-update-data-social">введены не все данные</button>
+                <button class="save-update-social">ok</button>
+            </div>
 
             <div class="choose-place">
                 <div class="choose-place">
@@ -140,12 +185,14 @@
                 </div>
             </div>
 
-            <div class="choose-region">
-                <span class="choose-region-title">Выбор региона:</span>
-                <div class="select-region">Вся Россия</div>
-            </div>
+            <label class="add-event-region">
+                <span class="add-event-region-title">Выбор региона:</span><span class="mark">&#9660;</span>
+                <select class="add-event-region-select">
+                    <option selected="selected">Вся Россия</option>
+                </select>
+            </label>
 
-            <div class="calculator">
+            <div class="add-event-calculator">
                 <span class="calculate-cost-title">Рассчитать стоимость:</span>
                 <div class="time-scale ">
                     <span class="min">минимум - 6 дней</span>
@@ -157,24 +204,183 @@
                     <span class="final-cost">стоимость заказа:<span class="value">2550 руб.</span></span>
                 </div>
             </div>
-            <input type="submit" value="оформить заказ"/>
+            <input class="personal-advertiser-submit" type="submit" value="оформить заказ"/>
         </form>
     </div>
 
     <div class="block">
         <span class="personal-advertiser-title">набранные баллы</span>
+        <table class="discount-for-points">
+            <caption>скидки за баллы</caption>
+            <tr>
+                <td>100 баллов</td>
+                <td>Скидка 3%</td>
+            </tr>
+            <tr>
+                <td>200 баллов</td>
+                <td>Скидка 5%</td>
+            </tr>
+            <tr>
+                <td>300 баллов</td>
+                <td>Скидка 10%</td>
+            </tr>
+            <tr>
+                <td>500 баллов</td>
+                <td>Скидка 20%</td>
+            </tr>
+            <tr>
+                <td>1000 баллов</td>
+                <td>Скидка 30%</td>
+            </tr>
+            <tr>
+                <td>5000 баллов</td>
+                <td>Скидка 50%</td>
+            </tr>
+        </table>
+        <div class="user-points-block">
+            <span class="user-points-title">Количество набранных баллов</span>
+            <div class="user-points"><span>258</span></div>
+        </div>
     </div>
 
     <div class="block">
         <span class="personal-advertiser-title">действующие акции</span>
+        <div class="private-event">
+            <div class="event-row">
+                <div class="private-event-image"><div><img src="images/bid-image.jpg" alt="фото акции"/></div></div>
+                <span class="private-event-text"><span class="title">Развлечения и спорт</span>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                </span>
+            </div>
+        </div>
+        <ul class="private-event-statistic">
+        <li>
+            <span class="data-name">количество лайков:</span>
+            <span class="data-value">56</span>
+        </li>
+        <li>
+            <span class="data-name">добавлено в группу</span>
+            <span class="data-value">40</span>
+        </li>
+        <li>
+            <span class="data-name">репост:</span>
+            <span class="data-value">348</span>
+        </li>
+    </ul>
+        <a href="" class="more-info">Показать еще</a>
     </div>
 
     <div class="block">
         <span class="personal-advertiser-title">ожидают одобрения</span>
+        <div class="private-event">
+            <div class="event-row">
+                <div class="private-event-image"><div><img src="images/bid-image.jpg" alt="фото акции"/></div></div>
+                <div class="private-event-text">
+                    <span class="title">Развлечения и спорт</span>
+                    <span class="text-fix">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
+                    <div class="private-event-control">
+                        <span class="private-event-control-title">запустить с </span>
+                        <label>01.11.2015<input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
+                        <span class="private-event-status">статус акции:&ensp;&ensp;&ensp;<span class="private-event-status-value">ожидаем</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="private-event">
+            <div class="event-row">
+                <div class="private-event-image"><div><img src="images/bid-image.jpg" alt="фото акции"/></div></div>
+                <div class="private-event-text">
+                    <span class="title">Развлечения и спорт</span>
+                    <span class="text-fix">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
+                    <div class="private-event-control">
+                        <span class="private-event-control-title">запустить с </span>
+                        <label>01.11.2015<input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
+                        <span class="private-event-status">статус акции:&ensp;&ensp;&ensp;<span class="private-event-status-value">ожидаем</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="" class="more-info">Показать еще</a>
     </div>
 
     <div class="block">
         <span class="personal-advertiser-title">архив акций</span>
+        <div class="private-event archive">
+            <div class="event-row">
+                <div class="private-event-image archive"><div><img src="images/bid-image.jpg" alt="фото акции"/></div></div>
+                <div class="private-event-text">
+                    <span class="title">Развлечения и спорт</span>
+                    <span class="text-fix">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
+                    <a href="#"  class="run-again">запустить заново</a>
+                </div>
+            </div>
+        </div>
+        <div class="private-event archive">
+            <div class="event-row">
+                <div class="private-event-image archive"><div><img src="images/bid-image.jpg" alt="фото акции"/></div></div>
+                <div class="private-event-text">
+                    <span class="title">Развлечения и спорт</span>
+                    <span class="text-fix">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
+                    <a href="#" class="run-again">запустить заново</a>
+                </div>
+            </div>
+        </div>
+        <div class="private-event archive">
+            <div class="event-row">
+                <div class="private-event-image archive"><div><img src="images/bid-image.jpg" alt="фото акции"/></div></div>
+                <div class="private-event-text">
+                    <span class="title">Развлечения и спорт</span>
+                    <span class="text-fix">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                    venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                    Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
+                    <a href="#"  class="run-again">запустить заново</a>
+                </div>
+            </div>
+        </div>
+        <a href="" class="more-info">Показать еще</a>
+    </div>
+    <div class="window-payment">
+        <div class="payment-successful">
+            <div class="close-window">&#10006;</div>
+            <span class="title">Поздравляем!</span>
+            <span class="info">Ваш заказ оплачен и находится в обработке</span>
+            <span class="title sub-title">Вам начислено +25 баллов!</span>
+        </div>
+    </div>
+    <div class="window-payment">
+        <div class="payment-error">
+            <div class="close-window">&#10006;</div>
+            <span class="title">Ошибка оплаты!</span>
+            <span class="info">Попробуйте позже...</span>
+        </div>
     </div>
 
 </main>

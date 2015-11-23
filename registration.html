@@ -82,7 +82,15 @@
             <span class="registr-title">заполните свой профиль </span>
             <input type="text" class="profile-first-name" placeholder="Имя:"/>
             <input type="email" class="profile-last-name" placeholder="email"/>
-            <span class="profile-city">Ваш город: <a href="#">&#9660;</a></span>
+            <label class="region-select-wrap">
+                <span class="mark">&#9660;</span>
+                <select class="region-select">
+                    <option selected="selected">Ваш город:</option>
+                    <option value="Kharkov">Харьков</option>
+                    <option value="Mariupol">Мариуполь</option>
+                    <option value="Odessa">Одесса</option>
+                </select>
+            </label>
             <input type="submit" class="profile-submit" value="Зарегистрироваться"/>
         </form>
     </div>

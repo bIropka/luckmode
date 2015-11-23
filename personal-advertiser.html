@@ -10,16 +10,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script>
         $(document).ready(function () {
-            $( '.input-event-date' ).datepicker();
+            $('.input-event-date').datepicker();
+            /***********************************/
             $( '.private-event-control-input' ).datepicker();
-            $('.bid-checkbox').bind('change', BidCSocialEvent);
-            function BidCSocialEvent() {
+            /***********************************/
+            $('.bid-checkbox').bind('change', BidSocialEvent);
+            function BidSocialEvent() {
                 if ($(this).find('input').prop("checked")){
                     $(this).addClass('active-bid-checkbox');
                 } else {
                     $(this).removeClass('active-bid-checkbox');
                 }
             }
+            /**********************************/
             $('.choice-place').bind('change', BidPlaceEvent);
             function BidPlaceEvent() {
                 if ($(this).find('input').prop("checked")){
@@ -41,15 +44,6 @@
                 }
             });
 
-            /*$('.to-put-money').click(function () {
-                $('.window-payment-successful').fadeIn();
-            });
-            $('.window-payment-successful').click(function (event) {
-                $target = $(event.target);
-                if (!$target.closest($('.payment-successful')).length) $('.window-payment-successful').fadeOut();
-                if ($target.hasClass('close-window')) $('.window-payment-successful').fadeOut();
-            });*/
-            /* payment with error, modal window*/
             $('.to-put-money').click(function () {
                 $('.window-payment-error').fadeIn();
             });
@@ -118,7 +112,7 @@
                 <textarea class="add-event-description" cols="" rows="5" placeholder="Добавить описание акции..."></textarea>
                 <span class="add-event-date-title">дата запуска</span>
                 <label class="add-event-date">
-                    Сегодня<span class="mark">&#9660;</span>
+                    <span class="mark">&#9660;</span>
                     <input type="date" class="input-event-date"/>
                 </label>
 
@@ -310,7 +304,7 @@
                     Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
                     <div class="private-event-control">
                         <span class="private-event-control-title">запустить с </span>
-                        <label>01.11.2015<input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
+                        <label><input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
                         <span class="private-event-status">статус акции:&ensp;&ensp;&ensp;<span class="private-event-status-value">ожидаем</span></span>
                     </div>
                 </div>
@@ -329,7 +323,7 @@
                     Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
                     <div class="private-event-control">
                         <span class="private-event-control-title">запустить с </span>
-                        <label>01.11.2015<input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
+                        <label><input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
                         <span class="private-event-status">статус акции:&ensp;&ensp;&ensp;<span class="private-event-status-value">ожидаем</span></span>
                     </div>
                 </div>

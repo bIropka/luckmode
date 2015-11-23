@@ -2258,11 +2258,37 @@ header .logo {
 }
 .input-auction-name {
     display: inline-block;
-    width: 100%;
+    width: 45%;
     padding: 0.5% 3%;
     border: 2px solid #f1efef;
     font-weight: 100;
     margin-bottom: 1%;
+    float: left;
+}
+.select-auction-category {
+    display: inline-block;
+    width: 45%;
+    padding: 0.5% 3%;
+    cursor: pointer;
+    /*for WebKit*/
+    -webkit-appearance: none;
+    /* for FF */
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    /* for IE */
+    -ms-appearance: none;
+    appearance: none!important;
+    border: 2px solid #f1efef;
+    color: #c6c6c6;
+    font-style: italic;
+}
+.select-auction-category .mark {
+    float: right;
+}
+
+.select-auction-category::-ms-expand {
+    display: none;
 }
 .auction-description {
     display: inline-block;
@@ -3412,7 +3438,7 @@ td {
     text-transform: lowercase;
 }
 /***********modal windows*************/
-.window-payment {
+.window-payment-successful {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -3422,7 +3448,7 @@ td {
     display: none;
     text-align: center;
 }
-.payment-successful, .payment-error {
+.payment-successful {
     position: absolute;
     width: 360px;
     height: 150px;
@@ -3435,15 +3461,15 @@ td {
     border: 2px solid #cc0000;
     outline: 10px solid white;
 }
-.payment-error {
+/*.payment-error {
     height: 100px;
     left: auto;
     right: 300px;
-}
+}*/
 .payment-successful .title {
     margin: 0 0 2%;
 }
-.payment-successful .info, .payment-error .info {
+.payment-successful .info/*, .payment-error .info */{
     display: inline-block;
     width: 70%;
     font-size: 1.3em;

@@ -40,14 +40,16 @@
                     $('.days-number .value').html(ui.value);
                 }
             });
+
             $('.to-put-money').click(function () {
-                $('.window-payment').fadeIn();
+                $('.window-payment-successful').fadeIn();
             });
-            $('.window-payment').click(function (event) {
+            /*$('.window-bid').click(function (event) {
                 $target = $(event.target);
-                if (!$target.closest($('.window-payment-error')).length) $('.window-payment').fadeOut();
-                if ($target.hasClass('close-window')) $('.window-payment').fadeOut();
-            });
+                if (!$target.closest($('.form-bid')).length) $('.window-bid').fadeOut();
+                if ($target.hasClass('close-window')) $('.window-bid').fadeOut();
+            });*/
+
         });
     </script>
 </head>
@@ -367,7 +369,7 @@
         </div>
         <a href="" class="more-info">Показать еще</a>
     </div>
-    <div class="window-payment">
+    <div class="window-payment-successful">
         <div class="payment-successful">
             <div class="close-window">&#10006;</div>
             <span class="title">Поздравляем!</span>
@@ -375,7 +377,7 @@
             <span class="title sub-title">Вам начислено +25 баллов!</span>
         </div>
     </div>
-    <div class="window-payment">
+    <div class="window-payment-error">
         <div class="payment-error">
             <div class="close-window">&#10006;</div>
             <span class="title">Ошибка оплаты!</span>

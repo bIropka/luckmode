@@ -49,8 +49,8 @@
             });
 
             /**************** calculator scripts ****************/
-            var calNetworks = 1;// number of networks (without instagram), values: 0, 1, 2, 3, 4
-            var calInstagram = 1;//was instagram chosen?, values: 0 - no, 1 - yes
+            var calNetworks = 0;// number of networks (without instagram), values: 0, 1, 2, 3, 4
+            var calInstagram = 0;//was instagram chosen?, values: 0 - no, 1 - yes
             var calDaysMin = 6;//minimal number of days, value: const
             var calDays = 6;//number of days, values: 6, 7, 8, ... , 30
             var calCostNetworksSet = 890;//cost of the first 6 days foa all networks (without instagram), values: 0, 190, 250, 340
@@ -66,11 +66,11 @@
             $('.save-update-social').click(function (){
                 calNetworks = 0;
                 calInstagram = 0;
-                if($('.choice-vkontakte').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-facebook').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-odnoklassniki').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-twitter').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-instagram').is('.active-bid-checkbox')){calInstagram = 1}
+                if($('.choice-vkontakte').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-facebook').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-odnoklassniki').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-twitter').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-instagram').find('.bid-checkbox').is('.active-bid-checkbox')){calInstagram = 1}
                 $('.final-cost .value').html(getCalCost());
                 $('.field').prop('disabled', true);
             });

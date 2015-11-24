@@ -32,34 +32,65 @@
                     $(this).removeClass('chosen-place');
                 }
             }
-        });
-        $(function() {
-            $('.time-scale' ).slider({
-                min: 6,
-                max: 30,
-                range: "min",
-                value: 14,
-                slide: function( event, ui ) {
-                    $('.days-number .value').html(ui.value);
-                }
+            /***********************************/
+            $('.to-update-data-social').click(function (){
+                $('.field').prop('disabled', false);
             });
 
+            /*****************************************/
             $('.to-put-money').click(function () {
                 $('.window-payment-error').fadeIn();
             });
+            /******************************************/
             $('.window-payment-error').click(function (event) {
                 $target = $(event.target);
                 if (!$target.closest($('.payment-error')).length) $('.window-payment-error').fadeOut();
                 if ($target.hasClass('close-window')) $('.window-payment-error').fadeOut();
             });
 
-            $('.to-update-data-social').click(function (){
-                $('.field').prop('disabled', false);
-            });
+            /**************** calculator scripts ****************/
+            var calNetworks = 1;// number of networks (without instagram), values: 0, 1, 2, 3, 4
+            var calInstagram = 1;//was instagram chosen?, values: 0 - no, 1 - yes
+            var calDaysMin = 6;//minimal number of days, value: const
+            var calDays = 6;//number of days, values: 6, 7, 8, ... , 30
+            var calCostNetworksSet = 890;//cost of the first 6 days foa all networks (without instagram), values: 0, 190, 250, 340
+            var calCostInstagramSet = 580;//cost of the instagram, value: const
+            var calCostRest = 140;//cost of the all days after 6, value: const
+            var calCost = 1;//final cost value
+
+            function getCalCost() {
+                return calNetworks * (calCostNetworksSet + calCostRest * (calDays - calDaysMin)) +
+                        calInstagram * (calCostInstagramSet + calCostRest * (calDays - calDaysMin));
+            }
+
             $('.save-update-social').click(function (){
+                calNetworks = 0;
+                calInstagram = 0;
+                if($('.choice-vkontakte').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-facebook').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-odnoklassniki').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-twitter').is('.active-bid-checkbox')){calNetworks++}
+                if($('.choice-instagram').is('.active-bid-checkbox')){calInstagram = 1}
+                $('.final-cost .value').html(getCalCost());
                 $('.field').prop('disabled', true);
             });
+
+            $(function() {
+                $('.time-scale' ).slider({
+                    min: 6,
+                    max: 30,
+                    range: "min",
+                    value: 6,
+                    slide: function( event, ui ) {
+                        calDays = ui.value;
+                        $('.final-cost .value').html(getCalCost());
+                        $('.days-number .value').html(calDays);
+                    }
+                });
+                /************* end of calculator scripts *************/
+            });
         });
+
     </script>
 </head>
 <body>
@@ -128,41 +159,41 @@
                 <ul>
                     <li class="choice-vkontakte">
                         <span class="social-icon vk-icon"></span>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
-                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
-                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
-                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field"/></label>
+                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-facebook">
                         <div class="social-icon fb-icon"></div>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
-                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
-                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
-                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field"/></label>
+                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" class="field" /></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-odnoklassniki">
                         <div class="social-icon od-icon"></div>
                         <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
-                        <label class="like bid-checkbox active-bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
-                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
-                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-twitter">
                         <div class="social-icon tw-icon"></div>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
-                        <label class="repost bid-checkbox active-bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
-                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field"/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                     <li class="choice-instagram">
                         <div class="social-icon inst-icon"></div>
-                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field" disabled/></label>
-                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox" checked class="field" disabled/></label>
-                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
-                        <label class="subscribe bid-checkbox active-bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field" disabled/></label>
+                        <label class="link-to-topic">Ссылка на запись:<input type="text" class="field"/></label>
+                        <label class="like bid-checkbox">Лайк<span class="bid-mark"></span><input type="checkbox"  class="field"/></label>
+                        <label class="repost bid-checkbox">Репост<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
+                        <label class="subscribe bid-checkbox">Подписаться<span class="bid-mark"></span><input type="checkbox" class="field"/></label>
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                 </ul>
@@ -174,10 +205,10 @@
 
             <div class="choose-place">
                 <div class="choose-place">
-                    <label class="choice-place choice-first-three chosen-place">
+                    <label class="choice-place choice-first-three">
                         <span class="usual-text">Закрепить Вашу акцию на</span>
                         <span class="big-text">первой тройке</span>
-                        <input type="checkbox" checked/>
+                        <input type="checkbox"/>
                         <span class="choice-place-background"></span>
                     </label>
                     <label class="choice-place choice-first-nine">
@@ -200,9 +231,8 @@
                 <span class="region-select-title">Выбор региона:</span><span class="mark">&#9660;</span>
                 <select class="region-select">
                     <option selected="selected">Вся Россия</option>
-                    <option value="Kharkov">Харьков</option>
-                    <option value="Mariupol">Мариуполь</option>
-                    <option value="Odessa">Одесса</option>
+                    <option value="Samara">Самара</option>
+                    <option value="Toliatti">Тольятти</option>
                 </select>
             </label>
 
@@ -213,9 +243,9 @@
                     <span class="max">максимум - 30 дней</span>
                 </div>
                 <div class="calculate-cost">
-                    <span class="days-number">Количество дней:<span class="value">14</span></span>
-                    <span class="audience-coverage">Вирусный охват аудитории:<span class="value">85000</span></span>
-                    <span class="final-cost">стоимость заказа:<span class="value">2550 руб.</span></span>
+                    <span class="days-number">Количество дней:<span class="value">6</span></span>
+                    <span class="audience-coverage">Вирусный охват аудитории:<span class="value">80000</span></span>
+                    <span class="final-cost">стоимость заказа: <span class="value">0</span><span class="currency">руб.</span></span>
                 </div>
             </div>
             <input class="personal-advertiser-submit" type="submit" value="оформить заказ"/>

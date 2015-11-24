@@ -1563,19 +1563,6 @@ header .logo {
     width: 84%;
     margin: 0 auto;
 }
-
-/*.block-calculator .choose-region-title {
-    margin: 1% auto 0;
-}
-.block-calculator .select-region {
-    width: 25%;
-    margin: 1% auto 2%;
-    padding: 1% 5% 1% 0;
-    background: white url("../images/sprite-bids.png") no-repeat 103% -5%;
-    background-size: 250%;
-}*/
-
-
 .block-calculator .choose-place-title,
 .block-calculator .calculate-cost-title,
 .block-calculator .choose-social-title {
@@ -1646,11 +1633,14 @@ header .logo {
     text-align: left;
     margin-right: 1%;
 }
-.calculate-cost .value {
+.calculate-cost .value, .calculate-cost .currency {
     font-size: 1.7em;
     text-transform: lowercase;
     color: #c40f13;
     padding-left: 20px;
+}
+.calculate-cost .currency {
+    padding-left: 5px;
 }
 .adver-name, .adver-email {
     display: inline-block;

@@ -2146,6 +2146,7 @@ header .logo {
     border: 2px solid #c4c2c2;
     position: relative;
     margin-bottom: 2%;
+    cursor: pointer;
 }
 .choice-place input {
     display: none;
@@ -2375,6 +2376,7 @@ header .logo {
 }
 .event-date-value {
     display: inline-block;
+    width: 100%;
     margin: 0 auto;
     font-family: Lobster, cursive;
     color: #cc0000;
@@ -2383,7 +2385,7 @@ header .logo {
 }
 .input-event-date-value {
     display: block;
-    height: 0;
+    height: 1px;
     width: 1px;
     border: none;
 }
@@ -3085,10 +3087,10 @@ td {
     font-weight: bold;
     border: 1px solid #c3c2c2;
 }
-.add-event-description:focus::-webkit-input-placeholder {color: transparent}
-.add-event-description:focus::-moz-placeholder {color: transparent}
-.add-event-description:focus:-moz-placeholder {color: transparent}
-.add-event-description:focus:-ms-input-placeholder {color: transparent}
+.add-event-description:focus::-webkit-input-placeholder {color: transparent;}
+.add-event-description:focus::-moz-placeholder {color: transparent;}
+.add-event-description:focus:-moz-placeholder {color: transparent;}
+.add-event-description:focus:-ms-input-placeholder {color: transparent;}
 .money-block {
     display: inline-block;
     width: 26%;
@@ -3201,24 +3203,12 @@ td {
     text-align: left;
     margin-bottom: 3%;
 }
-.to-update-data-social {
-    margin-left: 2.5%;
-    background: linear-gradient(#edecec, #dcdcdc);
-    color: black;
-    padding: 0.5% 1%;
-}
-.to-update-data-social:hover {
-    background: linear-gradient(#dcdcdc, #edecec);
-}
-.save-update-social {
-    margin-left: 3%;
-    padding: 0.5% 1%;
-}
 /*****************************************/
 .add-event .choice-place {
     background-color: #f7f7f7;
     padding: 1%;
     margin-bottom: 5%;
+    cursor: pointer;
 }
 /******************************************/
 .region-select-wrap {

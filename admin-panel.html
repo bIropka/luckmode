@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.choice').mouseenter(function () {
@@ -87,8 +87,8 @@
                 if ($target.hasClass('close-window')) $('.window-bid').fadeOut();
             });
 
-            $('.bid-checkbox').bind('change', BidCSocialEvent);
-            function BidCSocialEvent() {
+            $('.bid-checkbox').bind('change', bidCSocialEvent);
+            function bidCSocialEvent() {
                 if ($(this).find('input').prop("checked")){
                     $(this).addClass('active-bid-checkbox');
                 } else {
@@ -105,7 +105,55 @@
                     $(this).removeClass('chosen-place');
                 }
             }
-            $( '.input-event-date-value' ).datepicker();
+            $( '.input-event-date-value' ).datepicker({
+                dayNamesMin: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                onSelect: function(dateText, inst) {
+                    var dpData = $( '.input-event-date-value' ).datepicker("getDate");
+                    var dpDay = dpData.getDate();
+                    var dpMonth = dpData.getMonth();
+                    var dpYear = dpData.getFullYear();
+                    switch (dpMonth){
+                        case 0:
+                            dpMonth = "января";
+                            break;
+                        case 1:
+                            dpMonth = "февраля";
+                            break;
+                        case 2:
+                            dpMonth = "марта";
+                            break;
+                        case 3:
+                            dpMonth = "апреля";
+                            break;
+                        case 4:
+                            dpMonth = "мая";
+                            break;
+                        case 5:
+                            dpMonth = "июня";
+                            break;
+                        case 6:
+                            dpMonth = "июля";
+                            break;
+                        case 7:
+                            dpMonth = "августа";
+                            break;
+                        case 8:
+                            dpMonth = "сентября";
+                            break;
+                        case 9:
+                            dpMonth = "октября";
+                            break;
+                        case 10:
+                            dpMonth = "ноября";
+                            break;
+                        case 11:
+                            dpMonth = "декабря";
+                            break;
+                    }
+                    $('.event-date-value').html(dpDay + ' ' + dpMonth + ' ' + dpYear);
+                }
+            });
         });
     </script>
     <title>Admin-panel</title>
@@ -261,10 +309,9 @@
             <label class="region-select-wrap">
                 <span class="region-select-title">Выбор региона:<br></span><span class="mark">&#9660;</span>
                 <select class="region-select">
-                    <option selected="selected">Вся Россия</option>
-                    <option value="Kharkov">Харьков</option>
-                    <option value="Mariupol">Мариуполь</option>
-                    <option value="Odessa">Одесса</option>
+                    <option selected="selected" value="Russia">Вся Россия</option>
+                    <option value="Samara">Самара</option>
+                    <option value="Toliatti">Тольятти</option>
                 </select>
             </label>
 
@@ -300,7 +347,8 @@
             <label class="start-bid">Начальная ставка:<input type="text"/>баллов</label>
             <div class="event-date">
                 <span class="event-date-title">Дата розыгрыша</span>
-                <label class="event-date-value">12 ноября 2015<input class="input-event-date-value" type="date"/></label>
+                <label><span class="event-date-value">12 ноября 2015</span><input class="input-event-date-value"  type="text"/></label>
+                <!--<label class="event-date-value">12 ноября 2015<input class="input-event-date-value" type="date"/></label>-->
             </div>
             <input class="auction-submit" type="submit" value="Добавить"/>
         </div>

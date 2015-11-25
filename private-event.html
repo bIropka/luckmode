@@ -4,19 +4,39 @@
     <meta charset="UTF-8">
     <title>private event</title>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <link href="css/styles.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="css/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="css/dscountdown.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/dscountdown.js"></script>
     <script>
         $(document).ready(function () {
+
             $('.join-event').click(function () {
                 $('.window-private-event-wrap').fadeIn();
             });
+
             $('.window-private-event-wrap').click(function (event) {
                 $target = $(event.target);
                 if (!$target.closest($('.window-private-event')).length) $('.window-private-event-wrap').fadeOut();
             });
-        });
 
+            $('.timer').dsCountDown({
+                startDate: new Date(),
+                endDate: new Date("January 1, 2016 00:00:00"),
+                elemSelDays: '', // Leave blank to use default value or provide a string selector if the lement already exist, Example: .ds-days
+                elemSelHours: '', // Leave blank to use default value or provide a string selector if the lement already exist, Example: .ds-hours
+                elemSelMinutes: '', // Leave blank to use default value or provide a string selector if the lement already exist, Example: .ds-minutes
+                elemSelSeconds: '', // Leave blank to use default value or provide a string selector if the lement already exist, Example: .ds-seconds
+                theme: 'white', // Set the theme 'white', 'black', 'red', 'flat', 'custom'
+                titleDays: 'дни', // Set the title of days
+                titleHours: 'часы', // Set the title of hours
+                titleMinutes: 'минуты', // Set the title of minutes
+                titleSeconds: 'секунды' // Set the title of seconds
+            });
+
+        });
     </script>
 </head>
 <body>
@@ -120,7 +140,7 @@
                     <div class="private-event-date-title"><div class="event-date-icon"></div>Дата розыгрыша</div>
                     <div class="event-date-value">12 ноября 2015</div>
                     <span>осталось:</span>
-                    <div class="timer" style="display: inline-block;width: 80%;padding-bottom: 10%;background: lightgray;">timer</div>
+                    <div class="timer" style="display: inline-block;"></div>
                 </div>
                 <div class="participants-list">
                     <div class="participants-list-title"><div class="participants-list-icon"></div>список участников <span>(27)</span></div>

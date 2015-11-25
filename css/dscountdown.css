@@ -1,0 +1,46 @@
+.dsCountDown:after{
+	content:'';
+    clear: both;
+}
+
+.dsCountDown{
+    display:inline-block;
+    zoom: 1;
+}
+
+.dsCountDown.ds-white {
+	color: #000;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif, serif;
+	font-size: 1em;
+	padding: 10px;
+}
+
+.ds-white .ds-element {
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+}
+
+.dsCountDown.ds-white > .ds-element.ds-element-seconds {
+	margin-right: 0;
+	padding-right: 0;
+	border-right: 0;
+}
+
+.ds-white .ds-element-title {
+	font-size: 0.8em;
+	text-transform: lowercase;
+}
+
+.ds-white .ds-element-value {
+	font-size: 2.5em;
+	color: #333;
+	text-shadow: 2px 2px 0 #fff;
+	border: 1px solid #dedede;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 10px;
+	background: linear-gradient(to bottom, #dcdcdc 49.9%, #f3f3f3 50.1%);
+	padding: 5px;
+}

@@ -4,30 +4,22 @@
     <meta charset="UTF-8">
     <title>Personal advertiser</title>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.input-event-date').datepicker();
-            /***********************************/
-            $( '.private-event-control-input' ).datepicker();
-            /***********************************/
-            $('.bid-checkbox').bind('change', BidSocialEvent);
-            function BidSocialEvent() {
-                if ($(this).hasClass('active-bid-checkbox')){
-                    $(this).removeClass('active-bid-checkbox');
-                } else {
-                    $(this).addClass('active-bid-checkbox');
-                }
-            }
-            /***********************************/
-            $('.to-update-data-social').click(function (){
-                $('.field').prop('disabled', false);
+            $('.input-event-date').datepicker({
+                dayNamesMin: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
             });
-
-            /*****************************************/
+            /***********************************/
+            $( '.private-event-control-input' ).datepicker({
+                dayNamesMin: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            });
+            /***********************************/
             $('.to-put-money').click(function () {
                 $('.window-payment-error').fadeIn();
             });
@@ -55,21 +47,34 @@
                 return getCalCost() * 1.5;
             }
             /***********************/
-            $('.save-update-social').click(function (){
-                calNetworks = 0;
-                calInstagram = 0;
-                if($('.choice-vkontakte').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-facebook').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-odnoklassniki').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-twitter').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
-                if($('.choice-instagram').find('.bid-checkbox').is('.active-bid-checkbox')){calInstagram = 1}
+            $('.bid-checkbox').bind('change', bidSocialEvent);
+            function bidSocialEvent() {
+                if ($(this).hasClass('active-bid-checkbox')){
+                    $(this).removeClass('active-bid-checkbox');
+                    if(!$(this).parent('.choice-social').find('.bid-checkbox').is('.active-bid-checkbox')){
+                        if($(this).parent().is('.choice-instagram')){
+                            calInstagram = 0
+                        } else {
+                            calNetworks--;
+                        }
+                    }
+                } else {
+                    if(!$(this).parent('.choice-social').find('.bid-checkbox').is('.active-bid-checkbox')){
+                        if($(this).parent().is('.choice-instagram')){
+                            calInstagram = 1
+                        } else {
+                            calNetworks++;
+                        }
+                    }
+                    $(this).addClass('active-bid-checkbox');
+                }
                 $('.final-cost .value').html(getCalCost());
                 $('.audience-coverage .value').html(getCalPeople());
-                $('.field').prop('disabled', true);
-            });
+            }
+
             /*************************/
-            $('.choice-place').bind('change', BidPlaceEvent);
-            function BidPlaceEvent() {
+            $('.choice-place').bind('change', bidPlaceEvent);
+            function bidPlaceEvent() {
                 $('.choice-place').removeClass('chosen-place');
                 $(this).addClass('chosen-place');
                 calCostNetworksSet = 0;
@@ -151,7 +156,7 @@
                 <span class="add-event-date-title">дата запуска</span>
                 <label class="add-event-date">
                     <span class="mark">&#9660;</span>
-                    <input type="date" class="input-event-date"/>
+                    <input type="text" class="input-event-date" value="Введите дату"/>
                 </label>
 
                 <div class="money-block">
@@ -204,10 +209,6 @@
                         <span class="social-link">https://vk.com/topic-42654803_27567419</span>
                     </li>
                 </ul>
-            </div>
-            <div class="control-block-social">
-                <button class="to-update-data-social">введены не все данные</button>
-                <button class="save-update-social">ok</button>
             </div>
 
             <div class="choose-place">

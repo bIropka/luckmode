@@ -16,20 +16,10 @@
             /***********************************/
             $('.bid-checkbox').bind('change', BidSocialEvent);
             function BidSocialEvent() {
-                if ($(this).find('input').prop("checked")){
-                    $(this).addClass('active-bid-checkbox');
-                } else {
+                if ($(this).hasClass('active-bid-checkbox')){
                     $(this).removeClass('active-bid-checkbox');
-                }
-            }
-            /**********************************/
-            $('.choice-place').bind('change', BidPlaceEvent);
-            function BidPlaceEvent() {
-                if ($(this).find('input').prop("checked")){
-                    $('.choice-place').removeClass('chosen-place');
-                    $(this).addClass('chosen-place');
                 } else {
-                    $(this).removeClass('chosen-place');
+                    $(this).addClass('active-bid-checkbox');
                 }
             }
             /***********************************/
@@ -53,16 +43,18 @@
             var calInstagram = 0;//was instagram chosen?, values: 0 - no, 1 - yes
             var calDaysMin = 6;//minimal number of days, value: const
             var calDays = 6;//number of days, values: 6, 7, 8, ... , 30
-            var calCostNetworksSet = 890;//cost of the first 6 days foa all networks (without instagram), values: 0, 190, 250, 340
-            var calCostInstagramSet = 580;//cost of the instagram, value: const
+            var calCostNetworksSet = 1280;//cost of the first 6 days for all networks (without instagram), values: 890, 1080, 1280
+            var calCostInstagramSet = 970;//cost of the instagram, values: 580, 770, 970
             var calCostRest = 140;//cost of the all days after 6, value: const
-            var calCost = 1;//final cost value
 
             function getCalCost() {
                 return calNetworks * (calCostNetworksSet + calCostRest * (calDays - calDaysMin)) +
                         calInstagram * (calCostInstagramSet + calCostRest * (calDays - calDaysMin));
             }
-
+            function getCalPeople() {
+                return getCalCost() * 1.5;
+            }
+            /***********************/
             $('.save-update-social').click(function (){
                 calNetworks = 0;
                 calInstagram = 0;
@@ -72,9 +64,23 @@
                 if($('.choice-twitter').find('.bid-checkbox').is('.active-bid-checkbox')){calNetworks++}
                 if($('.choice-instagram').find('.bid-checkbox').is('.active-bid-checkbox')){calInstagram = 1}
                 $('.final-cost .value').html(getCalCost());
+                $('.audience-coverage .value').html(getCalPeople());
                 $('.field').prop('disabled', true);
             });
-
+            /*************************/
+            $('.choice-place').bind('change', BidPlaceEvent);
+            function BidPlaceEvent() {
+                $('.choice-place').removeClass('chosen-place');
+                $(this).addClass('chosen-place');
+                calCostNetworksSet = 0;
+                calCostInstagramSet = 0;
+                if($(this).is('.choice-first-three')){calCostNetworksSet = 1280; calCostInstagramSet = 970;}
+                if($(this).is('.choice-first-nine')){calCostNetworksSet = 1080; calCostInstagramSet = 770;}
+                if($(this).is('.choice-usual')){calCostNetworksSet = 890; calCostInstagramSet = 580;}
+                $('.final-cost .value').html(getCalCost());
+                $('.audience-coverage .value').html(getCalPeople());
+            }
+            /*************************/
             $(function() {
                 $('.time-scale' ).slider({
                     min: 6,
@@ -85,10 +91,11 @@
                         calDays = ui.value;
                         $('.final-cost .value').html(getCalCost());
                         $('.days-number .value').html(calDays);
+                        $('.audience-coverage .value').html(getCalPeople());
                     }
                 });
-                /************* end of calculator scripts *************/
             });
+            /************* end of calculator scripts *************/
         });
 
     </script>
@@ -205,10 +212,10 @@
 
             <div class="choose-place">
                 <div class="choose-place">
-                    <label class="choice-place choice-first-three">
+                    <label class="choice-place choice-first-three chosen-place">
                         <span class="usual-text">Закрепить Вашу акцию на</span>
                         <span class="big-text">первой тройке</span>
-                        <input type="checkbox"/>
+                        <input type="checkbox" checked/>
                         <span class="choice-place-background"></span>
                     </label>
                     <label class="choice-place choice-first-nine">
@@ -230,7 +237,7 @@
             <label class="region-select-wrap">
                 <span class="region-select-title">Выбор региона:</span><span class="mark">&#9660;</span>
                 <select class="region-select">
-                    <option selected="selected">Вся Россия</option>
+                    <option selected="selected" value="Russia">Вся Россия</option>
                     <option value="Samara">Самара</option>
                     <option value="Toliatti">Тольятти</option>
                 </select>
@@ -244,7 +251,7 @@
                 </div>
                 <div class="calculate-cost">
                     <span class="days-number">Количество дней:<span class="value">6</span></span>
-                    <span class="audience-coverage">Вирусный охват аудитории:<span class="value">80000</span></span>
+                    <span class="audience-coverage">Вирусный охват аудитории:<span class="value">0</span></span>
                     <span class="final-cost">стоимость заказа: <span class="value">0</span><span class="currency">руб.</span></span>
                 </div>
             </div>

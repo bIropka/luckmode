@@ -1615,7 +1615,7 @@ header .logo {
     display: inline-block;
     width: 100%;
     padding: 1% 0 1%;
-    text-align: center;
+    text-align: left;
     font-size: 0.9em;
 }
 .days-number, .audience-coverage, .final-cost, .discount {
@@ -1624,14 +1624,18 @@ header .logo {
     font-weight: bold;
     line-height: 1em;
     vertical-align: top;
-    text-align: left;
-    border: 1px solid black;
 }
 .days-number {
     float: left;
+    width: 22%;
+}
+.audience-coverage {
+    float: left;
+    margin-left: 0.5%;
+    width: 33%;
 }
 .final-cost {
-    margin-left: 5%;
+    margin-left: 1%;
 }
 .discount {
     float: right;
@@ -1640,13 +1644,16 @@ header .logo {
     font-size: 1.7em;
     text-transform: lowercase;
     color: #c40f13;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .discount .percents {
     padding: 0;
 }
 .calculate-cost .currency {
     padding-left: 5px;
+}
+.calculate-cost .value {
+
 }
 .adver-name, .adver-email {
     display: inline-block;
@@ -4433,7 +4440,7 @@ footer .logo {
         width: 15px;
         height: 15px;
         border: 4px solid #b10f13;
-        margin: -3px 0 0 -8px;
+        margin: -2px 0 0 -8px;
     }
     .ui-slider-horizontal {
         height: 50%;
@@ -4581,6 +4588,12 @@ footer .logo {
     }
     .personal-menu .choice, .personal-page-title {
         font-size: 0.8em;
+    }
+    .time-scale .ui-slider-handle {
+        width: 10px;
+        height: 10px;
+        border: 2px solid #b10f13;
+        margin: -2px 0 0 -8px;
     }
 
 }

@@ -38,13 +38,16 @@
             var calCostNetworksSet = 1280;//cost of the first 6 days for all networks (without instagram), values: 890, 1080, 1280
             var calCostInstagramSet = 970;//cost of the instagram, values: 580, 770, 970
             var calCostRest = 140;//cost of the all days after 6, value: const
+            var discount = 0.95;//discount value, values: 3% - 0.97, 5% - 0.95, 10% - 0.9, 20% - 0.8, 30% - 0.7, 50% - 0.5
 
             function getCalCost() {
-                return calNetworks * (calCostNetworksSet + calCostRest * (calDays - calDaysMin)) +
-                        calInstagram * (calCostInstagramSet + calCostRest * (calDays - calDaysMin));
+                var result =  (calNetworks * (calCostNetworksSet + calCostRest * (calDays - calDaysMin)) +
+                        calInstagram * (calCostInstagramSet + calCostRest * (calDays - calDaysMin))) * discount;
+                return parseInt(result);
             }
             function getCalPeople() {
-                return getCalCost() * 1.5;
+                var result = getCalCost() * 1.5;
+                return parseInt(result);
             }
             /***********************/
             $('.bid-checkbox').bind('change', bidSocialEvent);
@@ -97,6 +100,9 @@
                         $('.final-cost .value').html(getCalCost());
                         $('.days-number .value').html(calDays);
                         $('.audience-coverage .value').html(getCalPeople());
+                    },
+                    create: function(event, ui) {
+                        $('.discount .value').html(parseInt((1 - discount) * 100));
                     }
                 });
             });
@@ -269,7 +275,7 @@
                     <span class="days-number">Количество дней:<span class="value">6</span></span>
                     <span class="audience-coverage">Вирусный охват аудитории:<span class="value">0</span></span>
                     <span class="final-cost">стоимость заказа: <span class="value">0</span><span class="currency">руб.</span></span>
-                    <span class="discount">скидка: <span class="value">50</span><span class="percents">%</span></span>
+                    <span class="discount">скидка: <span class="value"></span><span class="percents">%</span></span>
                 </div>
             </div>
             <input class="personal-advertiser-submit" type="submit" value="оформить заказ"/>

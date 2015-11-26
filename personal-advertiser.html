@@ -152,12 +152,27 @@
                 <div class="add-photo">
                     <label>Загрузить фото<input type="file" accept="image/*"/></label>
                 </div>
-                <textarea class="add-event-description" cols="" rows="5" placeholder="Добавить описание акции..."></textarea>
-                <span class="add-event-date-title">дата запуска</span>
-                <label class="add-event-date">
-                    <span class="mark">&#9660;</span>
-                    <input type="text" class="input-event-date" value="Введите дату"/>
-                </label>
+
+                <div class="add-event-general-info">
+                    <textarea class="add-event-description" cols="" rows="5" placeholder="Добавить описание акции..."></textarea>
+                    <label class="auction-category">
+                        <select class="select-auction-category">
+                            <option value="">Название категории</option>
+                            <option value="">Красота и уход</option>
+                            <option value="">Еда</option>
+                            <option value="">Развлечения</option>
+                            <option value="">Спорт</option>
+                            <option value="">Медицина</option>
+                            <option value="">Образование</option>
+                            <option value="">Услуги</option>
+                        </select>
+                    </label>
+                    <span class="add-event-date-title">дата запуска</span>
+                    <label class="add-event-date">
+                        <span class="mark">&#9660;</span>
+                        <input type="text" class="input-event-date" value="Введите дату"/>
+                    </label>
+                </div>
 
                 <div class="money-block">
                     <div class="user-points"><span>650</span></div>
@@ -254,6 +269,7 @@
                     <span class="days-number">Количество дней:<span class="value">6</span></span>
                     <span class="audience-coverage">Вирусный охват аудитории:<span class="value">0</span></span>
                     <span class="final-cost">стоимость заказа: <span class="value">0</span><span class="currency">руб.</span></span>
+                    <span class="discount">скидка: <span class="value">50</span><span class="percents">%</span></span>
                 </div>
             </div>
             <input class="personal-advertiser-submit" type="submit" value="оформить заказ"/>
@@ -342,7 +358,7 @@
                     Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
                     <div class="private-event-control">
                         <span class="private-event-control-title">запустить с </span>
-                        <label><input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
+                        <label><input type="text" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
                         <span class="private-event-status">статус акции:&ensp;&ensp;&ensp;<span class="private-event-status-value">ожидаем</span></span>
                     </div>
                 </div>
@@ -361,7 +377,7 @@
                     Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</span>
                     <div class="private-event-control">
                         <span class="private-event-control-title">запустить с </span>
-                        <label><input type="date" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
+                        <label><input type="text" class="private-event-control-input"/><span class="mark">&#9660;</span></label>
                         <span class="private-event-status">статус акции:&ensp;&ensp;&ensp;<span class="private-event-status-value">ожидаем</span></span>
                     </div>
                 </div>

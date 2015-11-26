@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <title>Registration</title>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.profile-submit').click(function () {
+                $('.account-activation').css('opacity', '1');
+            });
+        });
+    </script>
 </head>
 <body>
 <header>
@@ -74,7 +84,7 @@
             <span>Мы отправили Вам на <span class="registr-email">dizayner.kruglova@gmail.com</span>
                 активационное письмо <span style="font-weight: bold">с данными для входа.</span></span>
         </div>
-        <form class="fill-profile">
+        <form class="fill-profile" onsubmit="return false">
             <span class="registr-title">заполните свой профиль </span>
             <input type="text" class="profile-first-name" placeholder="Имя:"/>
             <input type="email" class="profile-last-name" placeholder="email"/>

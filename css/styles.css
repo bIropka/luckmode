@@ -1270,7 +1270,7 @@ header .logo {
     width: 28%;
     margin-left: 3%;
 }
-.bid-checkbox {
+.bid-mark {
     display: inline-block;
     width: 37%;
     padding-top: 30%;
@@ -1279,34 +1279,10 @@ header .logo {
     background: url("../images/sprite-icons.png") 50% 0;
     background-size: cover;
 }
-.repost .bid-checkbox {width: 31%; padding-top: 25%;}
-.subscribe .bid-checkbox {width: 22%; padding-top: 17.5%;}
+.repost .bid-mark {width: 31%; padding-top: 25%;}
+.subscribe .bid-mark {width: 22%; padding-top: 17.5%;}
 .choice-twitter .repost {margin-left: 24%;}
-.active-bid-checkbox {background-position: 100% 0;}
-/*.like, .repost, .subscribe {
-    display: inline-block;
-    padding: 2% 0;
-    width: 17%;
-    margin-left: 4%;
-    border: 1px solid black;
-}
-.subscribe {
-    width: 28%;
-    margin-left: 5%;
-}
-.bid-checkbox {
-    display: inline-block;
-    width: 25%;
-    padding-top: 25%;
-    vertical-align: middle;
-    margin-left: 5%;
-    background: url("../images/sprite-icons-2.png");
-
-    border: 1px solid black;
-}
-.subscribe .bid-checkbox {width: 15%; padding-top: 15%;}
-.choice-twitter .repost {margin-left: 26%;}
-.active-bid-checkbox {background-position: 100% 75%;}*/
+.active-bid-checkbox .bid-mark {background-position: 100% 0;}
 .choice-place {
     display: inline-block;
     width: 30%;

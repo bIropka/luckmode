@@ -48,6 +48,25 @@
             $('.save-update').click(function (){
                 $('.field').prop('disabled', true);
             });
+            /**********************************/
+            $('.add-prize').click(function (){
+                var myCounter = 0;
+                var myResultText;
+                $('.prize').each(function(i, elem){
+                    if($(elem).val() != ''){
+                        myCounter++;
+                    } else {
+                    }
+                });
+                if (myCounter === 0 || myCounter === 5){
+                    myResultText = '(+' + myCounter + '&ensp;баллов)'
+                }else if (myCounter === 1){
+                    myResultText = '(+' + myCounter + '&ensp;балл)'
+                } else {
+                    myResultText = '(+' + myCounter + '&ensp;балла)'
+                }
+                $('.desired-prizes-table').find('.points-value').html(myResultText);
+            });
         });
     </script>
     <title>Personal pages</title>
@@ -198,19 +217,19 @@
                     </li>
                 </ul>
             </form>
-            <div class="desired-prizes">
+
+            <form class="desired-prizes" action="#"  onsubmit="return false">
                 <table class="desired-prizes-table">
                     <tr><th>Желаемые призы <span class="points-value">(+5 баллов)</span></th></tr>
-                    <tr><td>Ipad</td></tr>
-                    <tr><td>Ноутбук</td></tr>
-                    <tr><td>Смартфон</td></tr>
-                    <tr><td>Электронная книга</td></tr>
-                    <tr><td>Плазменный телевизор</td></tr>
-                    <tr><td>Поездка на курорт</td></tr>
-                    <tr><td>Билет в кино</td></tr>
+                    <tr><td><label><input class="prize" type="text" placeholder="Введите название приза"/></label></td></tr>
+                    <tr><td><label><input class="prize" type="text" placeholder="Введите название приза"/></label></td></tr>
+                    <tr><td><label><input class="prize" type="text" placeholder="Введите название приза"/></label></td></tr>
+                    <tr><td><label><input class="prize" type="text" placeholder="Введите название приза"/></label></td></tr>
+                    <tr><td><label><input class="prize" type="text" placeholder="Введите название приза"/></label></td></tr>
                 </table>
-                <button>добавить</button>
-            </div>
+                <input class="add-prize" type="submit" value="добавить">
+            </form>
+
         </div>
         <div class="personal-invite">
             <div class="personal-block-title">

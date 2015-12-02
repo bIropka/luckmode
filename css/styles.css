@@ -2933,7 +2933,18 @@ td {
     font-size: 0.95em;
     text-align: left;
 }
-.desired-prizes button {
+.desired-prizes-table label {
+    width: 90%;
+}
+.desired-prizes-table .prize {
+    width: 100%;
+    border: none;
+}
+.desired-prizes-table .prize:focus::-webkit-input-placeholder {color: transparent}
+.desired-prizes-table .prize:focus::-moz-placeholder {color: transparent}
+.desired-prizes-table .prize:focus:-moz-placeholder {color: transparent}
+.desired-prizes-table .prize:focus:-ms-input-placeholder {color: transparent}
+.desired-prizes .add-prize {
     float: right;
     clear: both;
     margin-top: 3%;
@@ -2942,6 +2953,7 @@ td {
     border-radius: 7px;
     font-size: 1em;
 }
+
 /*************personal invite***********/
 .personal-invite {
     width: 100%;

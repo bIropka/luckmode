@@ -1534,6 +1534,41 @@ header .logo {
     font-size: 1.2em;
     color: #777777;
 }
+.promo-text ul {
+    display: inline-block;
+    width: 100%;
+    padding-left: 10%;
+}
+.promo-text {
+    width: 100%;
+}
+.promo-text ul li {
+    font-family: Lobster, cursive;
+    color: #990000;
+    text-align: justify;
+    font-size: 1.2em;
+}
+.promo-text .title {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.promo-text p {
+    padding: 1% 2%;
+    text-indent: 3%;
+    font-size: 1.2em;
+    text-align: justify;
+}
+.promo-text h2  {
+    font-size: 1.8em;
+}
+.promo-text .new-logo {
+    display: inline-block;
+    width: 11.3%;
+    padding-top: 2%;
+    background: url("../images/new-logo.png");
+    background-size: cover;
+}
 .block-calculator {
     background: transparent url("../images/advert-background-2.png");
     background-size: cover;
@@ -2188,7 +2223,7 @@ header .logo {
     cursor: pointer;
 }
 .choice-place input {
-    display: none;
+    /*display: none;*/
 }
 .chosen-place {
     background: url("../images/sprite-bids.png") no-repeat -9% -25%;
